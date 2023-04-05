@@ -5,8 +5,8 @@ import (
 	"log"
 	"net/http"
 
-	"./handlers"
 	"github.com/gorilla/mux"
+	"github.com/rmacdiarmid/GPTSite/handlers"
 )
 
 func main() {
