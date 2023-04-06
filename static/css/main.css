@@ -25,9 +25,14 @@ header {
 }
 
 .navbar a {
-  color:#ffffff;
+  color: #ffffff;
   margin-right: 20px;
   padding: 10px;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  color: #00aaff;
 }
 
 /* Hero Styles */
@@ -47,51 +52,29 @@ header {
 
 .hero-text {
   color: white;
+  background-color: black;
   text-align: center;
   z-index: 1;
   font-size: 2.5rem;
   margin-top: 10%;
+  padding: 20px;
+  border-radius: 0.3rem;
 }
 
 /* Search Bar */
 .search-container {
   margin-top: 1rem;
-  width: fit-content;
-  font-size: 1.5rem;
-  border: none;
-  border-radius: 0.5rem;
-  padding: 0.5rem;
-  margin: 0;
   display: flex;
   align-items: center;
 }
 
-.search-container form {
-  display: flex;
-  flex-grow: 1;
-}
-
 .myform {
   display: flex;
-  line-height: 100px;
-  width: 400px;
-
-  -ms-box-orient: horizontal;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -moz-flex;
-  display: -webkit-flex;
-  display: flex;
-    
-  -webkit-justify-content: space-around;
   justify-content: space-around;
-  -webkit-flex-flow: row wrap;
-  flex-flow: row wrap;
-  -webkit-align-items: stretch;
+  flex-wrap: nowrap;
   align-items: stretch;
+  width: 400px;
 }
-
 
 .myform input {
   flex-grow: 2;
@@ -102,7 +85,6 @@ header {
 }
 
 .search-container input[type="text"] {
-  flex-grow: 1;
   height: 2rem;
   font-size: 1.1rem;
   border: none;
@@ -121,23 +103,29 @@ header {
   cursor: pointer;
 }
 
+/* main.css */
 /* Articles */
-.articles {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+
+.article-container {
   max-width: 1000px;
   margin: 0 auto;
   padding: 1rem;
 }
 
-.article {
+.articles {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.grid-item {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  width: 30%;
-  height: 100%;
   padding: 1rem;
   text-align: center;
 }
@@ -149,12 +137,14 @@ header {
   position: relative;
 }
 
-.article img {
-  width: auto;
+.article-img-container img {
+  width: 100%;
   height: 100%;
+  object-fit: cover;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  border-radius: 0.3rem;
 }
 
 .article-title {
@@ -165,4 +155,11 @@ header {
 
 .article-preview {
   font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .grid-item {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
 }
