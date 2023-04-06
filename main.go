@@ -12,6 +12,12 @@ import (
 func main() {
 	r := mux.NewRouter()
 
+	// Task CRUD handlers
+	r.HandleFunc("/tasks", handlers.CreateTaskHandler).Methods("POST")
+	r.HandleFunc("/tasks/{id}", handlers.ReadTaskHandler).Methods("GET")
+	r.HandleFunc("/tasks/{id}", handlers.UpdateTaskHandler).Methods("PUT")
+	r.HandleFunc("/tasks/{id}", handlers.DeleteTaskHandler).Methods("DELETE")
+
 	// Route handlers
 	r.HandleFunc("/", handlers.IndexHandler)
 	r.HandleFunc("/about", handlers.AboutHandler)
