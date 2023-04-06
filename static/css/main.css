@@ -1,57 +1,168 @@
-/* styles.css */
+/* main.css */
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: #0cd0f7;
-  }
-  
-  .container {
-    max-width: 1100px;
-    margin: 0 auto;
-    overflow: hidden;
-    padding: 0 2rem;
-  }
-  
-  h1, h2, h3, h4, h5, h6 {
-    color: #333;
-  }
-  
-  p {
-    color: #666;
-  }
-  
-  nav {
-    background-color: #333;
-    display: flex;
-    justify-content: space-around;
-    padding: 1rem 0;
-  }
-  
-  nav a {
-    color: #fff;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-  }
-  
-  nav a:hover {
-    background-color: #555;
-  }
-  
-  a {
-    color: #333;
-    text-decoration: none;
-  }
-  
-  a:hover {
-    color: #555;
-  }
-  
-  /* Responsive design */
-  @media screen and (max-width: 768px) {
-    nav {
-      flex-direction: column;
-    }
-  }
-  
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+}
+
+header {
+  display: flex;
+  background-color: black;
+  color: white;
+  height: 50px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-grow: 1;
+  padding: 0 40px;
+}
+
+.navbar a {
+  color:#ffffff;
+  margin-right: 20px;
+  padding: 10px;
+}
+
+/* Hero Styles */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 70vh;
+  overflow: hidden;
+  position: relative;
+  background-image: url('/static/images/hero-dragon.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-text {
+  color: white;
+  text-align: center;
+  z-index: 1;
+  font-size: 2.5rem;
+  margin-top: 10%;
+}
+
+/* Search Bar */
+.search-container {
+  margin-top: 1rem;
+  width: fit-content;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.search-container form {
+  display: flex;
+  flex-grow: 1;
+}
+
+.myform {
+  display: flex;
+  line-height: 100px;
+  width: 400px;
+
+  -ms-box-orient: horizontal;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+    
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-align-items: stretch;
+  align-items: stretch;
+}
+
+
+.myform input {
+  flex-grow: 2;
+}
+
+.myform button {
+  flex-grow: 1;
+}
+
+.search-container input[type="text"] {
+  flex-grow: 1;
+  height: 2rem;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 0.3rem;
+  padding: 0.5rem;
+}
+
+.search-container button[type="submit"] {
+  margin-left: 0.5rem;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 0.3rem;
+  padding: 0.5rem;
+  background-color: #00aaff;
+  color: white;
+  cursor: pointer;
+}
+
+/* Articles */
+.articles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 30%;
+  height: 100%;
+  padding: 1rem;
+  text-align: center;
+}
+
+.article-img-container {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.article img {
+  width: auto;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.article-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.article-preview {
+  font-size: 1rem;
+}
