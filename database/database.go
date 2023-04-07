@@ -8,6 +8,7 @@ import (
 	"log"
 
 	_ "github.com/mattn/go-sqlite3"
+	"github.com/rmacdiarmid/GPTSite/handlers"
 )
 
 // Define the Task struct
@@ -86,13 +87,6 @@ func UpdateTask(db *sql.DB, id int, title string, description string) error {
 	return nil
 }
 
-//func DeleteTask(db *sql.DB, id int) {
-//	_, err := db.Exec("DELETE FROM tasks WHERE id = ?", id)
-//	if err != nil {
-//		log.Fatalf("Error deleting task: %s", err)
-//	}
-//}
-
 func DeleteTask(db *sql.DB, id int) error {
 	_, err := db.Exec("DELETE FROM tasks WHERE id=$1", id)
 	return err
@@ -137,4 +131,25 @@ func ReadAllTasks() ([]Task, error) {
 
 	// Return the slice of tasks
 	return tasks, nil
+}
+
+// GetArticles retrieves all articles from the database.
+func GetArticles(db *sql.DB) ([]handlers.Article, error) {
+	rows, err := db.Query("SELECT id, title, image, preview FROM articles")
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+
+	var articles []handlers.Article
+	for rows.Next() {
+		var article handlers.Article
+		err := rows.Scan(&article.ID, &article.Title, &article.Image, &article.Preview)
+		if err != nil {
+			return nil, err
+		}
+		articles = append(articles, article)
+	}
+
+	return articles, nil
 }
