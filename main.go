@@ -43,6 +43,16 @@ func main() {
 	// Static file handling
 	r.PathPrefix("/static/").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir("./static"))))
 
+	http.HandleFunc("/tasks", func(w http.ResponseWriter, r *http.Request) {
+		if r.Method == "POST" {
+			handlers.CreateAboutTaskHandler(w, r)
+		} else if r.Method == "GET" {
+			handlers.GetTasksHandler(w, r)
+		} else {
+			http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
+		}
+	})
+
 	// Start the server
 	fmt.Println("Starting server on :8080...")
 	err = http.ListenAndServe(":8080", r)
