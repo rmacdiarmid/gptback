@@ -1,6 +1,7 @@
 package handlers
 
 import (
+	"database/sql"
 	"encoding/json"
 	"net/http"
 	"strconv"
@@ -19,7 +20,7 @@ func CreateTaskHandler(w http.ResponseWriter, r *http.Request) {
 	db := database.InitDB()
 	defer db.Close()
 
-	var task Task
+	var task database.Task
 	err := json.NewDecoder(r.Body).Decode(&task)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusBadRequest)
@@ -27,10 +28,20 @@ func CreateTaskHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	id := database.CreateTask(db, task.Title, task.Description)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
 	task.ID = id
 
+	newTask := database.ReadTask(db, int(id))
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+
 	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(task)
+	json.NewEncoder(w).Encode(newTask)
 }
 
 func ReadTaskHandler(w http.ResponseWriter, r *http.Request) {
@@ -72,7 +83,13 @@ func UpdateTaskHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	task.ID = int64(id)
+	task.ID = database.CreateTask(db, task.Title, task.Description)
+
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+
 	database.UpdateTask(db, id, task.Title, task.Description)
 
 	w.Header().Set("Content-Type", "application/json")
@@ -92,4 +109,23 @@ func DeleteTaskHandler(w http.ResponseWriter, r *http.Request) {
 
 	database.DeleteTask(db, id)
 	w.WriteHeader(http.StatusNoContent)
+}
+func ReadTask(db *sql.DB, id int) (*Task, error) {
+	// Define the SQL statement to retrieve the task
+	query := "SELECT id, title, description FROM tasks WHERE id = ?"
+
+	// Execute the SQL statement with the given id
+	row := db.QueryRow(query, id)
+
+	// Create a new task to hold the retrieved data
+	var task Task
+
+	// Populate the task with data from the query result
+	err := row.Scan(&task.ID, &task.Title, &task.Description)
+	if err != nil {
+		return nil, err
+	}
+
+	// Return the populated task
+	return &task, nil
 }

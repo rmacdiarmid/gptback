@@ -6,6 +6,7 @@ import (
 	"net/http"
 
 	"github.com/gorilla/mux"
+	"github.com/rmacdiarmid/GPTSite/database"
 	"github.com/rmacdiarmid/GPTSite/handlers"
 )
 
@@ -32,4 +33,24 @@ func main() {
 	if err != nil {
 		log.Fatalf("Error starting server: %s", err)
 	}
+
+	// Define the database and task variables
+	db := database.InitDB()
+	defer db.Close()
+	task := database.Task{Title: "New Task", Description: "This is a new task"}
+
+	// Create the task
+	id := database.CreateTask(db, task.Title, task.Description)
+	if err != nil {
+		log.Fatalf("Error creating task: %s", err)
+	}
+
+	// Retrieve the task
+	newTask := database.ReadTask(db, int(id))
+	if err != nil {
+		log.Fatalf("Error reading task: %s", err)
+	}
+
+	// Do something with the retrieved task
+	fmt.Printf("Retrieved task: %+v\n", newTask)
 }
