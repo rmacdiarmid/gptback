@@ -1,3 +1,4 @@
+{{ define "index.html" }}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,6 +14,7 @@
       <a href="/">Home</a>
       <a href="/about">About</a>
       <a href="/contact">Contact</a>
+      <a href="/activity">Contact</a>
     </nav>
   </header>
   <main class="container">
@@ -30,29 +32,25 @@
     <div class="article-container">
       <h2>Featured Articles</h2>
       <div class="articles">
+        {{ range . }}
         <div class="grid-item">
           <div class="article-img-container">
-            <img src="/static/images/dragon1.jpg" alt="Dragon article 1">
+            <img src="{{ .Image }}" alt="{{ .Title }}">
           </div>
-          <h3 class="article-title">The Whimsical Dragon's Guide to the Meaning of Life</h3>
-          <p class="article-preview">Once upon a time, in a land far, far away, there lived a whimsical dragon named Fiddlesticks. He was not your ordinary dragon; he was a bright purple dragon with polka dots and loved to play tricks on his fellow dragon friends. Fiddlesticks was also a wise dragon and had many outrageous antidotes to teach young creatures about the meaning of life... (Read More)</p>
+          <h3 class="article-title">{{ .Title }}</h3>
+          <p class="article-preview">{{ .Preview }}</p>
         </div>
-        <div class="grid-item">
-          <div class="article-img-container">
-            <img src="/static/images/dragon2.jpg" alt="Dragon article 2">
-          </div>
-          <h3 class="article-title">Dragon Tales and the Meaning of Life</h3>
-          <p class="article-preview">Dragons are known for their powerful and often misunderstood nature, but they can also be incredible teachers of the meaning of life. This tale begins with a dragon named Boomer, who loved to cause mischief by making loud, thunderous sounds whenever he flapped his wings... (Read More)</p>
-        </div>
-        <div class="grid-item">
-          <div class="article-img-container">
-            <img src="/static/images/dragon3.jpg" alt="Dragon article 3">
-          </div>
-          <h3 class="article-title">The Treasure of Dragon Island and the Meaning of Life</h3>
-          <p class="article-preview">Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons. It was on this island that the greatest treasure of all time was rumored to be hidden: the secret to the meaning of life. One brave young dragon named Blaze decided to embark on a quest to uncover this treasure and share it with the world... (Read More)</p>
-        </div>
+        {{ end }}
       </div>
+    </div>
+    <!-- Task list container -->
+    <div id="task-list-container">
+      <!-- Task list will be populated by JavaScript -->
     </div>
   </main>
   <footer>
     <p>&copy; MyGeePeeTeeDragon 2023. All rights reserved.</p>
+  </footer>
+</body>
+</html>
+{{ end }}
