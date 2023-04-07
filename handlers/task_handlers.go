@@ -3,6 +3,7 @@ package handlers
 import (
 	"database/sql"
 	"encoding/json"
+	"log"
 	"net/http"
 	"strconv"
 
@@ -10,16 +11,58 @@ import (
 	"github.com/rmacdiarmid/GPTSite/database"
 )
 
+// Add this line
+var db *sql.DB
+
+func init() {
+	var err error
+	db, err = database.InitDB()
+	if err != nil {
+		log.Fatalf("Error initializing database: %s", err)
+	}
+}
+
 type Task struct {
 	ID          int64  `json:"id"`
 	Title       string `json:"title"`
 	Description string `json:"description"`
 }
 
-func CreateTaskHandler(w http.ResponseWriter, r *http.Request) {
-	db := database.InitDB()
-	defer db.Close()
+func CreateTask(db *sql.DB, title, description string) (int64, error) {
+	stmt, err := db.Prepare("INSERT INTO tasks(title, description) VALUES (?, ?)")
+	if err != nil {
+		return 0, err
+	}
 
+	res, err := stmt.Exec(title, description)
+	if err != nil {
+		return 0, err
+	}
+
+	id, err := res.LastInsertId()
+	if err != nil {
+		return 0, err
+	}
+
+	return id, nil
+}
+
+func ReadTask(db *sql.DB, id int) (*Task, error) {
+	row := db.QueryRow("SELECT id, title, description FROM tasks WHERE id = ?", id)
+
+	var task Task
+	err := row.Scan(&task.ID, &task.Title, &task.Description)
+	if err == sql.ErrNoRows {
+		return nil, sql.ErrNoRows
+	} else if err != nil {
+		return nil, err
+	}
+
+	return &task, nil
+}
+
+// CreateTaskHandler handles the creation of a new task.
+func CreateTaskHandler(w http.ResponseWriter, r *http.Request) {
 	var task database.Task
 	err := json.NewDecoder(r.Body).Decode(&task)
 	if err != nil {
@@ -27,27 +70,17 @@ func CreateTaskHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	id := database.CreateTask(db, task.Title, task.Description)
+	id, err := database.CreateTask(task.Title, task.Description)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
+
 	task.ID = id
-
-	newTask := database.ReadTask(db, int(id))
-	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-		return
-	}
-
-	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(newTask)
+	json.NewEncoder(w).Encode(task)
 }
 
 func ReadTaskHandler(w http.ResponseWriter, r *http.Request) {
-	db := database.InitDB()
-	defer db.Close()
-
 	vars := mux.Vars(r)
 	id, err := strconv.Atoi(vars["id"])
 	if err != nil {
@@ -55,20 +88,19 @@ func ReadTaskHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	task := database.ReadTask(db, id)
-	if task == nil {
-		http.Error(w, "Task not found", http.StatusNotFound)
+	task, err := database.ReadTask(db, id) // Updated to include the db variable
+	if err != nil {
+		if err == sql.ErrNoRows {
+			http.Error(w, "Task not found", http.StatusNotFound)
+		} else {
+			http.Error(w, err.Error(), http.StatusInternalServerError)
+		}
 		return
 	}
 
-	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(task)
 }
-
 func UpdateTaskHandler(w http.ResponseWriter, r *http.Request) {
-	db := database.InitDB()
-	defer db.Close()
-
 	vars := mux.Vars(r)
 	id, err := strconv.Atoi(vars["id"])
 	if err != nil {
@@ -76,30 +108,25 @@ func UpdateTaskHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	var task Task
-	err = json.NewDecoder(r.Body).Decode(&task)
+	var updatedTask database.Task
+	err = json.NewDecoder(r.Body).Decode(&updatedTask)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
 	}
 
-	task.ID = database.CreateTask(db, task.Title, task.Description)
-
+	err = database.UpdateTask(db, id, updatedTask.Title, updatedTask.Description)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
 
-	database.UpdateTask(db, id, task.Title, task.Description)
-
-	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(task)
+	w.WriteHeader(http.StatusNoContent)
 }
 
-func DeleteTaskHandler(w http.ResponseWriter, r *http.Request) {
-	db := database.InitDB()
-	defer db.Close()
+// In handlers package:
 
+func DeleteTaskHandler(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	id, err := strconv.Atoi(vars["id"])
 	if err != nil {
@@ -107,25 +134,11 @@ func DeleteTaskHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	database.DeleteTask(db, id)
-	w.WriteHeader(http.StatusNoContent)
-}
-func ReadTask(db *sql.DB, id int) (*Task, error) {
-	// Define the SQL statement to retrieve the task
-	query := "SELECT id, title, description FROM tasks WHERE id = ?"
-
-	// Execute the SQL statement with the given id
-	row := db.QueryRow(query, id)
-
-	// Create a new task to hold the retrieved data
-	var task Task
-
-	// Populate the task with data from the query result
-	err := row.Scan(&task.ID, &task.Title, &task.Description)
+	err = database.DeleteTask(db, id)
 	if err != nil {
-		return nil, err
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
 	}
 
-	// Return the populated task
-	return &task, nil
+	w.WriteHeader(http.StatusNoContent)
 }

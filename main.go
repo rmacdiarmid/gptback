@@ -11,6 +11,19 @@ import (
 )
 
 func main() {
+	// Initialize the database
+	db, err := database.InitDB()
+	if err != nil {
+		log.Fatalf("Error initializing database: %s", err)
+	}
+
+	// Close the database when the program exits
+	defer db.Close()
+
+	// Assign the database to the handlers package variable
+	handlers.DB = db
+
+	// Create the router and add the routes
 	r := mux.NewRouter()
 
 	// Task CRUD handlers
@@ -23,34 +36,17 @@ func main() {
 	r.HandleFunc("/", handlers.IndexHandler)
 	r.HandleFunc("/about", handlers.AboutHandler)
 	r.HandleFunc("/contact", handlers.ContactHandler)
+	r.HandleFunc("/activity", handlers.ActivityHandler)
+	r.HandleFunc("/task_list", handlers.TaskListHandler) // <-- Add this line
 	r.NotFoundHandler = http.HandlerFunc(handlers.NotFoundHandler)
 
 	// Static file handling
 	r.PathPrefix("/static/").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir("./static"))))
 
+	// Start the server
 	fmt.Println("Starting server on :8080...")
-	err := http.ListenAndServe(":8080", r)
+	err = http.ListenAndServe(":8080", r)
 	if err != nil {
 		log.Fatalf("Error starting server: %s", err)
 	}
-
-	// Define the database and task variables
-	db := database.InitDB()
-	defer db.Close()
-	task := database.Task{Title: "New Task", Description: "This is a new task"}
-
-	// Create the task
-	id := database.CreateTask(db, task.Title, task.Description)
-	if err != nil {
-		log.Fatalf("Error creating task: %s", err)
-	}
-
-	// Retrieve the task
-	newTask := database.ReadTask(db, int(id))
-	if err != nil {
-		log.Fatalf("Error reading task: %s", err)
-	}
-
-	// Do something with the retrieved task
-	fmt.Printf("Retrieved task: %+v\n", newTask)
 }
