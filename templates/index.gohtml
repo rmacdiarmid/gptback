@@ -33,9 +33,11 @@
       <div class="articles">
         {{range .}}
         <div class="article">
+        <div class="article-img-container">
           <img src="{{.Image}}" alt="Article Image">
-          <h3>{{.Title}}</h3>
-          <p>{{.Preview}}</p>
+        </div>
+          <h3 class="article-title">{{.Title}}</h3>
+          <p class="article-preview">{{.Preview}}</p>
         </div>
         {{end}}
       </div>

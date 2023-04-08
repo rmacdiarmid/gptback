@@ -6,10 +6,11 @@ import (
 	"net/http"
 
 	"github.com/rmacdiarmid/GPTSite/database"
+	"github.com/rmacdiarmid/GPTSite/logger"
 )
 
 func IndexHandler(w http.ResponseWriter, r *http.Request) {
-	log.Println("IndexHandler called")
+	logger.DualLog.Println("IndexHandler called")
 
 	// Retrieve data from the database
 	articles, err := database.GetArticles()

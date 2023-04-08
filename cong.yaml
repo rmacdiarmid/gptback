@@ -1,7 +1,0 @@
-# config.yaml
-database:
-  path: "Database/tasks.db"
-
-log:
-  dir: "logs"
-  file: "application.log"

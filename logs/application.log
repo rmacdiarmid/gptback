@@ -1,0 +1,941 @@
+2023/04/07 20:02:23 Hello, world!
+2023/04/07 20:02:32 IndexHandler called
+2023/04/07 20:02:32 Fetched articles: []database.Article{database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}, database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}, database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}}
+2023/04/07 20:02:32 Rendering index.gohtml with data: []database.Article{database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}, database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}, database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}}
+2023/04/07 20:02:34 Rendering template: 404.html
+2023/04/07 20:03:43 Hello, world!
+2023/04/07 20:03:51 IndexHandler called
+2023/04/07 20:03:51 Fetched articles: []database.Article{database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}, database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}, database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}}
+2023/04/07 20:03:51 Rendering index.gohtml with data: []database.Article{database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}, database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}, database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}}
+2023/04/07 20:03:56 Fetched tasks: []database.Task{database.Task{ID:1, Title:"Task 1", Description:"Do something"}, database.Task{ID:2, Title:"Task 2", Description:"Do something else"}}
+2023/04/07 20:04:11 Created task with ID: 3
+2023/04/07 20:04:16 Fetched tasks: []database.Task{database.Task{ID:1, Title:"Task 1", Description:"Do something"}, database.Task{ID:2, Title:"Task 2", Description:"Do something else"}, database.Task{ID:3, Title:"I want to add something", Description:"Did it work?"}}
+2023/04/07 20:04:21 Rendering template: contact.html
+2023/04/07 20:04:23 Fetched tasks: []database.Task{database.Task{ID:1, Title:"Task 1", Description:"Do something"}, database.Task{ID:2, Title:"Task 2", Description:"Do something else"}, database.Task{ID:3, Title:"I want to add something", Description:"Did it work?"}}
+2023/04/07 20:04:25 IndexHandler called
+2023/04/07 20:04:25 Fetched articles: []database.Article{database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}, database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}, database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}}
+2023/04/07 20:04:25 Rendering index.gohtml with data: []database.Article{database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}, database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}, database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}}
+2023/04/07 20:15:12 Hello, world!
+2023/04/07 20:15:16 IndexHandler called
+2023/04/07 20:15:16 Fetched articles: []database.Article{database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}, database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}, database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}}
+2023/04/07 20:15:16 Rendering index.gohtml with data: []database.Article{database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}, database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}, database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}}
+2023/04/07 20:15:17 Rendering template: 404.html
+2023/04/07 20:23:54 Hello, world!
+2023/04/07 20:24:27 Hello, world!
+2023/04/07 20:24:33 IndexHandler called
+2023/04/07 20:24:33 Fetched articles: []database.Article{database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}, database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}, database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}}
+2023/04/07 20:24:33 Rendering index.gohtml with data: []database.Article{database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}, database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}, database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}}
+2023/04/07 20:24:35 Rendering template: 404.html
+2023/04/07 21:50:50 Hello, world!
+2023/04/07 23:11:59 Hello, world!
+2023/04/07 23:12:08 IndexHandler called
+2023/04/07 23:12:08 Fetched articles: []database.Article{database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}, database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}, database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}}
+2023/04/07 23:12:08 Rendering index.gohtml with data: []database.Article{database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}, database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}, database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}}
+2023/04/07 23:12:19 Rendering template: 404.html
+2023/04/07 23:14:53 IndexHandler called
+2023/04/07 23:14:53 Fetched articles: []database.Article{database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}, database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}, database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}}
+2023/04/07 23:14:53 Rendering index.gohtml with data: []database.Article{database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}, database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}, database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}}
+2023/04/07 23:15:31 IndexHandler called
+2023/04/07 23:15:31 Fetched articles: []database.Article{database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}, database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}, database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}}
+2023/04/07 23:15:31 Rendering index.gohtml with data: []database.Article{database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}, database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}, database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}}
+2023/04/07 23:18:35 Hello, world!
+2023/04/07 23:18:40 Rendering template: 404.html
+2023/04/07 23:18:49 http: panic serving [::1]:61393: open ../config.yaml: no such file or directory
+goroutine 7 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1854 +0xbf
+panic({0x1005ab640, 0xc0001ae8a0})
+	/usr/local/Cellar/go/1.20.3/libexec/src/runtime/panic.go:890 +0x263
+github.com/rmacdiarmid/GPTSite/handlers.LoadAPIKey()
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:68 +0x9b
+github.com/rmacdiarmid/GPTSite/handlers.ChatGPTRequest({0xc000032940, 0x19})
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:14 +0x65
+github.com/rmacdiarmid/GPTSite/handlers.GenerateArticle({0xc000032940?, 0x10060ced3?})
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:48 +0x1e
+github.com/rmacdiarmid/GPTSite/handlers.GenerateArticleHandler({0x1006c3c20?, 0xc00017c1c0}, 0xc0001ae780?)
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/article_generator.go:29 +0x6e
+net/http.HandlerFunc.ServeHTTP(0xc000170700?, {0x1006c3c20?, 0xc00017c1c0?}, 0xc00015f9e8?)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2122 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc000000180, {0x1006c3c20, 0xc00017c1c0}, 0xc000170600)
+	/Users/ryanmacdiarmid/go/pkg/mod/github.com/gorilla/mux@v1.8.0/mux.go:210 +0x1cf
+net/http.serverHandler.ServeHTTP({0x1006c2ad0?}, {0x1006c3c20, 0xc00017c1c0}, 0xc000170600)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc0001923f0, {0x1006c3f08, 0xc0001ae1b0})
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:3089 +0x5ed
+2023/04/07 23:18:49 http: panic serving [::1]:61394: open ../config.yaml: no such file or directory
+goroutine 8 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1854 +0xbf
+panic({0x1005ab640, 0xc0001aeb40})
+	/usr/local/Cellar/go/1.20.3/libexec/src/runtime/panic.go:890 +0x263
+github.com/rmacdiarmid/GPTSite/handlers.LoadAPIKey()
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:68 +0x9b
+github.com/rmacdiarmid/GPTSite/handlers.ChatGPTRequest({0xc0000329c0, 0x19})
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:14 +0x65
+github.com/rmacdiarmid/GPTSite/handlers.GenerateArticle({0xc0000329c0?, 0x10060ced3?})
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:48 +0x1e
+github.com/rmacdiarmid/GPTSite/handlers.GenerateArticleHandler({0x1006c3c20?, 0xc00017c2a0}, 0xc0001aea20?)
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/article_generator.go:29 +0x6e
+net/http.HandlerFunc.ServeHTTP(0xc000170900?, {0x1006c3c20?, 0xc00017c2a0?}, 0x800?)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2122 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc000000180, {0x1006c3c20, 0xc00017c2a0}, 0xc000170200)
+	/Users/ryanmacdiarmid/go/pkg/mod/github.com/gorilla/mux@v1.8.0/mux.go:210 +0x1cf
+net/http.serverHandler.ServeHTTP({0x1006c2ad0?}, {0x1006c3c20, 0xc00017c2a0}, 0xc000170200)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc000192480, {0x1006c3f08, 0xc0001ae1b0})
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:3089 +0x5ed
+2023/04/07 23:18:49 http: panic serving [::1]:61398: open ../config.yaml: no such file or directory
+goroutine 34 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1854 +0xbf
+panic({0x1005ab640, 0xc000206300})
+	/usr/local/Cellar/go/1.20.3/libexec/src/runtime/panic.go:890 +0x263
+github.com/rmacdiarmid/GPTSite/handlers.LoadAPIKey()
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:68 +0x9b
+github.com/rmacdiarmid/GPTSite/handlers.ChatGPTRequest({0xc00021e060, 0x19})
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:14 +0x65
+github.com/rmacdiarmid/GPTSite/handlers.GenerateArticle({0xc00021e060?, 0x10060ced3?})
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:48 +0x1e
+github.com/rmacdiarmid/GPTSite/handlers.GenerateArticleHandler({0x1006c3c20?, 0xc000236000}, 0xc0002061e0?)
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/article_generator.go:29 +0x6e
+net/http.HandlerFunc.ServeHTTP(0xc00021a100?, {0x1006c3c20?, 0xc000236000?}, 0x800?)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2122 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc000000180, {0x1006c3c20, 0xc000236000}, 0xc00021a000)
+	/Users/ryanmacdiarmid/go/pkg/mod/github.com/gorilla/mux@v1.8.0/mux.go:210 +0x1cf
+net/http.serverHandler.ServeHTTP({0x1006c2ad0?}, {0x1006c3c20, 0xc000236000}, 0xc00021a000)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc00020a000, {0x1006c3f08, 0xc0001ae1b0})
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:3089 +0x5ed
+2023/04/07 23:20:24 Hello, world!
+2023/04/07 23:20:29 http: panic serving [::1]:61439: open ../config.yaml: no such file or directory
+goroutine 20 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1854 +0xbf
+panic({0x1005ab640, 0xc00010c300})
+	/usr/local/Cellar/go/1.20.3/libexec/src/runtime/panic.go:890 +0x263
+github.com/rmacdiarmid/GPTSite/handlers.LoadAPIKey()
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:68 +0x9b
+github.com/rmacdiarmid/GPTSite/handlers.ChatGPTRequest({0xc000032100, 0x19})
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:14 +0x65
+github.com/rmacdiarmid/GPTSite/handlers.GenerateArticle({0xc000032100?, 0x10060ced3?})
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:48 +0x1e
+github.com/rmacdiarmid/GPTSite/handlers.GenerateArticleHandler({0x1006c3c20?, 0xc000124000}, 0xc00010c1e0?)
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/article_generator.go:29 +0x6e
+net/http.HandlerFunc.ServeHTTP(0xc000112100?, {0x1006c3c20?, 0xc000124000?}, 0x800?)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2122 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc0001aa0c0, {0x1006c3c20, 0xc000124000}, 0xc000112000)
+	/Users/ryanmacdiarmid/go/pkg/mod/github.com/gorilla/mux@v1.8.0/mux.go:210 +0x1cf
+net/http.serverHandler.ServeHTTP({0x1006c2ad0?}, {0x1006c3c20, 0xc000124000}, 0xc000112000)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc0001bc3f0, {0x1006c3f08, 0xc0001e01b0})
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:3089 +0x5ed
+2023/04/07 23:20:45 http: panic serving [::1]:61440: open ../config.yaml: no such file or directory
+goroutine 34 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1854 +0xbf
+panic({0x1005ab640, 0xc00010c5a0})
+	/usr/local/Cellar/go/1.20.3/libexec/src/runtime/panic.go:890 +0x263
+github.com/rmacdiarmid/GPTSite/handlers.LoadAPIKey()
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:68 +0x9b
+github.com/rmacdiarmid/GPTSite/handlers.ChatGPTRequest({0xc000032180, 0x19})
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:14 +0x65
+github.com/rmacdiarmid/GPTSite/handlers.GenerateArticle({0xc000032180?, 0x10060ced3?})
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:48 +0x1e
+github.com/rmacdiarmid/GPTSite/handlers.GenerateArticleHandler({0x1006c3c20?, 0xc0001240e0}, 0xc00010c480?)
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/article_generator.go:29 +0x6e
+net/http.HandlerFunc.ServeHTTP(0xc000112300?, {0x1006c3c20?, 0xc0001240e0?}, 0x800?)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2122 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc0001aa0c0, {0x1006c3c20, 0xc0001240e0}, 0xc00022a000)
+	/Users/ryanmacdiarmid/go/pkg/mod/github.com/gorilla/mux@v1.8.0/mux.go:210 +0x1cf
+net/http.serverHandler.ServeHTTP({0x1006c2ad0?}, {0x1006c3c20, 0xc0001240e0}, 0xc00022a000)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc000208000, {0x1006c3f08, 0xc0001e01b0})
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:3089 +0x5ed
+2023/04/07 23:20:45 http: panic serving [::1]:61445: open ../config.yaml: no such file or directory
+goroutine 50 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1854 +0xbf
+panic({0x1005ab640, 0xc000284300})
+	/usr/local/Cellar/go/1.20.3/libexec/src/runtime/panic.go:890 +0x263
+github.com/rmacdiarmid/GPTSite/handlers.LoadAPIKey()
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:68 +0x9b
+github.com/rmacdiarmid/GPTSite/handlers.ChatGPTRequest({0xc000298060, 0x19})
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:14 +0x65
+github.com/rmacdiarmid/GPTSite/handlers.GenerateArticle({0xc000298060?, 0x10060ced3?})
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:48 +0x1e
+github.com/rmacdiarmid/GPTSite/handlers.GenerateArticleHandler({0x1006c3c20?, 0xc0002b0000}, 0xc0002841e0?)
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/article_generator.go:29 +0x6e
+net/http.HandlerFunc.ServeHTTP(0xc000294100?, {0x1006c3c20?, 0xc0002b0000?}, 0x800?)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2122 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc0001aa0c0, {0x1006c3c20, 0xc0002b0000}, 0xc000294000)
+	/Users/ryanmacdiarmid/go/pkg/mod/github.com/gorilla/mux@v1.8.0/mux.go:210 +0x1cf
+net/http.serverHandler.ServeHTTP({0x1006c2ad0?}, {0x1006c3c20, 0xc0002b0000}, 0xc000294000)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc000288000, {0x1006c3f08, 0xc0001e01b0})
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:3089 +0x5ed
+2023/04/07 23:20:45 http: panic serving [::1]:61446: open ../config.yaml: no such file or directory
+goroutine 7 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1854 +0xbf
+panic({0x1005ab640, 0xc00010c930})
+	/usr/local/Cellar/go/1.20.3/libexec/src/runtime/panic.go:890 +0x263
+github.com/rmacdiarmid/GPTSite/handlers.LoadAPIKey()
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:68 +0x9b
+github.com/rmacdiarmid/GPTSite/handlers.ChatGPTRequest({0xc000032200, 0x19})
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:14 +0x65
+github.com/rmacdiarmid/GPTSite/handlers.GenerateArticle({0xc000032200?, 0x10060ced3?})
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:48 +0x1e
+github.com/rmacdiarmid/GPTSite/handlers.GenerateArticleHandler({0x1006c3c20?, 0xc0001241c0}, 0xc00010c810?)
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/article_generator.go:29 +0x6e
+net/http.HandlerFunc.ServeHTTP(0xc000112600?, {0x1006c3c20?, 0xc0001241c0?}, 0x800?)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2122 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc0001aa0c0, {0x1006c3c20, 0xc0001241c0}, 0xc000112500)
+	/Users/ryanmacdiarmid/go/pkg/mod/github.com/gorilla/mux@v1.8.0/mux.go:210 +0x1cf
+net/http.serverHandler.ServeHTTP({0x1006c2ad0?}, {0x1006c3c20, 0xc0001241c0}, 0xc000112500)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc000114240, {0x1006c3f08, 0xc0001e01b0})
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:3089 +0x5ed
+2023/04/07 23:20:51 IndexHandler called
+2023/04/07 23:20:51 Fetched articles: []database.Article{database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}, database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}, database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}}
+2023/04/07 23:20:51 Rendering index.gohtml with data: []database.Article{database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}, database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}, database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}}
+2023/04/07 23:21:03 http: panic serving [::1]:61448: open templates/article_generator.html: no such file or directory
+goroutine 52 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1854 +0xbf
+panic({0x1005ab640, 0xc00010cb70})
+	/usr/local/Cellar/go/1.20.3/libexec/src/runtime/panic.go:890 +0x263
+html/template.Must(...)
+	/usr/local/Cellar/go/1.20.3/libexec/src/html/template/template.go:368
+github.com/rmacdiarmid/GPTSite/handlers.GenerateArticleHandler({0x1006c3c20?, 0xc000124380}, 0xc00010cb40?)
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/article_generator.go:45 +0x34e
+net/http.HandlerFunc.ServeHTTP(0xc000112a00?, {0x1006c3c20?, 0xc000124380?}, 0x800?)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2122 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc0001aa0c0, {0x1006c3c20, 0xc000124380}, 0xc000112900)
+	/Users/ryanmacdiarmid/go/pkg/mod/github.com/gorilla/mux@v1.8.0/mux.go:210 +0x1cf
+net/http.serverHandler.ServeHTTP({0xc0002843c0?}, {0x1006c3c20, 0xc000124380}, 0xc000112900)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc0002881b0, {0x1006c3f08, 0xc0001e01b0})
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:3089 +0x5ed
+2023/04/07 23:21:03 http: panic serving [::1]:61449: open templates/article_generator.html: no such file or directory
+goroutine 9 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1854 +0xbf
+panic({0x1005ab640, 0xc00010ccf0})
+	/usr/local/Cellar/go/1.20.3/libexec/src/runtime/panic.go:890 +0x263
+html/template.Must(...)
+	/usr/local/Cellar/go/1.20.3/libexec/src/html/template/template.go:368
+github.com/rmacdiarmid/GPTSite/handlers.GenerateArticleHandler({0x1006c3c20?, 0xc000124540}, 0xc00010ccc0?)
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/article_generator.go:45 +0x34e
+net/http.HandlerFunc.ServeHTTP(0xc000112c00?, {0x1006c3c20?, 0xc000124540?}, 0x800?)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2122 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc0001aa0c0, {0x1006c3c20, 0xc000124540}, 0xc000112800)
+	/Users/ryanmacdiarmid/go/pkg/mod/github.com/gorilla/mux@v1.8.0/mux.go:210 +0x1cf
+net/http.serverHandler.ServeHTTP({0xc00010c9f0?}, {0x1006c3c20, 0xc000124540}, 0xc000112800)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc0001143f0, {0x1006c3f08, 0xc0001e01b0})
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:3089 +0x5ed
+2023/04/07 23:21:03 http: panic serving [::1]:61454: open templates/article_generator.html: no such file or directory
+goroutine 12 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1854 +0xbf
+panic({0x1005ab640, 0xc00010cf30})
+	/usr/local/Cellar/go/1.20.3/libexec/src/runtime/panic.go:890 +0x263
+html/template.Must(...)
+	/usr/local/Cellar/go/1.20.3/libexec/src/html/template/template.go:368
+github.com/rmacdiarmid/GPTSite/handlers.GenerateArticleHandler({0x1006c3c20?, 0xc000124700}, 0xc00010cf00?)
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/article_generator.go:45 +0x34e
+net/http.HandlerFunc.ServeHTTP(0xc000112f00?, {0x1006c3c20?, 0xc000124700?}, 0x800?)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2122 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc0001aa0c0, {0x1006c3c20, 0xc000124700}, 0xc000112e00)
+	/Users/ryanmacdiarmid/go/pkg/mod/github.com/gorilla/mux@v1.8.0/mux.go:210 +0x1cf
+net/http.serverHandler.ServeHTTP({0xc00010cdb0?}, {0x1006c3c20, 0xc000124700}, 0xc000112e00)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc000114630, {0x1006c3f08, 0xc0001e01b0})
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:3089 +0x5ed
+2023/04/07 23:21:04 http: panic serving [::1]:61455: open templates/article_generator.html: no such file or directory
+goroutine 14 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1854 +0xbf
+panic({0x1005ab640, 0xc00010d170})
+	/usr/local/Cellar/go/1.20.3/libexec/src/runtime/panic.go:890 +0x263
+html/template.Must(...)
+	/usr/local/Cellar/go/1.20.3/libexec/src/html/template/template.go:368
+github.com/rmacdiarmid/GPTSite/handlers.GenerateArticleHandler({0x1006c3c20?, 0xc0001247e0}, 0xc00010d140?)
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/article_generator.go:45 +0x34e
+net/http.HandlerFunc.ServeHTTP(0xc000113200?, {0x1006c3c20?, 0xc0001247e0?}, 0x800?)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2122 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc0001aa0c0, {0x1006c3c20, 0xc0001247e0}, 0xc000113100)
+	/Users/ryanmacdiarmid/go/pkg/mod/github.com/gorilla/mux@v1.8.0/mux.go:210 +0x1cf
+net/http.serverHandler.ServeHTTP({0xc00010cff0?}, {0x1006c3c20, 0xc0001247e0}, 0xc000113100)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc0001147e0, {0x1006c3f08, 0xc0001e01b0})
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:3089 +0x5ed
+2023/04/07 23:21:09 http: panic serving [::1]:61456: open templates/article_generator.html: no such file or directory
+goroutine 54 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1854 +0xbf
+panic({0x1005ab640, 0xc00010d2f0})
+	/usr/local/Cellar/go/1.20.3/libexec/src/runtime/panic.go:890 +0x263
+html/template.Must(...)
+	/usr/local/Cellar/go/1.20.3/libexec/src/html/template/template.go:368
+github.com/rmacdiarmid/GPTSite/handlers.GenerateArticleHandler({0x1006c3c20?, 0xc0001248c0}, 0xc00010d2c0?)
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/article_generator.go:45 +0x34e
+net/http.HandlerFunc.ServeHTTP(0xc000113400?, {0x1006c3c20?, 0xc0001248c0?}, 0x800?)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2122 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc0001aa0c0, {0x1006c3c20, 0xc0001248c0}, 0xc000294600)
+	/Users/ryanmacdiarmid/go/pkg/mod/github.com/gorilla/mux@v1.8.0/mux.go:210 +0x1cf
+net/http.serverHandler.ServeHTTP({0xc0002852f0?}, {0x1006c3c20, 0xc0001248c0}, 0xc000294600)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc000288360, {0x1006c3f08, 0xc0001e01b0})
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:3089 +0x5ed
+2023/04/07 23:21:09 http: panic serving [::1]:61458: open templates/article_generator.html: no such file or directory
+goroutine 35 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1854 +0xbf
+panic({0x1005ab640, 0xc000285470})
+	/usr/local/Cellar/go/1.20.3/libexec/src/runtime/panic.go:890 +0x263
+html/template.Must(...)
+	/usr/local/Cellar/go/1.20.3/libexec/src/html/template/template.go:368
+github.com/rmacdiarmid/GPTSite/handlers.GenerateArticleHandler({0x1006c3c20?, 0xc0002b0380}, 0xc000285440?)
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/article_generator.go:45 +0x34e
+net/http.HandlerFunc.ServeHTTP(0xc000294700?, {0x1006c3c20?, 0xc0002b0380?}, 0xc00021b9e8?)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2122 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc0001aa0c0, {0x1006c3c20, 0xc0002b0380}, 0xc00022a100)
+	/Users/ryanmacdiarmid/go/pkg/mod/github.com/gorilla/mux@v1.8.0/mux.go:210 +0x1cf
+net/http.serverHandler.ServeHTTP({0xc000204180?}, {0x1006c3c20, 0xc0002b0380}, 0xc00022a100)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc000208090, {0x1006c3f08, 0xc0001e01b0})
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:3089 +0x5ed
+2023/04/07 23:21:09 http: panic serving [::1]:61459: open templates/article_generator.html: no such file or directory
+goroutine 36 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1854 +0xbf
+panic({0x1005ab640, 0xc0002043c0})
+	/usr/local/Cellar/go/1.20.3/libexec/src/runtime/panic.go:890 +0x263
+html/template.Must(...)
+	/usr/local/Cellar/go/1.20.3/libexec/src/html/template/template.go:368
+github.com/rmacdiarmid/GPTSite/handlers.GenerateArticleHandler({0x1006c3c20?, 0xc000242000}, 0xc000204390?)
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/article_generator.go:45 +0x34e
+net/http.HandlerFunc.ServeHTTP(0xc00022a300?, {0x1006c3c20?, 0xc000242000?}, 0x800?)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2122 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc0001aa0c0, {0x1006c3c20, 0xc000242000}, 0xc00022a200)
+	/Users/ryanmacdiarmid/go/pkg/mod/github.com/gorilla/mux@v1.8.0/mux.go:210 +0x1cf
+net/http.serverHandler.ServeHTTP({0xc000204240?}, {0x1006c3c20, 0xc000242000}, 0xc00022a200)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc000208120, {0x1006c3f08, 0xc0001e01b0})
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:3089 +0x5ed
+2023/04/07 23:28:04 Hello, world!
+2023/04/07 23:28:22 http: panic serving [::1]:61624: open ../config.yaml: no such file or directory
+goroutine 7 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1854 +0xbf
+panic({0x1005ab640, 0xc000204330})
+	/usr/local/Cellar/go/1.20.3/libexec/src/runtime/panic.go:890 +0x263
+github.com/rmacdiarmid/GPTSite/handlers.LoadAPIKey()
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:68 +0x9b
+github.com/rmacdiarmid/GPTSite/handlers.ChatGPTRequest({0xc00021c060, 0x19})
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:14 +0x65
+github.com/rmacdiarmid/GPTSite/handlers.GenerateArticle({0xc00021c060?, 0x10060ced3?})
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:48 +0x1e
+github.com/rmacdiarmid/GPTSite/handlers.GenerateArticleHandler({0x1006c3c20?, 0xc000232000}, 0xc000204210?)
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/article_generator.go:29 +0x6e
+net/http.HandlerFunc.ServeHTTP(0xc00021a200?, {0x1006c3c20?, 0xc000232000?}, 0x800?)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2122 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc000000180, {0x1006c3c20, 0xc000232000}, 0xc00021a100)
+	/Users/ryanmacdiarmid/go/pkg/mod/github.com/gorilla/mux@v1.8.0/mux.go:210 +0x1cf
+net/http.serverHandler.ServeHTTP({0x1006c2ad0?}, {0x1006c3c20, 0xc000232000}, 0xc00021a100)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc0001923f0, {0x1006c3f08, 0xc0001b01b0})
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:3089 +0x5ed
+2023/04/07 23:28:22 http: panic serving [::1]:61625: open ../config.yaml: no such file or directory
+goroutine 18 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1854 +0xbf
+panic({0x1005ab640, 0xc0002045d0})
+	/usr/local/Cellar/go/1.20.3/libexec/src/runtime/panic.go:890 +0x263
+github.com/rmacdiarmid/GPTSite/handlers.LoadAPIKey()
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:68 +0x9b
+github.com/rmacdiarmid/GPTSite/handlers.ChatGPTRequest({0xc00021c0e0, 0x19})
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:14 +0x65
+github.com/rmacdiarmid/GPTSite/handlers.GenerateArticle({0xc00021c0e0?, 0x10060ced3?})
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:48 +0x1e
+github.com/rmacdiarmid/GPTSite/handlers.GenerateArticleHandler({0x1006c3c20?, 0xc0002320e0}, 0xc0002044b0?)
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/article_generator.go:29 +0x6e
+net/http.HandlerFunc.ServeHTTP(0xc00021a400?, {0x1006c3c20?, 0xc0002320e0?}, 0x800?)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2122 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc000000180, {0x1006c3c20, 0xc0002320e0}, 0xc00021a000)
+	/Users/ryanmacdiarmid/go/pkg/mod/github.com/gorilla/mux@v1.8.0/mux.go:210 +0x1cf
+net/http.serverHandler.ServeHTTP({0x1006c2ad0?}, {0x1006c3c20, 0xc0002320e0}, 0xc00021a000)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc000208000, {0x1006c3f08, 0xc0001b01b0})
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:3089 +0x5ed
+2023/04/07 23:28:22 http: panic serving [::1]:61628: open ../config.yaml: no such file or directory
+goroutine 21 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1854 +0xbf
+panic({0x1005ab640, 0xc0001b14a0})
+	/usr/local/Cellar/go/1.20.3/libexec/src/runtime/panic.go:890 +0x263
+github.com/rmacdiarmid/GPTSite/handlers.LoadAPIKey()
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:68 +0x9b
+github.com/rmacdiarmid/GPTSite/handlers.ChatGPTRequest({0xc000032960, 0x19})
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:14 +0x65
+github.com/rmacdiarmid/GPTSite/handlers.GenerateArticle({0xc000032960?, 0x10060ced3?})
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:48 +0x1e
+github.com/rmacdiarmid/GPTSite/handlers.GenerateArticleHandler({0x1006c3c20?, 0xc00017c1c0}, 0xc0001b1380?)
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/article_generator.go:29 +0x6e
+net/http.HandlerFunc.ServeHTTP(0xc000170600?, {0x1006c3c20?, 0xc00017c1c0?}, 0xc00006c9e8?)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2122 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc000000180, {0x1006c3c20, 0xc00017c1c0}, 0xc00021a600)
+	/Users/ryanmacdiarmid/go/pkg/mod/github.com/gorilla/mux@v1.8.0/mux.go:210 +0x1cf
+net/http.serverHandler.ServeHTTP({0x1006c2ad0?}, {0x1006c3c20, 0xc00017c1c0}, 0xc00021a600)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc000208240, {0x1006c3f08, 0xc0001b01b0})
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:3089 +0x5ed
+2023/04/07 23:28:58 Fetched tasks: []database.Task{database.Task{ID:1, Title:"Task 1", Description:"Do something"}, database.Task{ID:2, Title:"Task 2", Description:"Do something else"}, database.Task{ID:3, Title:"I want to add something", Description:"Did it work?"}}
+2023/04/07 23:29:03 Rendering template: contact.html
+2023/04/07 23:29:05 Fetched tasks: []database.Task{database.Task{ID:1, Title:"Task 1", Description:"Do something"}, database.Task{ID:2, Title:"Task 2", Description:"Do something else"}, database.Task{ID:3, Title:"I want to add something", Description:"Did it work?"}}
+2023/04/07 23:29:06 http: panic serving [::1]:61630: open ../config.yaml: no such file or directory
+goroutine 11 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1854 +0xbf
+panic({0x1005ab640, 0xc0000a27b0})
+	/usr/local/Cellar/go/1.20.3/libexec/src/runtime/panic.go:890 +0x263
+github.com/rmacdiarmid/GPTSite/handlers.LoadAPIKey()
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:68 +0x9b
+github.com/rmacdiarmid/GPTSite/handlers.ChatGPTRequest({0x10062c2ba, 0x41})
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:14 +0x65
+github.com/rmacdiarmid/GPTSite/handlers.GenerateArticle({0x10062c2ba?, 0x100316c70?})
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:48 +0x1e
+github.com/rmacdiarmid/GPTSite/handlers.ActivityHandler({0x1006c3f08?, 0xc000156e80?}, 0xc0000a2780?)
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/article_generator.go:12 +0x25
+net/http.HandlerFunc.ServeHTTP(0xc00009a700?, {0x1006c3c20?, 0xc0000b81c0?}, 0xc0001d39e8?)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2122 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc000000180, {0x1006c3c20, 0xc0000b81c0}, 0xc00009a600)
+	/Users/ryanmacdiarmid/go/pkg/mod/github.com/gorilla/mux@v1.8.0/mux.go:210 +0x1cf
+net/http.serverHandler.ServeHTTP({0xc0001b15c0?}, {0x1006c3c20, 0xc0000b81c0}, 0xc00009a600)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc000192750, {0x1006c3f08, 0xc0001b01b0})
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:3089 +0x5ed
+2023/04/07 23:29:06 http: panic serving [::1]:61629: open ../config.yaml: no such file or directory
+goroutine 10 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1854 +0xbf
+panic({0x1005ab640, 0xc0000a2900})
+	/usr/local/Cellar/go/1.20.3/libexec/src/runtime/panic.go:890 +0x263
+github.com/rmacdiarmid/GPTSite/handlers.LoadAPIKey()
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:68 +0x9b
+github.com/rmacdiarmid/GPTSite/handlers.ChatGPTRequest({0x10062c2ba, 0x41})
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:14 +0x65
+github.com/rmacdiarmid/GPTSite/handlers.GenerateArticle({0x10062c2ba?, 0x100316c70?})
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:48 +0x1e
+github.com/rmacdiarmid/GPTSite/handlers.ActivityHandler({0x1006c3f08?, 0xc000156e80?}, 0xc0000a28d0?)
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/article_generator.go:12 +0x25
+net/http.HandlerFunc.ServeHTTP(0xc00009aa00?, {0x1006c3c20?, 0xc0000b82a0?}, 0x800?)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2122 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc000000180, {0x1006c3c20, 0xc0000b82a0}, 0xc00009a900)
+	/Users/ryanmacdiarmid/go/pkg/mod/github.com/gorilla/mux@v1.8.0/mux.go:210 +0x1cf
+net/http.serverHandler.ServeHTTP({0xc0001b1620?}, {0x1006c3c20, 0xc0000b82a0}, 0xc00009a900)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc0001926c0, {0x1006c3f08, 0xc0001b01b0})
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:3089 +0x5ed
+2023/04/07 23:29:06 http: panic serving [::1]:61640: open ../config.yaml: no such file or directory
+goroutine 38 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1854 +0xbf
+panic({0x1005ab640, 0xc0000a2ba0})
+	/usr/local/Cellar/go/1.20.3/libexec/src/runtime/panic.go:890 +0x263
+github.com/rmacdiarmid/GPTSite/handlers.LoadAPIKey()
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:68 +0x9b
+github.com/rmacdiarmid/GPTSite/handlers.ChatGPTRequest({0x10062c2ba, 0x41})
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:14 +0x65
+github.com/rmacdiarmid/GPTSite/handlers.GenerateArticle({0x10062c2ba?, 0x100316c70?})
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:48 +0x1e
+github.com/rmacdiarmid/GPTSite/handlers.ActivityHandler({0x1006c3f08?, 0xc000156e80?}, 0xc0000a2b70?)
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/article_generator.go:12 +0x25
+net/http.HandlerFunc.ServeHTTP(0xc00009ad00?, {0x1006c3c20?, 0xc0000b8380?}, 0x800?)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2122 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc000000180, {0x1006c3c20, 0xc0000b8380}, 0xc00009ac00)
+	/Users/ryanmacdiarmid/go/pkg/mod/github.com/gorilla/mux@v1.8.0/mux.go:210 +0x1cf
+net/http.serverHandler.ServeHTTP({0xc0000a2a20?}, {0x1006c3c20, 0xc0000b8380}, 0xc00009ac00)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc00009e240, {0x1006c3f08, 0xc0001b01b0})
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:3089 +0x5ed
+2023/04/07 23:29:07 http: panic serving [::1]:61641: open ../config.yaml: no such file or directory
+goroutine 40 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1854 +0xbf
+panic({0x1005ab640, 0xc0000a2de0})
+	/usr/local/Cellar/go/1.20.3/libexec/src/runtime/panic.go:890 +0x263
+github.com/rmacdiarmid/GPTSite/handlers.LoadAPIKey()
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:68 +0x9b
+github.com/rmacdiarmid/GPTSite/handlers.ChatGPTRequest({0x10062c2ba, 0x41})
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:14 +0x65
+github.com/rmacdiarmid/GPTSite/handlers.GenerateArticle({0x10062c2ba?, 0x100316c70?})
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:48 +0x1e
+github.com/rmacdiarmid/GPTSite/handlers.ActivityHandler({0x1006c3f08?, 0xc000156e80?}, 0xc0000a2db0?)
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/article_generator.go:12 +0x25
+net/http.HandlerFunc.ServeHTTP(0xc00009b000?, {0x1006c3c20?, 0xc0000b8460?}, 0x800?)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2122 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc000000180, {0x1006c3c20, 0xc0000b8460}, 0xc00009af00)
+	/Users/ryanmacdiarmid/go/pkg/mod/github.com/gorilla/mux@v1.8.0/mux.go:210 +0x1cf
+net/http.serverHandler.ServeHTTP({0xc0000a2c60?}, {0x1006c3c20, 0xc0000b8460}, 0xc00009af00)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc00009e3f0, {0x1006c3f08, 0xc0001b01b0})
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:3089 +0x5ed
+2023/04/07 23:29:24 IndexHandler called
+2023/04/07 23:29:24 Fetched articles: []database.Article{database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}, database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}, database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}}
+2023/04/07 23:29:24 Rendering index.gohtml with data: []database.Article{database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}, database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}, database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}}
+2023/04/07 23:44:26 Hello, world!
+2023/04/07 23:44:33 IndexHandler called
+2023/04/07 23:44:33 Fetched articles: []database.Article{database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}, database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}, database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}}
+2023/04/07 23:44:33 Rendering index.gohtml with data: []database.Article{database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}, database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}, database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}}
+2023/04/07 23:44:54 http: panic serving [::1]:61964: interface conversion: interface {} is nil, not []interface {}
+goroutine 7 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1854 +0xbf
+panic({0x1005a3500, 0xc000280960})
+	/usr/local/Cellar/go/1.20.3/libexec/src/runtime/panic.go:890 +0x263
+github.com/rmacdiarmid/GPTSite/handlers.ChatGPTRequest({0xc000284060, 0x19})
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:40 +0x78e
+github.com/rmacdiarmid/GPTSite/handlers.GenerateArticle({0xc000284060?, 0x10060ced3?})
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:48 +0x1e
+github.com/rmacdiarmid/GPTSite/handlers.GenerateArticleHandler({0x1006c3c20?, 0xc0002a4000}, 0xc000280120?)
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/article_generator.go:29 +0x6e
+net/http.HandlerFunc.ServeHTTP(0xc000282100?, {0x1006c3c20?, 0xc0002a4000?}, 0x800?)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2122 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc000000180, {0x1006c3c20, 0xc0002a4000}, 0xc000282000)
+	/Users/ryanmacdiarmid/go/pkg/mod/github.com/gorilla/mux@v1.8.0/mux.go:210 +0x1cf
+net/http.serverHandler.ServeHTTP({0x1006c2ad0?}, {0x1006c3c20, 0xc0002a4000}, 0xc000282000)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc00019a3f0, {0x1006c3f08, 0xc0001b61b0})
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:3089 +0x5ed
+2023/04/07 23:44:54 http: panic serving [::1]:61965: interface conversion: interface {} is nil, not []interface {}
+goroutine 18 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1854 +0xbf
+panic({0x1005a3500, 0xc000281020})
+	/usr/local/Cellar/go/1.20.3/libexec/src/runtime/panic.go:890 +0x263
+github.com/rmacdiarmid/GPTSite/handlers.ChatGPTRequest({0xc000284280, 0x19})
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:40 +0x78e
+github.com/rmacdiarmid/GPTSite/handlers.GenerateArticle({0xc000284280?, 0x10060ced3?})
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:48 +0x1e
+github.com/rmacdiarmid/GPTSite/handlers.GenerateArticleHandler({0x1006c3c20?, 0xc0002a40e0}, 0xc000280ae0?)
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/article_generator.go:29 +0x6e
+net/http.HandlerFunc.ServeHTTP(0xc000282500?, {0x1006c3c20?, 0xc0002a40e0?}, 0x800?)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2122 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc000000180, {0x1006c3c20, 0xc0002a40e0}, 0xc00021a000)
+	/Users/ryanmacdiarmid/go/pkg/mod/github.com/gorilla/mux@v1.8.0/mux.go:210 +0x1cf
+net/http.serverHandler.ServeHTTP({0x1006c2ad0?}, {0x1006c3c20, 0xc0002a40e0}, 0xc00021a000)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc000208000, {0x1006c3f08, 0xc0001b61b0})
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:3089 +0x5ed
+2023/04/07 23:44:54 http: panic serving [::1]:61972: interface conversion: interface {} is nil, not []interface {}
+goroutine 41 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1854 +0xbf
+panic({0x1005a3500, 0xc0002817a0})
+	/usr/local/Cellar/go/1.20.3/libexec/src/runtime/panic.go:890 +0x263
+github.com/rmacdiarmid/GPTSite/handlers.ChatGPTRequest({0xc0002844a0, 0x19})
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:40 +0x78e
+github.com/rmacdiarmid/GPTSite/handlers.GenerateArticle({0xc0002844a0?, 0x10060ced3?})
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:48 +0x1e
+github.com/rmacdiarmid/GPTSite/handlers.GenerateArticleHandler({0x1006c3c20?, 0xc0002a41c0}, 0xc000281290?)
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/article_generator.go:29 +0x6e
+net/http.HandlerFunc.ServeHTTP(0xc000282a00?, {0x1006c3c20?, 0xc0002a41c0?}, 0x800?)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2122 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc000000180, {0x1006c3c20, 0xc0002a41c0}, 0xc000282900)
+	/Users/ryanmacdiarmid/go/pkg/mod/github.com/gorilla/mux@v1.8.0/mux.go:210 +0x1cf
+net/http.serverHandler.ServeHTTP({0x1006c2ad0?}, {0x1006c3c20, 0xc0002a41c0}, 0xc000282900)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc0002867e0, {0x1006c3f08, 0xc0001b61b0})
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:3089 +0x5ed
+2023/04/07 23:49:51 Hello, world!
+2023/04/07 23:50:02 http: panic serving [::1]:62116: open ../config.yaml: no such file or directory
+goroutine 7 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1854 +0xbf
+panic({0x1005ab640, 0xc0000a0270})
+	/usr/local/Cellar/go/1.20.3/libexec/src/runtime/panic.go:890 +0x263
+github.com/rmacdiarmid/GPTSite/handlers.LoadAPIKey()
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:68 +0x9b
+github.com/rmacdiarmid/GPTSite/handlers.ChatGPTRequest({0xc00009a060, 0x19})
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:14 +0x65
+github.com/rmacdiarmid/GPTSite/handlers.GenerateArticle({0xc00009a060?, 0x10060ced3?})
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:48 +0x1e
+github.com/rmacdiarmid/GPTSite/handlers.GenerateArticleHandler({0x1006c3c20?, 0xc0000c6000}, 0xc0000a0150?)
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/article_generator.go:29 +0x6e
+net/http.HandlerFunc.ServeHTTP(0xc0000cc000?, {0x1006c3c20?, 0xc0000c6000?}, 0x800?)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2122 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc000000180, {0x1006c3c20, 0xc0000c6000}, 0xc000170200)
+	/Users/ryanmacdiarmid/go/pkg/mod/github.com/gorilla/mux@v1.8.0/mux.go:210 +0x1cf
+net/http.serverHandler.ServeHTTP({0x1006c2ad0?}, {0x1006c3c20, 0xc0000c6000}, 0xc000170200)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc0001923f0, {0x1006c3f08, 0xc0001ae1b0})
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:3089 +0x5ed
+2023/04/07 23:50:08 IndexHandler called
+2023/04/07 23:50:08 Fetched articles: []database.Article{database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}, database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}, database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}}
+2023/04/07 23:50:08 Rendering index.gohtml with data: []database.Article{database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}, database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}, database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}}
+2023/04/07 23:50:23 http: panic serving [::1]:62117: open ../config.yaml: no such file or directory
+goroutine 8 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1854 +0xbf
+panic({0x1005ab640, 0xc0001af500})
+	/usr/local/Cellar/go/1.20.3/libexec/src/runtime/panic.go:890 +0x263
+github.com/rmacdiarmid/GPTSite/handlers.LoadAPIKey()
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:68 +0x9b
+github.com/rmacdiarmid/GPTSite/handlers.ChatGPTRequest({0xc000032960, 0x19})
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:14 +0x65
+github.com/rmacdiarmid/GPTSite/handlers.GenerateArticle({0xc000032960?, 0x10060ced3?})
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:48 +0x1e
+github.com/rmacdiarmid/GPTSite/handlers.GenerateArticleHandler({0x1006c3c20?, 0xc00017c2a0}, 0xc0001af3e0?)
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/article_generator.go:29 +0x6e
+net/http.HandlerFunc.ServeHTTP(0xc000170900?, {0x1006c3c20?, 0xc00017c2a0?}, 0xc00015f9e8?)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2122 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc000000180, {0x1006c3c20, 0xc00017c2a0}, 0xc000170800)
+	/Users/ryanmacdiarmid/go/pkg/mod/github.com/gorilla/mux@v1.8.0/mux.go:210 +0x1cf
+net/http.serverHandler.ServeHTTP({0x1006c2ad0?}, {0x1006c3c20, 0xc00017c2a0}, 0xc000170800)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc000192480, {0x1006c3f08, 0xc0001ae1b0})
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:3089 +0x5ed
+2023/04/07 23:50:23 http: panic serving [::1]:62119: open ../config.yaml: no such file or directory
+goroutine 20 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1854 +0xbf
+panic({0x1005ab640, 0xc0001af7a0})
+	/usr/local/Cellar/go/1.20.3/libexec/src/runtime/panic.go:890 +0x263
+github.com/rmacdiarmid/GPTSite/handlers.LoadAPIKey()
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:68 +0x9b
+github.com/rmacdiarmid/GPTSite/handlers.ChatGPTRequest({0xc0000329e0, 0x19})
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:14 +0x65
+github.com/rmacdiarmid/GPTSite/handlers.GenerateArticle({0xc0000329e0?, 0x10060ced3?})
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:48 +0x1e
+github.com/rmacdiarmid/GPTSite/handlers.GenerateArticleHandler({0x1006c3c20?, 0xc00017c380}, 0xc0001af680?)
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/article_generator.go:29 +0x6e
+net/http.HandlerFunc.ServeHTTP(0xc000170b00?, {0x1006c3c20?, 0xc00017c380?}, 0x800?)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2122 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc000000180, {0x1006c3c20, 0xc00017c380}, 0xc0000cc400)
+	/Users/ryanmacdiarmid/go/pkg/mod/github.com/gorilla/mux@v1.8.0/mux.go:210 +0x1cf
+net/http.serverHandler.ServeHTTP({0x1006c2ad0?}, {0x1006c3c20, 0xc00017c380}, 0xc0000cc400)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc00009c240, {0x1006c3f08, 0xc0001ae1b0})
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:3089 +0x5ed
+2023/04/07 23:50:23 http: panic serving [::1]:62125: open ../config.yaml: no such file or directory
+goroutine 12 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1854 +0xbf
+panic({0x1005ab640, 0xc0001afb30})
+	/usr/local/Cellar/go/1.20.3/libexec/src/runtime/panic.go:890 +0x263
+github.com/rmacdiarmid/GPTSite/handlers.LoadAPIKey()
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:68 +0x9b
+github.com/rmacdiarmid/GPTSite/handlers.ChatGPTRequest({0xc000032a60, 0x19})
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:14 +0x65
+github.com/rmacdiarmid/GPTSite/handlers.GenerateArticle({0xc000032a60?, 0x10060ced3?})
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:48 +0x1e
+github.com/rmacdiarmid/GPTSite/handlers.GenerateArticleHandler({0x1006c3c20?, 0xc00017c460}, 0xc0001afa10?)
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/article_generator.go:29 +0x6e
+net/http.HandlerFunc.ServeHTTP(0xc000170e00?, {0x1006c3c20?, 0xc00017c460?}, 0x800?)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2122 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc000000180, {0x1006c3c20, 0xc00017c460}, 0xc000170d00)
+	/Users/ryanmacdiarmid/go/pkg/mod/github.com/gorilla/mux@v1.8.0/mux.go:210 +0x1cf
+net/http.serverHandler.ServeHTTP({0x1006c2ad0?}, {0x1006c3c20, 0xc00017c460}, 0xc000170d00)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc000192750, {0x1006c3f08, 0xc0001ae1b0})
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:3089 +0x5ed
+2023/04/08 05:34:25 Hello, world!
+2023/04/08 05:34:44 IndexHandler called
+2023/04/08 05:34:44 Fetched articles: []database.Article{database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}, database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}, database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}}
+2023/04/08 05:34:44 Rendering index.gohtml with data: []database.Article{database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}, database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}, database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}}
+2023/04/08 05:35:00 Fetched tasks: []database.Task{database.Task{ID:1, Title:"Task 1", Description:"Do something"}, database.Task{ID:2, Title:"Task 2", Description:"Do something else"}, database.Task{ID:3, Title:"I want to add something", Description:"Did it work?"}}
+2023/04/08 05:35:01 IndexHandler called
+2023/04/08 05:35:01 Fetched articles: []database.Article{database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}, database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}, database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}}
+2023/04/08 05:35:01 Rendering index.gohtml with data: []database.Article{database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}, database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}, database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}}
+2023/04/08 05:36:50 Hello, world!
+2023/04/08 05:37:34 http: panic serving [::1]:63570: open ../config.yaml: no such file or directory
+goroutine 7 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1854 +0xbf
+panic({0x1005ab300, 0xc0001b6c30})
+	/usr/local/Cellar/go/1.20.3/libexec/src/runtime/panic.go:890 +0x263
+github.com/rmacdiarmid/GPTSite/handlers.LoadAPIKey()
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:68 +0x9b
+github.com/rmacdiarmid/GPTSite/handlers.ChatGPTRequest({0xc000032900, 0x1f})
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:14 +0x65
+github.com/rmacdiarmid/GPTSite/handlers.GenerateArticle({0xc000032900?, 0x10060cb93?})
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:48 +0x1e
+github.com/rmacdiarmid/GPTSite/handlers.GenerateArticleHandler({0x1006c39a0?, 0xc00018a2a0}, 0xc0001b6b10?)
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/article_generator.go:20 +0x70
+net/http.HandlerFunc.ServeHTTP(0xc0000f8700?, {0x1006c39a0?, 0xc00018a2a0?}, 0xc0000af9e8?)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2122 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc000000180, {0x1006c39a0, 0xc00018a2a0}, 0xc0000f8600)
+	/Users/ryanmacdiarmid/go/pkg/mod/github.com/gorilla/mux@v1.8.0/mux.go:210 +0x1cf
+net/http.serverHandler.ServeHTTP({0x1006c2850?}, {0x1006c39a0, 0xc00018a2a0}, 0xc0000f8600)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc00019a3f0, {0x1006c3c88, 0xc0001b60f0})
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:3089 +0x5ed
+2023/04/08 05:37:34 http: panic serving [::1]:63571: open ../config.yaml: no such file or directory
+goroutine 9 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1854 +0xbf
+panic({0x1005ab300, 0xc0001b6ed0})
+	/usr/local/Cellar/go/1.20.3/libexec/src/runtime/panic.go:890 +0x263
+github.com/rmacdiarmid/GPTSite/handlers.LoadAPIKey()
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:68 +0x9b
+github.com/rmacdiarmid/GPTSite/handlers.ChatGPTRequest({0xc000032960, 0x1f})
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:14 +0x65
+github.com/rmacdiarmid/GPTSite/handlers.GenerateArticle({0xc000032960?, 0x10060cb93?})
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:48 +0x1e
+github.com/rmacdiarmid/GPTSite/handlers.GenerateArticleHandler({0x1006c39a0?, 0xc00018a380}, 0xc0001b6db0?)
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/article_generator.go:20 +0x70
+net/http.HandlerFunc.ServeHTTP(0xc0000f8900?, {0x1006c39a0?, 0xc00018a380?}, 0x800?)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2122 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc000000180, {0x1006c39a0, 0xc00018a380}, 0xc0000f8500)
+	/Users/ryanmacdiarmid/go/pkg/mod/github.com/gorilla/mux@v1.8.0/mux.go:210 +0x1cf
+net/http.serverHandler.ServeHTTP({0x1006c2850?}, {0x1006c39a0, 0xc00018a380}, 0xc0000f8500)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc00019a5a0, {0x1006c3c88, 0xc0001b60f0})
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:3089 +0x5ed
+2023/04/08 05:37:34 http: panic serving [::1]:63578: open ../config.yaml: no such file or directory
+goroutine 18 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1854 +0xbf
+panic({0x1005ab300, 0xc000116300})
+	/usr/local/Cellar/go/1.20.3/libexec/src/runtime/panic.go:890 +0x263
+github.com/rmacdiarmid/GPTSite/handlers.LoadAPIKey()
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:68 +0x9b
+github.com/rmacdiarmid/GPTSite/handlers.ChatGPTRequest({0xc00012a040, 0x1f})
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:14 +0x65
+github.com/rmacdiarmid/GPTSite/handlers.GenerateArticle({0xc00012a040?, 0x10060cb93?})
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:48 +0x1e
+github.com/rmacdiarmid/GPTSite/handlers.GenerateArticleHandler({0x1006c39a0?, 0xc000140000}, 0xc0001161e0?)
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/article_generator.go:20 +0x70
+net/http.HandlerFunc.ServeHTTP(0xc000128100?, {0x1006c39a0?, 0xc000140000?}, 0x800?)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2122 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc000000180, {0x1006c39a0, 0xc000140000}, 0xc000128000)
+	/Users/ryanmacdiarmid/go/pkg/mod/github.com/gorilla/mux@v1.8.0/mux.go:210 +0x1cf
+net/http.serverHandler.ServeHTTP({0x1006c2850?}, {0x1006c39a0, 0xc000140000}, 0xc000128000)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc00011a000, {0x1006c3c88, 0xc0001b60f0})
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:3089 +0x5ed
+2023/04/08 05:51:19 Hello, world!
+2023/04/08 05:51:19 Starting server on :8080...
+2023/04/08 05:51:39 IndexHandler called
+2023/04/08 05:51:39 Fetched articles: []database.Article{database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}, database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}, database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}}
+2023/04/08 05:51:39 Rendering index.gohtml with data: []database.Article{database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}, database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}, database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}}
+2023/04/08 05:51:58 http: panic serving [::1]:50847: open ../config.yaml: no such file or directory
+goroutine 20 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1854 +0xbf
+panic({0x1005ab320, 0xc0002049c0})
+	/usr/local/Cellar/go/1.20.3/libexec/src/runtime/panic.go:890 +0x263
+github.com/rmacdiarmid/GPTSite/handlers.LoadAPIKey()
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:68 +0x9b
+github.com/rmacdiarmid/GPTSite/handlers.ChatGPTRequest({0xc00022c0a0, 0x19})
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:14 +0x65
+github.com/rmacdiarmid/GPTSite/handlers.GenerateArticle({0xc00022c0a0?, 0x10060cbb3?})
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:48 +0x1e
+github.com/rmacdiarmid/GPTSite/handlers.GenerateArticleHandler({0x1006c39c0?, 0xc00022e1c0}, 0xc0002048a0?)
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/article_generator.go:21 +0x6e
+net/http.HandlerFunc.ServeHTTP(0xc00022a500?, {0x1006c39c0?, 0xc00022e1c0?}, 0xc0001779e8?)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2122 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc0001a20c0, {0x1006c39c0, 0xc00022e1c0}, 0xc00022a400)
+	/Users/ryanmacdiarmid/go/pkg/mod/github.com/gorilla/mux@v1.8.0/mux.go:210 +0x1cf
+net/http.serverHandler.ServeHTTP({0x1006c2870?}, {0x1006c39c0, 0xc00022e1c0}, 0xc00022a400)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc0001b43f0, {0x1006c3ca8, 0xc0001d61b0})
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:3089 +0x5ed
+2023/04/08 05:51:58 http: panic serving [::1]:50848: open ../config.yaml: no such file or directory
+goroutine 34 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1854 +0xbf
+panic({0x1005ab320, 0xc000204c60})
+	/usr/local/Cellar/go/1.20.3/libexec/src/runtime/panic.go:890 +0x263
+github.com/rmacdiarmid/GPTSite/handlers.LoadAPIKey()
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:68 +0x9b
+github.com/rmacdiarmid/GPTSite/handlers.ChatGPTRequest({0xc00022c120, 0x19})
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:14 +0x65
+github.com/rmacdiarmid/GPTSite/handlers.GenerateArticle({0xc00022c120?, 0x10060cbb3?})
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:48 +0x1e
+github.com/rmacdiarmid/GPTSite/handlers.GenerateArticleHandler({0x1006c39c0?, 0xc00022e2a0}, 0xc000204b40?)
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/article_generator.go:21 +0x6e
+net/http.HandlerFunc.ServeHTTP(0xc00022a700?, {0x1006c39c0?, 0xc00022e2a0?}, 0x800?)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2122 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc0001a20c0, {0x1006c39c0, 0xc00022e2a0}, 0xc00022a000)
+	/Users/ryanmacdiarmid/go/pkg/mod/github.com/gorilla/mux@v1.8.0/mux.go:210 +0x1cf
+net/http.serverHandler.ServeHTTP({0x1006c2870?}, {0x1006c39c0, 0xc00022e2a0}, 0xc00022a000)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc000208000, {0x1006c3ca8, 0xc0001d61b0})
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:3089 +0x5ed
+2023/04/08 05:51:58 http: panic serving [::1]:50874: open ../config.yaml: no such file or directory
+goroutine 38 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1854 +0xbf
+panic({0x1005ab320, 0xc000204ff0})
+	/usr/local/Cellar/go/1.20.3/libexec/src/runtime/panic.go:890 +0x263
+github.com/rmacdiarmid/GPTSite/handlers.LoadAPIKey()
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:68 +0x9b
+github.com/rmacdiarmid/GPTSite/handlers.ChatGPTRequest({0xc00022c1a0, 0x19})
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:14 +0x65
+github.com/rmacdiarmid/GPTSite/handlers.GenerateArticle({0xc00022c1a0?, 0x10060cbb3?})
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:48 +0x1e
+github.com/rmacdiarmid/GPTSite/handlers.GenerateArticleHandler({0x1006c39c0?, 0xc00022e380}, 0xc000204ed0?)
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/article_generator.go:21 +0x6e
+net/http.HandlerFunc.ServeHTTP(0xc00022aa00?, {0x1006c39c0?, 0xc00022e380?}, 0x800?)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2122 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc0001a20c0, {0x1006c39c0, 0xc00022e380}, 0xc00022a900)
+	/Users/ryanmacdiarmid/go/pkg/mod/github.com/gorilla/mux@v1.8.0/mux.go:210 +0x1cf
+net/http.serverHandler.ServeHTTP({0x1006c2870?}, {0x1006c39c0, 0xc00022e380}, 0xc00022a900)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc0002082d0, {0x1006c3ca8, 0xc0001d61b0})
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:3089 +0x5ed
+2023/04/08 05:55:38 Hello, world!
+2023/04/08 05:55:38 Starting server on :8080...
+2023/04/08 05:55:50 IndexHandler called
+2023/04/08 05:55:50 Fetched articles: []database.Article{database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}, database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}, database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}}
+2023/04/08 05:55:50 Rendering index.gohtml with data: []database.Article{database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}, database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}, database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}}
+2023/04/08 05:55:52 Fetched tasks: []database.Task{database.Task{ID:1, Title:"Task 1", Description:"Do something"}, database.Task{ID:2, Title:"Task 2", Description:"Do something else"}, database.Task{ID:3, Title:"I want to add something", Description:"Did it work?"}}
+2023/04/08 05:55:54 IndexHandler called
+2023/04/08 05:55:54 Fetched articles: []database.Article{database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}, database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}, database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}}
+2023/04/08 05:55:54 Rendering index.gohtml with data: []database.Article{database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}, database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}, database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}}
+2023/04/08 05:56:00 Rendering template: contact.html
+2023/04/08 05:56:01 Fetched tasks: []database.Task{database.Task{ID:1, Title:"Task 1", Description:"Do something"}, database.Task{ID:2, Title:"Task 2", Description:"Do something else"}, database.Task{ID:3, Title:"I want to add something", Description:"Did it work?"}}
+2023/04/08 05:56:03 Rendering template: contact.html
+2023/04/08 05:56:04 Rendering template: contact.html
+2023/04/08 05:56:06 IndexHandler called
+2023/04/08 05:56:06 Fetched articles: []database.Article{database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}, database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}, database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}}
+2023/04/08 05:56:06 Rendering index.gohtml with data: []database.Article{database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}, database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}, database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}}
+2023/04/08 05:56:39 IndexHandler called
+2023/04/08 05:56:39 Fetched articles: []database.Article{database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}, database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}, database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}}
+2023/04/08 05:56:39 Rendering index.gohtml with data: []database.Article{database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}, database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}, database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}}
+2023/04/08 05:56:41 Fetched tasks: []database.Task{database.Task{ID:1, Title:"Task 1", Description:"Do something"}, database.Task{ID:2, Title:"Task 2", Description:"Do something else"}, database.Task{ID:3, Title:"I want to add something", Description:"Did it work?"}}
+2023/04/08 05:56:43 IndexHandler called
+2023/04/08 05:56:43 Fetched articles: []database.Article{database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}, database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}, database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}}
+2023/04/08 05:56:43 Rendering index.gohtml with data: []database.Article{database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}, database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}, database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}}
+2023/04/08 05:56:52 http: panic serving [::1]:51006: open ../config.yaml: no such file or directory
+goroutine 20 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1854 +0xbf
+panic({0x1005ab220, 0xc000108210})
+	/usr/local/Cellar/go/1.20.3/libexec/src/runtime/panic.go:890 +0x263
+github.com/rmacdiarmid/GPTSite/handlers.LoadAPIKey()
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:68 +0x9b
+github.com/rmacdiarmid/GPTSite/handlers.ChatGPTRequest({0xc000032100, 0x19})
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:14 +0x65
+github.com/rmacdiarmid/GPTSite/handlers.GenerateArticle({0xc000032100?, 0x10060cab3?})
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:48 +0x1e
+github.com/rmacdiarmid/GPTSite/handlers.GenerateArticleHandler({0x1006c3920?, 0xc00010e000}, 0xc0001080f0?)
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/article_generator.go:21 +0x6e
+net/http.HandlerFunc.ServeHTTP(0xc000102100?, {0x1006c3920?, 0xc00010e000?}, 0x800?)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2122 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc0001b20c0, {0x1006c3920, 0xc00010e000}, 0xc000102000)
+	/Users/ryanmacdiarmid/go/pkg/mod/github.com/gorilla/mux@v1.8.0/mux.go:210 +0x1cf
+net/http.serverHandler.ServeHTTP({0x1006c27d0?}, {0x1006c3920, 0xc00010e000}, 0xc000102000)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc0001c43f0, {0x1006c3c08, 0xc0001e81b0})
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:3089 +0x5ed
+2023/04/08 05:56:52 http: panic serving [::1]:51023: open ../config.yaml: no such file or directory
+goroutine 38 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1854 +0xbf
+panic({0x1005ab220, 0xc000108510})
+	/usr/local/Cellar/go/1.20.3/libexec/src/runtime/panic.go:890 +0x263
+github.com/rmacdiarmid/GPTSite/handlers.LoadAPIKey()
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:68 +0x9b
+github.com/rmacdiarmid/GPTSite/handlers.ChatGPTRequest({0xc000032180, 0x19})
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:14 +0x65
+github.com/rmacdiarmid/GPTSite/handlers.GenerateArticle({0xc000032180?, 0x10060cab3?})
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:48 +0x1e
+github.com/rmacdiarmid/GPTSite/handlers.GenerateArticleHandler({0x1006c3920?, 0xc00010e0e0}, 0xc0001083f0?)
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/article_generator.go:21 +0x6e
+net/http.HandlerFunc.ServeHTTP(0xc000102300?, {0x1006c3920?, 0xc00010e0e0?}, 0x800?)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2122 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc0001b20c0, {0x1006c3920, 0xc00010e0e0}, 0xc000206c00)
+	/Users/ryanmacdiarmid/go/pkg/mod/github.com/gorilla/mux@v1.8.0/mux.go:210 +0x1cf
+net/http.serverHandler.ServeHTTP({0x1006c27d0?}, {0x1006c3920, 0xc00010e0e0}, 0xc000206c00)
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc00020a240, {0x1006c3c08, 0xc0001e81b0})
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:3089 +0x5ed
+2023/04/08 05:56:52 http: panic serving [::1]:51024: open ../config.yaml: no such file or directory
+goroutine 7 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/Cellar/go/1.20.3/libexec/src/net/http/server.go:1854 +0xbf
+panic({0x1005ab220, 0xc000108840})
+	/usr/local/Cellar/go/1.20.3/libexec/src/runtime/panic.go:890 +0x263
+github.com/rmacdiarmid/GPTSite/handlers.LoadAPIKey()
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:68 +0x9b
+github.com/rmacdiarmid/GPTSite/handlers.ChatGPTRequest({0xc000032200, 0x19})
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoProjects/GPTSite/handlers/chat_gpt.go:14 +0x65
+github.com/rmacdiarmid/GPTSite/handlers.GenerateArticle({0xc000032200?, 0x10060cab3?})
+	/Users/ryanmacdiarmid/Dropbox (Personal)/_github/GoP2023/04/08 06:21:01 main.go:68: Hello, world!
+2023/04/08 06:21:01 main.go:98: Starting server on :8080...

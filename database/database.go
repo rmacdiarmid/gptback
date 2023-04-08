@@ -20,6 +20,21 @@ func InitDB(dbPath string) (*sql.DB, error) {
 		return nil, err
 	}
 
+	// Create the articles table if it doesn't exist
+	createTableQuery := `
+    CREATE TABLE IF NOT EXISTS articles (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        title TEXT NOT NULL,
+        image TEXT NOT NULL,
+        preview TEXT NOT NULL
+    );
+    `
+
+	_, err = DB.Exec(createTableQuery)
+	if err != nil {
+		return nil, err
+	}
+
 	return DB, nil
 }
 
@@ -54,6 +69,21 @@ func GetArticles() ([]Article, error) {
 
 	log.Printf("Fetched articles: %#v", articles)
 	return articles, nil
+}
+
+func InsertArticle(title, image, preview string) (int64, error) {
+	result, err := DB.Exec("INSERT INTO articles(title, image, preview) VALUES (?, ?, ?)", title, image, preview)
+	if err != nil {
+		return 0, err
+	}
+
+	id, err := result.LastInsertId()
+	if err != nil {
+		return 0, err
+	}
+
+	log.Printf("Inserted article with ID: %d", id)
+	return id, nil
 }
 
 type Task struct {

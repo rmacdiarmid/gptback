@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article Generator</title>
+</head>
+<body>
+    <h1>Article Generator</h1>
+    <form method="POST" action="/generate-article">
+        <label for="prompt">Prompt:</label>
+        <input type="text" id="prompt" name="prompt" required>
+        <button type="submit">Generate</button>
+    </form>
+    {{ if .Generated }}
+        <h2>Generated Article</h2>
+        <p>Title: {{ .Title }}</p>
+        <p>Image URL: {{ .ImageURL }}</p>
+        <p>Content:</p>
+        <p>{{ .ArticleText }}</p>
+        <form method="POST" action="/accept-article">
+            <input type="hidden" name="title" value="{{ .Title }}">
+            <input type="hidden" name="image_url" value="{{ .ImageURL }}">
+            <input type="hidden" name="article_text" value="{{ .ArticleText }}">
+            <button type="submit">Accept and Upload</button>
+        </form>
+    {{ end }}
+</body>
+</html>
