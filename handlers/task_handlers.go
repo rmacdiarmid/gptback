@@ -3,7 +3,6 @@ package handlers
 import (
 	"database/sql"
 	"encoding/json"
-	"log"
 	"net/http"
 	"strconv"
 
@@ -11,59 +10,14 @@ import (
 	"github.com/rmacdiarmid/GPTSite/database"
 )
 
-// Add this line
-var db *sql.DB
-
-func init() {
-	var err error
-	db, err = database.InitDB()
-	if err != nil {
-		log.Fatalf("Error initializing database: %s", err)
-	}
-}
-
 type Task struct {
 	ID          int64  `json:"id"`
 	Title       string `json:"title"`
 	Description string `json:"description"`
 }
 
-func CreateTask(db *sql.DB, title, description string) (int64, error) {
-	stmt, err := db.Prepare("INSERT INTO tasks(title, description) VALUES (?, ?)")
-	if err != nil {
-		return 0, err
-	}
-
-	res, err := stmt.Exec(title, description)
-	if err != nil {
-		return 0, err
-	}
-
-	id, err := res.LastInsertId()
-	if err != nil {
-		return 0, err
-	}
-
-	return id, nil
-}
-
-func ReadTask(db *sql.DB, id int) (*Task, error) {
-	row := db.QueryRow("SELECT id, title, description FROM tasks WHERE id = ?", id)
-
-	var task Task
-	err := row.Scan(&task.ID, &task.Title, &task.Description)
-	if err == sql.ErrNoRows {
-		return nil, sql.ErrNoRows
-	} else if err != nil {
-		return nil, err
-	}
-
-	return &task, nil
-}
-
-// CreateTaskHandler handles the creation of a new task.
 func CreateTaskHandler(w http.ResponseWriter, r *http.Request) {
-	var task database.Task
+	var task Task
 	err := json.NewDecoder(r.Body).Decode(&task)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusBadRequest)
@@ -88,7 +42,7 @@ func ReadTaskHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	task, err := database.ReadTask(db, id) // Updated to include the db variable
+	task, err := database.ReadTask(id)
 	if err != nil {
 		if err == sql.ErrNoRows {
 			http.Error(w, "Task not found", http.StatusNotFound)
@@ -100,6 +54,7 @@ func ReadTaskHandler(w http.ResponseWriter, r *http.Request) {
 
 	json.NewEncoder(w).Encode(task)
 }
+
 func UpdateTaskHandler(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	id, err := strconv.Atoi(vars["id"])
@@ -108,14 +63,14 @@ func UpdateTaskHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	var updatedTask database.Task
+	var updatedTask Task
 	err = json.NewDecoder(r.Body).Decode(&updatedTask)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
 	}
 
-	err = database.UpdateTask(db, id, updatedTask.Title, updatedTask.Description)
+	err = database.UpdateTask(id, updatedTask.Title, updatedTask.Description)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
@@ -123,8 +78,6 @@ func UpdateTaskHandler(w http.ResponseWriter, r *http.Request) {
 
 	w.WriteHeader(http.StatusNoContent)
 }
-
-// In handlers package:
 
 func DeleteTaskHandler(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
@@ -134,7 +87,7 @@ func DeleteTaskHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	err = database.DeleteTask(db, id)
+	err = database.DeleteTask(id)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return

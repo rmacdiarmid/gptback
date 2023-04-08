@@ -1,15 +1,13 @@
 package database
 
-// ...package database
-
 import (
 	"database/sql"
-	"fmt"
 	"log"
 
 	_ "github.com/mattn/go-sqlite3"
-	"github.com/rmacdiarmid/GPTSite/handlers"
 )
+
+var DB *sql.DB
 
 // Define the Task struct
 type Task struct {
@@ -18,35 +16,46 @@ type Task struct {
 	Description string `json:"description"`
 }
 
-func InitDB() (*sql.DB, error) {
-	db, err := sql.Open("sqlite3", "tasks.db")
+type Article struct {
+	ID      int
+	Title   string
+	Image   string
+	Preview string
+}
+
+func InitDB(filepath string) {
+	var err error
+	DB, err = sql.Open("sqlite3", filepath)
 	if err != nil {
-		return nil, fmt.Errorf("Error opening database: %s", err)
+		log.Fatalf("Cannot open database: %v", err)
 	}
 
 	createTable := `CREATE TABLE IF NOT EXISTS tasks (
-		id INTEGER PRIMARY KEY AUTOINCREMENT,
-		title TEXT NOT NULL,
-		description TEXT
-	);`
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        title TEXT NOT NULL,
+        description TEXT
+    );`
 
-	_, err = db.Exec(createTable)
+	_, err = DB.Exec(createTable)
 	if err != nil {
-		return nil, fmt.Errorf("Error creating tasks table: %s", err)
+		log.Fatalf("Error creating tasks table: %s", err)
 	}
 
-	return db, nil
+	createArticlesTable := `CREATE TABLE IF NOT EXISTS articles (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        title TEXT NOT NULL,
+        image TEXT NOT NULL,
+        preview TEXT NOT NULL
+    );`
+
+	_, err = DB.Exec(createArticlesTable)
+	if err != nil {
+		log.Fatalf("Error creating articles table: %s", err)
+	}
 }
 
 func CreateTask(title, description string) (int64, error) {
-	db, err := sql.Open("sqlite3", "./tasks.db")
-	if err != nil {
-		log.Fatalf("Error opening the database: %s", err)
-		return 0, err
-	}
-	defer db.Close()
-
-	stmt, err := db.Prepare("INSERT INTO tasks(title, description) VALUES (?, ?)")
+	stmt, err := DB.Prepare("INSERT INTO tasks(title, description) VALUES (?, ?)")
 	if err != nil {
 		return 0, err
 	}
@@ -64,8 +73,8 @@ func CreateTask(title, description string) (int64, error) {
 	return id, nil
 }
 
-func ReadTask(db *sql.DB, id int) (*Task, error) {
-	row := db.QueryRow("SELECT id, title, description FROM tasks WHERE id = ?", id)
+func ReadTask(id int) (*Task, error) {
+	row := DB.QueryRow("SELECT id, title, description FROM tasks WHERE id = ?", id)
 
 	var task Task
 	err := row.Scan(&task.ID, &task.Title, &task.Description)
@@ -78,8 +87,8 @@ func ReadTask(db *sql.DB, id int) (*Task, error) {
 	return &task, nil
 }
 
-func UpdateTask(db *sql.DB, id int, title string, description string) error {
-	_, err := db.Exec("UPDATE tasks SET title = ?, description = ? WHERE id = ?", title, description, id)
+func UpdateTask(id int, title string, description string) error {
+	_, err := DB.Exec("UPDATE tasks SET title = ?, description = ? WHERE id = ?", title, description, id)
 	if err != nil {
 		log.Printf("Error updating task: %s", err)
 		return err
@@ -87,33 +96,19 @@ func UpdateTask(db *sql.DB, id int, title string, description string) error {
 	return nil
 }
 
-func DeleteTask(db *sql.DB, id int) error {
-	_, err := db.Exec("DELETE FROM tasks WHERE id=$1", id)
+func DeleteTask(id int) error {
+	_, err := DB.Exec("DELETE FROM tasks WHERE id = ?", id)
 	return err
 }
 
-// ReadAllTasks retrieves all tasks from the database
 func ReadAllTasks() ([]Task, error) {
-	// Initialize the database connection
-	db, err := InitDB()
-	if err != nil {
-		return nil, fmt.Errorf("Error initializing database: %w", err)
-	}
-	defer db.Close()
-
-	// Define the SQL query to retrieve all tasks
 	query := "SELECT id, title, description FROM tasks"
-
-	// Execute the query
-	rows, err := db.Query(query)
+	rows, err := DB.Query(query)
 	if err != nil {
 		return nil, err
 	}
 
-	// Initialize an empty slice to hold the tasks
 	tasks := []Task{}
-
-	// Iterate over the result rows and add each task to the slice
 	for rows.Next() {
 		var task Task
 		err := rows.Scan(&task.ID, &task.Title, &task.Description)
@@ -123,33 +118,38 @@ func ReadAllTasks() ([]Task, error) {
 		tasks = append(tasks, task)
 	}
 
-	// Check for any errors encountered while iterating over the rows
 	err = rows.Err()
 	if err != nil {
 		return nil, err
 	}
 
-	// Return the slice of tasks
 	return tasks, nil
 }
 
 // GetArticles retrieves all articles from the database.
-func GetArticles(db *sql.DB) ([]handlers.Article, error) {
-	rows, err := db.Query("SELECT id, title, image, preview FROM articles")
+func GetArticles() ([]Article, error) {
+	rows, err := DB.Query("SELECT id, title, image, preview FROM articles")
 	if err != nil {
 		return nil, err
 	}
 	defer rows.Close()
 
-	var articles []handlers.Article
+	var articles []Article
 	for rows.Next() {
-		var article handlers.Article
-		err := rows.Scan(&article.ID, &article.Title, &article.Image, &article.Preview)
+		var a Article
+		err := rows.Scan(&a.ID, &a.Title, &a.Image, &a.Preview)
 		if err != nil {
 			return nil, err
 		}
-		articles = append(articles, article)
+		articles = append(articles, a)
+	}
+	if err = rows.Err(); err != nil {
+		return nil, err
 	}
 
+	// Test data to check if the problem is with the database connection or not
+	articles = append(articles, Article{ID: 1, Title: "Test article 1", Image: "https://via.placeholder.com/150", Preview: "This is a test article."})
+
+	log.Printf("Fetched articles: %#v", articles)
 	return articles, nil
 }
