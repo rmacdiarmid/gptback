@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyGeePeeTeeDragon</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/main.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+      <a href="/activity">Contact</a>
+    </nav>
+  </header>
+  <main class="container">
+    <section class="hero">
+      <div class="hero-text-container">
+        <h1 class="hero-text">MyGeePeeTeeDragon</h1>
+        <div class="search-container">
+          <form class="myform">
+            <input type="text" placeholder="Search for articles...">
+            <button type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </section>
+    <div class="article-container">
+      <h2>Featured Articles</h2>
+      <div class="articles">
+        {{range .}}
+        <div class="article">
+          <img src="{{.Image}}" alt="Article Image">
+          <h3>{{.Title}}</h3>
+          <p>{{.Preview}}</p>
+        </div>
+        {{end}}
+      </div>
+    </div>
+    
+    <div id="task-list-container">
+      
+    </div>
+  </main>
+  <footer>
+    <p>&copy; MyGeePeeTeeDragon 2023. All rights reserved.</p>
+  </footer>
+</body>
+</html>

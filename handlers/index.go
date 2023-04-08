@@ -1,6 +1,7 @@
 package handlers
 
 import (
+	"html/template"
 	"log"
 	"net/http"
 
@@ -18,8 +19,18 @@ func IndexHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	log.Printf("Rendering index.html with data: %#v", articles)
+	log.Printf("Rendering index.gohtml with data: %#v", articles)
 
-	// Render the HTML template with the data
-	renderTemplateWithData(w, "index.html", articles)
+	// Load the Go template
+	tpl, err := template.ParseFiles("templates/index.gohtml")
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+
+	// Render the Go template with the data
+	err = tpl.Execute(w, articles)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+	}
 }

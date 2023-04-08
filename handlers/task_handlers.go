@@ -42,7 +42,7 @@ func ReadTaskHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	task, err := database.ReadTask(id)
+	task, err := database.ReadTask(database.DB, id)
 	if err != nil {
 		if err == sql.ErrNoRows {
 			http.Error(w, "Task not found", http.StatusNotFound)
@@ -70,7 +70,7 @@ func UpdateTaskHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	err = database.UpdateTask(id, updatedTask.Title, updatedTask.Description)
+	err = database.UpdateTask(database.DB, id, updatedTask.Title, updatedTask.Description)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
@@ -87,7 +87,7 @@ func DeleteTaskHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	err = database.DeleteTask(id)
+	err = database.DeleteTask(database.DB, id)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return

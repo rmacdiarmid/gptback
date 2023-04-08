@@ -9,106 +9,67 @@ import (
 
 var DB *sql.DB
 
-// Define the Task struct
-type Task struct {
-	ID          int64  `json:"id"`
-	Title       string `json:"title"`
-	Description string `json:"description"`
+func InitDB(dbPath string) (*sql.DB, error) {
+	var err error
+	DB, err = sql.Open("sqlite3", dbPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if err = DB.Ping(); err != nil {
+		return nil, err
+	}
+
+	return DB, nil
 }
 
 type Article struct {
-	ID      int
+	ID      int64
 	Title   string
 	Image   string
 	Preview string
 }
 
-func InitDB(filepath string) {
-	var err error
-	DB, err = sql.Open("sqlite3", filepath)
+func GetArticles() ([]Article, error) {
+	rows, err := DB.Query("SELECT id, title, image, preview FROM articles")
 	if err != nil {
-		log.Fatalf("Cannot open database: %v", err)
+		return nil, err
+	}
+	defer rows.Close()
+
+	var articles []Article
+	for rows.Next() {
+		var article Article
+		err := rows.Scan(&article.ID, &article.Title, &article.Image, &article.Preview)
+		if err != nil {
+			return nil, err
+		}
+		articles = append(articles, article)
 	}
 
-	createTable := `CREATE TABLE IF NOT EXISTS tasks (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        title TEXT NOT NULL,
-        description TEXT
-    );`
-
-	_, err = DB.Exec(createTable)
+	err = rows.Err()
 	if err != nil {
-		log.Fatalf("Error creating tasks table: %s", err)
-	}
-
-	createArticlesTable := `CREATE TABLE IF NOT EXISTS articles (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        title TEXT NOT NULL,
-        image TEXT NOT NULL,
-        preview TEXT NOT NULL
-    );`
-
-	_, err = DB.Exec(createArticlesTable)
-	if err != nil {
-		log.Fatalf("Error creating articles table: %s", err)
-	}
-}
-
-func CreateTask(title, description string) (int64, error) {
-	stmt, err := DB.Prepare("INSERT INTO tasks(title, description) VALUES (?, ?)")
-	if err != nil {
-		return 0, err
-	}
-
-	res, err := stmt.Exec(title, description)
-	if err != nil {
-		return 0, err
-	}
-
-	id, err := res.LastInsertId()
-	if err != nil {
-		return 0, err
-	}
-
-	return id, nil
-}
-
-func ReadTask(id int) (*Task, error) {
-	row := DB.QueryRow("SELECT id, title, description FROM tasks WHERE id = ?", id)
-
-	var task Task
-	err := row.Scan(&task.ID, &task.Title, &task.Description)
-	if err == sql.ErrNoRows {
-		return nil, sql.ErrNoRows
-	} else if err != nil {
 		return nil, err
 	}
 
-	return &task, nil
+	log.Printf("Fetched articles: %#v", articles)
+	return articles, nil
 }
 
-func UpdateTask(id int, title string, description string) error {
-	_, err := DB.Exec("UPDATE tasks SET title = ?, description = ? WHERE id = ?", title, description, id)
-	if err != nil {
-		log.Printf("Error updating task: %s", err)
-		return err
-	}
-	return nil
-}
-
-func DeleteTask(id int) error {
-	_, err := DB.Exec("DELETE FROM tasks WHERE id = ?", id)
-	return err
+type Task struct {
+	ID          int64
+	Title       string
+	Description string
 }
 
 func ReadAllTasks() ([]Task, error) {
-	query := "SELECT id, title, description FROM tasks"
-	rows, err := DB.Query(query)
+	rows, err := DB.Query("SELECT id, title, description FROM tasks")
 	if err != nil {
 		return nil, err
 	}
+	defer rows.Close()
 
-	tasks := []Task{}
+	var tasks []Task
 	for rows.Next() {
 		var task Task
 		err := rows.Scan(&task.ID, &task.Title, &task.Description)
@@ -123,33 +84,61 @@ func ReadAllTasks() ([]Task, error) {
 		return nil, err
 	}
 
+	log.Printf("Fetched tasks: %#v", tasks)
 	return tasks, nil
 }
 
-// GetArticles retrieves all articles from the database.
-func GetArticles() ([]Article, error) {
-	rows, err := DB.Query("SELECT id, title, image, preview FROM articles")
+func CreateTask(title string, description string) (int64, error) {
+	result, err := DB.Exec("INSERT INTO tasks(title, description) VALUES (?, ?)", title, description)
 	if err != nil {
-		return nil, err
-	}
-	defer rows.Close()
-
-	var articles []Article
-	for rows.Next() {
-		var a Article
-		err := rows.Scan(&a.ID, &a.Title, &a.Image, &a.Preview)
-		if err != nil {
-			return nil, err
-		}
-		articles = append(articles, a)
-	}
-	if err = rows.Err(); err != nil {
-		return nil, err
+		return 0, err
 	}
 
-	// Test data to check if the problem is with the database connection or not
-	articles = append(articles, Article{ID: 1, Title: "Test article 1", Image: "https://via.placeholder.com/150", Preview: "This is a test article."})
+	id, err := result.LastInsertId()
+	if err != nil {
+		return 0, err
+	}
 
-	log.Printf("Fetched articles: %#v", articles)
-	return articles, nil
+	log.Printf("Created task with ID: %d", id)
+	return id, nil
+}
+
+func UpdateTask(db *sql.DB, id int, title, description string) error {
+	stmt, err := db.Prepare("UPDATE tasks SET title = ?, description = ? WHERE id = ?")
+	if err != nil {
+		return err
+	}
+	defer stmt.Close()
+
+	_, err = stmt.Exec(title, description, id)
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func DeleteTask(db *sql.DB, id int) error {
+	stmt, err := db.Prepare("DELETE FROM tasks WHERE id = ?")
+	if err != nil {
+		return err
+	}
+	defer stmt.Close()
+
+	_, err = stmt.Exec(id)
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func ReadTask(db *sql.DB, id int) (Task, error) {
+	var task Task
+	err := db.QueryRow("SELECT id, title, description FROM tasks WHERE id = ?", id).Scan(&task.ID, &task.Title, &task.Description)
+	if err != nil {
+		return Task{}, err
+	}
+
+	return task, nil
 }
