@@ -5,5 +5,5 @@ import (
 )
 
 func ContactHandler(w http.ResponseWriter, r *http.Request) {
-	renderTemplate(w, "contact.html")
+	RenderTemplate(w, "contact.gohtml")
 }

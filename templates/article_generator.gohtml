@@ -3,15 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{{ template "partials/favicon.gohtml" . }}
+    <link rel="stylesheet" href="/static/css/main.css">
     <title>Article Generator</title>
 </head>
 <body>
+    {{ template "partials/navbar.gohtml" . }}
+    
     <h1>Article Generator</h1>
     <form method="POST" action="/generate-article">
-        <label for="prompt">Prompt:</label>
-        <input type="text" id="prompt" name="prompt" required>
-        <button type="submit">Generate</button>
-    </form>
+    <label for="prompt">Prompt:</label>
+    <input type="text" id="prompt" name="prompt" required>
+    <button type="submit">Generate</button>
+</form>
+
     {{ if .Generated }}
         <h2>Generated Article</h2>
         <p>Title: {{ .Title }}</p>

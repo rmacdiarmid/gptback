@@ -15,7 +15,8 @@ import (
 	"github.com/spf13/viper"
 )
 
-func main() {
+func init() {
+
 	// Load configuration from the config file
 	viper.SetConfigName("config") // Name of config file (without extension)
 	viper.AddConfigPath(".")      // Path to look for the config file in
@@ -44,10 +45,16 @@ func main() {
 	if err != nil {
 		log.Fatal("Error creating log file:", err)
 	}
-	defer f.Close()
 
 	// Initialize the logger with the custom dual writer
 	logger.InitLogger(f)
+
+	// Load templates
+	handlers.LoadTemplates()
+}
+
+func main() {
+	var err error
 
 	// Use logger.DualLog instead of the previously used dualLog variable
 	logger.DualLog.Println("Reading the database path from the config...")
@@ -74,6 +81,8 @@ func main() {
 	}
 	logger.DualLog.Println("Environmental variables loaded successfully")
 
+	// Add the logger usage that was removed from the handlers package
+	logger.DualLog.Println("Handlers package initialized")
 	// Create the router and add the routes
 	r := mux.NewRouter()
 
@@ -98,7 +107,10 @@ func main() {
 	r.NotFoundHandler = http.HandlerFunc(handlers.NotFoundHandler)
 
 	// Static file handling
-	r.PathPrefix("/static/").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir("./static"))))
+	r.PathPrefix("/favicon.ico").Handler(http.FileServer(http.Dir("./static/images")))
+	// ...
+	fs := http.FileServer(http.Dir("static/images"))
+	http.Handle("/favicon.ico", fs)
 
 	// Start the server
 	logger.DualLog.Println("Starting server on :8080...")

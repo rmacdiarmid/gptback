@@ -65,8 +65,12 @@ func ChatGPTRequest(prompt string) (string, error) {
 	req.Header.Set("Content-Type", "application/json")
 	req.Header.Set("Authorization", fmt.Sprintf("Bearer %s", apiKey))
 
+	// Log message for request start
+	logger.DualLog.Println("Starting ChatGPT request...")
+
 	resp, err := client.Do(req)
 	if err != nil {
+		logger.DualLog.Printf("Error sending ChatGPT request: %v", err)
 		return "", err
 	}
 	defer resp.Body.Close()
@@ -78,15 +82,25 @@ func ChatGPTRequest(prompt string) (string, error) {
 	choices := result["choices"].([]interface{})
 	message := choices[0].(map[string]interface{})["message"].(map[string]interface{})["content"].(string)
 
+	// Log message for request success
+	logger.DualLog.Println("ChatGPT request completed successfully.")
+
 	return message, nil
 }
 
 func GenerateArticle(prompt string) (string, string, string, error) {
+	logger.DualLog.Printf("GenerateArticle", "Starting GenerateArticle function...")
+	defer logger.DualLog.Printf("GenerateArticle", "Exiting GenerateArticle function.")
+
 	// Call ChatGPTRequest with the prompt to generate the article text
 	articleText, err := ChatGPTRequest(prompt)
 	if err != nil {
+		logger.DualLog.Panicf("GenerateArticle", fmt.Sprintf("Error generating article: %v", err))
 		return "", "", "", err
 	}
+
+	// Log message for article generation success
+	logger.DualLog.Printf("GenerateArticle", "Article generated successfully.")
 
 	// Generate the title and image URL here
 	// For now, we'll use placeholders

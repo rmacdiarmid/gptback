@@ -1,22 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MyGeePeeTeeDragon</title>
-  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/static/css/main.css">
-</head>
-<body>
-  <header>
-    <nav class="navbar">
-      <a href="/">Home</a>
-      <a href="/about">About</a>
-      <a href="/contact">Contact</a>
-      <a href="/activity">Contact</a>
-    </nav>
-  </header>
-  <main class="container">
+{{define "index.gohtml"}}
     <section class="hero">
       <div class="hero-text-container">
         <h1 class="hero-text">MyGeePeeTeeDragon</h1>
@@ -46,9 +28,4 @@
     <div id="task-list-container">
       
     </div>
-  </main>
-  <footer>
-    <p>&copy; MyGeePeeTeeDragon 2023. All rights reserved.</p>
-  </footer>
-</body>
-</html>
+{{end}}
