@@ -44,13 +44,15 @@ func LoadTemplates() {
 
 	// Iterate through the template files and add them to the templates object
 	for _, file := range templateFiles {
-		filePath := filepath.Join("templates", file.Name())
-		_, err := templates.ParseFiles(filePath)
-		if err != nil {
-			logger.DualLog.Printf("Error parsing template file %s: %v", file.Name(), err)
-			return
+		if !file.IsDir() {
+			filePath := filepath.Join("templates", file.Name())
+			templates, err = templates.ParseFiles(filePath)
+			if err != nil {
+				logger.DualLog.Printf("Error parsing template file %s: %v", file.Name(), err)
+				return
+			}
+			logger.DualLog.Printf("- %s", file.Name())
 		}
-		logger.DualLog.Printf("- %s", file.Name())
 	}
 }
 
@@ -104,25 +106,16 @@ func ExecTemplate(templateName string, data interface{}) (string, error) {
 	return buf.String(), nil
 }
 
-func RenderTemplateWithData(w http.ResponseWriter, templateName string, data interface{}) {
-	t := templates.Lookup("base.gohtml")
-	if t == nil {
-		logger.DualLog.Printf("Template not found: base.gohtml")
-		http.Error(w, "Template not found.", http.StatusInternalServerError)
-		return
-	}
+func RenderTemplateWithData(w http.ResponseWriter, r *http.Request, templateName string, data map[string]interface{}) {
+	logger.DualLog.Printf("Rendering template: %s with content: %s", "base.gohtml", templateName)
 
-	logger.DualLog.Printf("Rendering template: base.gohtml with content: %s", templateName)
-	err := t.Execute(w, struct {
-		Template string
-		Data     interface{}
-	}{
-		Template: templateName,
-		Data:     data,
-	})
+	data["ContentTemplateName"] = templateName
 
+	// Execute the base template
+	err := templates.ExecuteTemplate(w, "base.gohtml", data)
 	if err != nil {
 		logger.DualLog.Printf("Error executing template: %v", err)
-		http.Error(w, "Internal server error", http.StatusInternalServerError)
+		http.Error(w, "Error executing template", http.StatusInternalServerError)
+		return
 	}
 }

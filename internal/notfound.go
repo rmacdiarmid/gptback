@@ -12,12 +12,8 @@ func NotFoundHandler(w http.ResponseWriter, r *http.Request) {
 
 	w.WriteHeader(http.StatusNotFound)
 
-	data := struct {
-		Content string
-	}{
-		Content: "404.gohtml",
-	}
+	data := make(map[string]interface{})
 
 	// Call the function without using the result as a value
-	RenderTemplateWithData(w, "base.gohtml", data)
+	RenderTemplateWithData(w, r, "404.gohtml", data)
 }

@@ -1,0 +1,14 @@
+2023/04/10 11:34:09 handlers.go:30: Starting LoadTemplates function...
+2023/04/10 11:34:09 handlers.go:53: - 404.gohtml
+2023/04/10 11:34:09 handlers.go:53: - about.gohtml
+2023/04/10 11:34:09 handlers.go:53: - activity.gohtml
+2023/04/10 11:34:09 handlers.go:53: - article_generator.gohtml
+2023/04/10 11:34:09 handlers.go:53: - base.gohtml
+2023/04/10 11:34:09 handlers.go:53: - contact.gohtml
+2023/04/10 11:34:09 handlers.go:53: - index.gohtml
+2023/04/10 11:34:09 handlers.go:50: Error parsing template file partials: read templates/partials: is a directory
+2023/04/10 11:34:09 handlers.go:51: Exiting LoadTemplates function.
+2023/04/10 11:34:09 main.go:66: Reading the database path from the config...
+2023/04/10 11:34:09 main.go:70: Read database path from config successfully
+2023/04/10 11:34:09 main.go:73: Initializing database...
+2023/04/10 11:34:09 main.go:77: Failed to initialize database: unable to open database file: no such file or directory

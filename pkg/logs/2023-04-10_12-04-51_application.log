@@ -1,0 +1,39 @@
+2023/04/10 12:04:51 handlers.go:30: Starting LoadTemplates function...
+2023/04/10 12:04:51 handlers.go:54: - 404.gohtml
+2023/04/10 12:04:51 handlers.go:54: - about.gohtml
+2023/04/10 12:04:51 handlers.go:54: - activity.gohtml
+2023/04/10 12:04:51 handlers.go:54: - article_generator.gohtml
+2023/04/10 12:04:51 handlers.go:54: - base.gohtml
+2023/04/10 12:04:51 handlers.go:54: - contact.gohtml
+2023/04/10 12:04:51 handlers.go:54: - index.gohtml
+2023/04/10 12:04:51 handlers.go:54: - success.gohtml
+2023/04/10 12:04:51 handlers.go:54: - task_list.gohtml
+2023/04/10 12:04:51 handlers.go:57: Exiting LoadTemplates function.
+2023/04/10 12:04:51 main.go:66: Reading the database path from the config...
+2023/04/10 12:04:51 main.go:70: Read database path from config successfully
+2023/04/10 12:04:51 main.go:73: Initializing database...
+2023/04/10 12:04:51 main.go:79: Database initialized successfully
+2023/04/10 12:04:51 main.go:82: Loading environmental variables...
+2023/04/10 12:04:51 load.go:12: Starting LoadEnvFile function with path .env...
+2023/04/10 12:04:51 load.go:20: .env file opened successfully.
+2023/04/10 12:04:51 load.go:36: Environment variable CONFIG_FILE_PATH set successfully.
+2023/04/10 12:04:51 load.go:43: .env file read successfully.
+2023/04/10 12:04:51 load.go:45: Exiting LoadEnvFile function.
+2023/04/10 12:04:51 main.go:88: Environmental variables loaded successfully
+2023/04/10 12:04:51 main.go:91: Handlers package initialized
+2023/04/10 12:04:51 handlers.go:30: Starting LoadTemplates function...
+2023/04/10 12:04:51 handlers.go:54: - 404.gohtml
+2023/04/10 12:04:51 handlers.go:54: - about.gohtml
+2023/04/10 12:04:51 handlers.go:54: - activity.gohtml
+2023/04/10 12:04:51 handlers.go:54: - article_generator.gohtml
+2023/04/10 12:04:51 handlers.go:54: - base.gohtml
+2023/04/10 12:04:51 handlers.go:54: - contact.gohtml
+2023/04/10 12:04:51 handlers.go:54: - index.gohtml
+2023/04/10 12:04:51 handlers.go:54: - success.gohtml
+2023/04/10 12:04:51 handlers.go:54: - task_list.gohtml
+2023/04/10 12:04:51 handlers.go:57: Exiting LoadTemplates function.
+2023/04/10 12:04:51 main.go:124: Starting server on :8080...
+2023/04/10 12:04:57 index.go:11: IndexHandler called
+2023/04/10 12:04:57 index.go:17: Fetched articles: [{1 The Whimsical Dragon's Guide to the Meaning of Life /static/images/dragon1.jpg Once upon a time, in a land far, far away...} {2 Dragon Tales and the Meaning of Life /static/images/dragon2.jpg Dragons are known for their powerful and often misunderstood nature...} {3 The Treasure of Dragon Island and the Meaning of Life /static/images/dragon3.jpg Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons...}]
+2023/04/10 12:04:57 handlers.go:110: Rendering template: base.gohtml with content: base.gohtml
+2023/04/10 12:04:57 handlers.go:121: Error executing template: template: index.gohtml:16:16: executing "content" at <.Articles>: can't evaluate field Articles in type struct { ContentTemplateName string; Data interface {} }

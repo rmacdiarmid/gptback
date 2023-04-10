@@ -17,13 +17,11 @@ func ArticleGeneratorHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	data := struct {
-		Content string
-	}{
-		Content: "article_generator.gohtml",
+	data := map[string]interface{}{
+		"Content": "article_generator.gohtml",
 	}
 
-	RenderTemplateWithData(w, "base.gohtml", data)
+	RenderTemplateWithData(w, r, "article_generator.gohtml", data)
 }
 
 func GenerateArticleHandler(w http.ResponseWriter, r *http.Request) {
@@ -49,21 +47,15 @@ func GenerateArticleHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	data := struct {
-		Content     string
-		Generated   bool
-		Title       string
-		ImageURL    string
-		ArticleText string
-	}{
-		Content:     "article_generator.gohtml",
-		Generated:   true,
-		Title:       title,
-		ImageURL:    imageURL,
-		ArticleText: articleText,
+	data := map[string]interface{}{
+		"Content":     "article_generator.gohtml",
+		"Generated":   true,
+		"Title":       title,
+		"ImageURL":    imageURL,
+		"ArticleText": articleText,
 	}
 
-	RenderTemplateWithData(w, "base.gohtml", data)
+	RenderTemplateWithData(w, r, "base.gohtml", data)
 }
 
 func AcceptArticleHandler(w http.ResponseWriter, r *http.Request) {
@@ -96,11 +88,7 @@ func SuccessHandler(w http.ResponseWriter, r *http.Request) {
 	logger.DualLog.Println("Starting the SuccessHandler function...")
 	defer logger.DualLog.Println("Exiting the SuccessHandler function.")
 
-	data := struct {
-		Content string
-	}{
-		Content: "success.gohtml",
-	}
+	data := make(map[string]interface{})
 
-	RenderTemplateWithData(w, "base.gohtml", data)
+	RenderTemplateWithData(w, r, "article_generator.gohtml", data)
 }
