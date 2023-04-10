@@ -1,0 +1,41 @@
+2023/04/09 07:17:42 handlers.go:40: Loaded templates:
+2023/04/09 07:17:42 handlers.go:42: - activity.gohtml
+2023/04/09 07:17:42 handlers.go:42: - article_generator.gohtml
+2023/04/09 07:17:42 handlers.go:42: - base.gohtml
+2023/04/09 07:17:42 handlers.go:42: - contact.gohtml
+2023/04/09 07:17:42 handlers.go:42: - index.gohtml
+2023/04/09 07:17:42 handlers.go:42: - task_list.gohtml
+2023/04/09 07:17:42 handlers.go:42: - 404.gohtml
+2023/04/09 07:17:42 handlers.go:42: - about.gohtml
+2023/04/09 07:17:42 main.go:60: Reading the database path from the config...
+2023/04/09 07:17:42 main.go:64: Read database path from config successfully
+2023/04/09 07:17:42 main.go:67: Initializing database...
+2023/04/09 07:17:42 main.go:73: Database initialized successfully
+2023/04/09 07:17:42 main.go:76: Loading environmental variables...
+2023/04/09 07:17:42 load.go:12: Starting LoadEnvFile function with path .env...
+2023/04/09 07:17:42 load.go:20: .env file opened successfully.
+2023/04/09 07:17:42 load.go:36: Environment variable CONFIG_FILE_PATH set successfully.
+2023/04/09 07:17:42 load.go:43: .env file read successfully.
+2023/04/09 07:17:42 load.go:45: Exiting LoadEnvFile function.
+2023/04/09 07:17:42 main.go:82: Environmental variables loaded successfully
+2023/04/09 07:17:42 main.go:85: Handlers package initialized
+2023/04/09 07:17:42 main.go:114: Starting server on :8080...
+2023/04/09 07:17:48 index.go:11: IndexHandler called
+2023/04/09 07:17:48 index.go:21: Rendering index.gohtml with data: []database.Article{database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}, database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}, database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}}
+2023/04/09 07:17:48 handlers.go:74: Rendering template: base.gohtml
+2023/04/09 07:19:37 index.go:11: IndexHandler called
+2023/04/09 07:19:37 index.go:21: Rendering index.gohtml with data: []database.Article{database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}, database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}, database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}}
+2023/04/09 07:19:37 handlers.go:74: Rendering template: base.gohtml
+2023/04/09 07:19:44 handlers.go:56: Rendering template: contact.gohtml
+2023/04/09 07:19:44 handlers.go:59: Error executing template: html/template:contact.gohtml:11:16: no such template "partials/navbar.gohtml"
+2023/04/09 07:19:51 article_generator.go:11: Starting the ArticleGeneratorHandler function...
+2023/04/09 07:19:51 article_generator.go:22: Error executing template: html/template:article_generator.gohtml:11:16: no such template "partials/navbar.gohtml"
+2023/04/09 07:19:51 article_generator.go:25: Exiting the ArticleGeneratorHandler function.
+2023/04/09 07:19:54 index.go:11: IndexHandler called
+2023/04/09 07:19:54 index.go:21: Rendering index.gohtml with data: []database.Article{database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}, database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}, database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}}
+2023/04/09 07:19:54 handlers.go:74: Rendering template: base.gohtml
+2023/04/09 07:19:57 about.go:15: Starting the AboutHandler function...
+2023/04/09 07:19:57 about.go:98: Starting the renderTemplateWithData function...
+2023/04/09 07:19:57 about.go:110: Error executing template 'about.gohtml': html/template:about.gohtml:11:16: no such template "partials/navbar.gohtml"
+2023/04/09 07:19:57 about.go:112: Exiting the renderTemplateWithData function.
+2023/04/09 07:19:57 about.go:34: Exiting the AboutHandler function.

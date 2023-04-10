@@ -1,0 +1,93 @@
+2023/04/09 22:33:44 handlers.go:41: Loaded templates:
+2023/04/09 22:33:44 handlers.go:43: - 404.gohtml
+2023/04/09 22:33:44 handlers.go:43: - about.gohtml
+2023/04/09 22:33:44 handlers.go:43: - article_generator.gohtml
+2023/04/09 22:33:44 handlers.go:43: - index.gohtml
+2023/04/09 22:33:44 handlers.go:43: - success.gohtml
+2023/04/09 22:33:44 handlers.go:43: - task_list.gohtml
+2023/04/09 22:33:44 handlers.go:43: - base.gohtml
+2023/04/09 22:33:44 handlers.go:43: - activity.gohtml
+2023/04/09 22:33:44 handlers.go:43: - contact.gohtml
+2023/04/09 22:33:44 main.go:66: Reading the database path from the config...
+2023/04/09 22:33:44 main.go:70: Read database path from config successfully
+2023/04/09 22:33:44 main.go:73: Initializing database...
+2023/04/09 22:33:44 main.go:79: Database initialized successfully
+2023/04/09 22:33:44 main.go:82: Loading environmental variables...
+2023/04/09 22:33:44 load.go:12: Starting LoadEnvFile function with path .env...
+2023/04/09 22:33:44 load.go:20: .env file opened successfully.
+2023/04/09 22:33:44 load.go:36: Environment variable CONFIG_FILE_PATH set successfully.
+2023/04/09 22:33:44 load.go:43: .env file read successfully.
+2023/04/09 22:33:44 load.go:45: Exiting LoadEnvFile function.
+2023/04/09 22:33:44 main.go:88: Environmental variables loaded successfully
+2023/04/09 22:33:44 main.go:91: Handlers package initialized
+2023/04/09 22:33:44 main.go:121: Starting server on :8080...
+2023/04/09 22:33:58 index.go:11: IndexHandler called
+2023/04/09 22:33:58 index.go:21: Rendering index.gohtml with data: []database.Article{database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}, database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}, database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}}
+2023/04/09 22:33:59 index.go:11: IndexHandler called
+2023/04/09 22:33:59 index.go:21: Rendering index.gohtml with data: []database.Article{database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}, database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}, database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}}
+2023/04/09 22:34:00 index.go:11: IndexHandler called
+2023/04/09 22:34:00 index.go:21: Rendering index.gohtml with data: []database.Article{database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}, database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}, database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}}
+2023/04/09 22:34:00 index.go:11: IndexHandler called
+2023/04/09 22:34:00 index.go:21: Rendering index.gohtml with data: []database.Article{database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}, database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}, database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}}
+2023/04/09 22:34:00 index.go:11: IndexHandler called
+2023/04/09 22:34:00 index.go:21: Rendering index.gohtml with data: []database.Article{database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}, database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}, database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}}
+2023/04/09 22:34:03 index.go:11: IndexHandler called
+2023/04/09 22:34:03 index.go:21: Rendering index.gohtml with data: []database.Article{database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}, database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}, database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}}
+2023/04/09 22:34:08 index.go:11: IndexHandler called
+2023/04/09 22:34:08 index.go:21: Rendering index.gohtml with data: []database.Article{database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}, database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}, database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}}
+2023/04/09 22:34:08 index.go:11: IndexHandler called
+2023/04/09 22:34:08 index.go:21: Rendering index.gohtml with data: []database.Article{database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}, database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}, database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}}
+2023/04/09 22:34:08 index.go:11: IndexHandler called
+2023/04/09 22:34:08 index.go:21: Rendering index.gohtml with data: []database.Article{database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}, database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}, database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}}
+2023/04/09 22:34:11 about.go:15: Starting the AboutHandler function...
+2023/04/09 22:34:11 about.go:100: Starting the renderTemplateWithData function...
+2023/04/09 22:34:11 panic.go:884: Exiting the renderTemplateWithData function.
+2023/04/09 22:34:11 panic.go:884: Exiting the AboutHandler function.
+2023/04/09 22:34:12 about.go:15: Starting the AboutHandler function...
+2023/04/09 22:34:12 about.go:100: Starting the renderTemplateWithData function...
+2023/04/09 22:34:12 panic.go:884: Exiting the renderTemplateWithData function.
+2023/04/09 22:34:12 panic.go:884: Exiting the AboutHandler function.
+2023/04/09 22:34:12 about.go:15: Starting the AboutHandler function...
+2023/04/09 22:34:12 about.go:100: Starting the renderTemplateWithData function...
+2023/04/09 22:34:12 panic.go:884: Exiting the renderTemplateWithData function.
+2023/04/09 22:34:12 panic.go:884: Exiting the AboutHandler function.
+2023/04/09 22:34:13 about.go:15: Starting the AboutHandler function...
+2023/04/09 22:34:13 about.go:100: Starting the renderTemplateWithData function...
+2023/04/09 22:34:13 panic.go:884: Exiting the renderTemplateWithData function.
+2023/04/09 22:34:13 panic.go:884: Exiting the AboutHandler function.
+2023/04/09 22:34:13 about.go:15: Starting the AboutHandler function...
+2023/04/09 22:34:13 about.go:100: Starting the renderTemplateWithData function...
+2023/04/09 22:34:13 panic.go:884: Exiting the renderTemplateWithData function.
+2023/04/09 22:34:13 panic.go:884: Exiting the AboutHandler function.
+2023/04/09 22:34:13 about.go:15: Starting the AboutHandler function...
+2023/04/09 22:34:13 about.go:100: Starting the renderTemplateWithData function...
+2023/04/09 22:34:13 panic.go:884: Exiting the renderTemplateWithData function.
+2023/04/09 22:34:13 panic.go:884: Exiting the AboutHandler function.
+2023/04/09 22:34:18 about.go:15: Starting the AboutHandler function...
+2023/04/09 22:34:18 about.go:100: Starting the renderTemplateWithData function...
+2023/04/09 22:34:18 panic.go:884: Exiting the renderTemplateWithData function.
+2023/04/09 22:34:18 panic.go:884: Exiting the AboutHandler function.
+2023/04/09 22:34:36 index.go:11: IndexHandler called
+2023/04/09 22:34:36 index.go:21: Rendering index.gohtml with data: []database.Article{database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}, database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}, database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}}
+2023/04/09 22:34:37 index.go:11: IndexHandler called
+2023/04/09 22:34:37 index.go:21: Rendering index.gohtml with data: []database.Article{database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}, database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}, database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}}
+2023/04/09 22:34:38 index.go:11: IndexHandler called
+2023/04/09 22:34:38 index.go:21: Rendering index.gohtml with data: []database.Article{database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}, database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}, database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}}
+2023/04/09 22:34:43 index.go:11: IndexHandler called
+2023/04/09 22:34:43 index.go:21: Rendering index.gohtml with data: []database.Article{database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}, database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}, database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}}
+2023/04/09 22:34:48 about.go:15: Starting the AboutHandler function...
+2023/04/09 22:34:48 about.go:100: Starting the renderTemplateWithData function...
+2023/04/09 22:34:48 panic.go:884: Exiting the renderTemplateWithData function.
+2023/04/09 22:34:48 panic.go:884: Exiting the AboutHandler function.
+2023/04/09 22:34:48 about.go:15: Starting the AboutHandler function...
+2023/04/09 22:34:48 about.go:100: Starting the renderTemplateWithData function...
+2023/04/09 22:34:48 panic.go:884: Exiting the renderTemplateWithData function.
+2023/04/09 22:34:48 panic.go:884: Exiting the AboutHandler function.
+2023/04/09 22:34:48 about.go:15: Starting the AboutHandler function...
+2023/04/09 22:34:48 about.go:100: Starting the renderTemplateWithData function...
+2023/04/09 22:34:48 panic.go:884: Exiting the renderTemplateWithData function.
+2023/04/09 22:34:48 panic.go:884: Exiting the AboutHandler function.
+2023/04/09 22:35:13 index.go:11: IndexHandler called
+2023/04/09 22:35:13 index.go:21: Rendering index.gohtml with data: []database.Article{database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}, database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}, database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}}
+2023/04/09 22:36:13 index.go:11: IndexHandler called
+2023/04/09 22:36:13 index.go:21: Rendering index.gohtml with data: []database.Article{database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}, database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}, database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}}

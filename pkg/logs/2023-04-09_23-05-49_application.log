@@ -1,0 +1,50 @@
+2023/04/09 23:05:49 handlers.go:17: Starting LoadTemplates function...
+2023/04/09 23:05:49 handlers.go:38: - 404.gohtml
+2023/04/09 23:05:49 handlers.go:38: - about.gohtml
+2023/04/09 23:05:49 handlers.go:38: - activity.gohtml
+2023/04/09 23:05:49 handlers.go:38: - article_generator.gohtml
+2023/04/09 23:05:49 handlers.go:38: - base.gohtml
+2023/04/09 23:05:49 handlers.go:38: - contact.gohtml
+2023/04/09 23:05:49 handlers.go:38: - index.gohtml
+2023/04/09 23:05:49 handlers.go:35: Error parsing template file partials: read templates/partials: is a directory
+2023/04/09 23:05:49 handlers.go:36: Exiting LoadTemplates function.
+2023/04/09 23:05:49 main.go:66: Reading the database path from the config...
+2023/04/09 23:05:49 main.go:70: Read database path from config successfully
+2023/04/09 23:05:49 main.go:73: Initializing database...
+2023/04/09 23:05:49 main.go:79: Database initialized successfully
+2023/04/09 23:05:49 main.go:82: Loading environmental variables...
+2023/04/09 23:05:49 load.go:12: Starting LoadEnvFile function with path .env...
+2023/04/09 23:05:49 load.go:20: .env file opened successfully.
+2023/04/09 23:05:49 load.go:36: Environment variable CONFIG_FILE_PATH set successfully.
+2023/04/09 23:05:49 load.go:43: .env file read successfully.
+2023/04/09 23:05:49 load.go:45: Exiting LoadEnvFile function.
+2023/04/09 23:05:49 main.go:88: Environmental variables loaded successfully
+2023/04/09 23:05:49 main.go:91: Handlers package initialized
+2023/04/09 23:05:49 handlers.go:17: Starting LoadTemplates function...
+2023/04/09 23:05:49 handlers.go:38: - 404.gohtml
+2023/04/09 23:05:49 handlers.go:38: - about.gohtml
+2023/04/09 23:05:49 handlers.go:38: - activity.gohtml
+2023/04/09 23:05:49 handlers.go:38: - article_generator.gohtml
+2023/04/09 23:05:49 handlers.go:38: - base.gohtml
+2023/04/09 23:05:49 handlers.go:38: - contact.gohtml
+2023/04/09 23:05:49 handlers.go:38: - index.gohtml
+2023/04/09 23:05:49 handlers.go:35: Error parsing template file partials: read templates/partials: is a directory
+2023/04/09 23:05:49 handlers.go:36: Exiting LoadTemplates function.
+2023/04/09 23:05:49 main.go:124: Starting server on :8080...
+2023/04/09 23:07:02 about.go:15: Starting the AboutHandler function...
+2023/04/09 23:07:02 about.go:100: Starting the renderTemplateWithData function...
+2023/04/09 23:07:02 about.go:117: Template 'about.gohtml' executed successfully
+2023/04/09 23:07:02 about.go:118: Exiting the renderTemplateWithData function.
+2023/04/09 23:07:02 about.go:36: Exiting the AboutHandler function.
+2023/04/09 23:07:09 index.go:11: IndexHandler called
+2023/04/09 23:07:09 index.go:21: Rendering index.gohtml with data: []database.Article{database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}, database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}, database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}}
+2023/04/09 23:07:09 handlers.go:100: Rendering template: base.gohtml with content: base.gohtml
+2023/04/09 23:07:09 handlers.go:110: Error executing template: template: index.gohtml:16:16: executing "content" at <.>: range can't iterate over {base.gohtml {index.gohtml [{1 The Whimsical Dragon's Guide to the Meaning of Life /static/images/dragon1.jpg Once upon a time, in a land far, far away...} {2 Dragon Tales and the Meaning of Life /static/images/dragon2.jpg Dragons are known for their powerful and often misunderstood nature...} {3 The Treasure of Dragon Island and the Meaning of Life /static/images/dragon3.jpg Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons...}]}}
+2023/04/09 23:07:55 article_generator.go:11: Starting the ArticleGeneratorHandler function...
+2023/04/09 23:07:55 handlers.go:100: Rendering template: base.gohtml with content: base.gohtml
+2023/04/09 23:07:55 handlers.go:110: Error executing template: template: index.gohtml:16:16: executing "content" at <.>: range can't iterate over {base.gohtml {article_generator.gohtml}}
+2023/04/09 23:07:55 article_generator.go:27: Exiting the ArticleGeneratorHandler function.
+2023/04/09 23:07:59 article_generator.go:11: Starting the ArticleGeneratorHandler function...
+2023/04/09 23:07:59 handlers.go:100: Rendering template: base.gohtml with content: base.gohtml
+2023/04/09 23:07:59 handlers.go:110: Error executing template: template: index.gohtml:16:16: executing "content" at <.>: range can't iterate over {base.gohtml {article_generator.gohtml}}
+2023/04/09 23:07:59 article_generator.go:27: Exiting the ArticleGeneratorHandler function.

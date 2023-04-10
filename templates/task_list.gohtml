@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-{{ template "partials/favicon.gohtml" . }}
-    <link rel="stylesheet" href="/static/css/main.css">
-    <title>Task List</title>
-</head>
-<body>
-    {{ template "partials/navbar.gohtml" . }}
+{{define "task_list.gohtml"}}
 	<h1>Task List</h1>
 	<table>
 		<thead>
@@ -28,5 +18,4 @@
 			{{end}}
 		</tbody>
 	</table>
-</body>
-</html>
+{{end}}

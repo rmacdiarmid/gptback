@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-{{ template "partials/favicon.gohtml" . }}    
-<link rel="stylesheet" href="/static/css/main.css">
-    <title>About</title>
-</head>
-<body>
-    {{ template "partials/navbar.gohtml" . }}
-<main class="container">
+{{define "about.gohtml"}}
     <h1>About Us</h1>
     <p>Welcome to the About Us page. This is where you can learn more about our company, mission, and team.</p>
     <!-- Add more content here -->
@@ -49,12 +38,4 @@
             <ul id="recent-activity"></ul>
         </div>
     </div>
-</main>
-
-<footer>
-    <p>&copy; Your Website 2023. All rights reserved.</p>
-</footer>
-
-<script src="/static/js/main.js"></script>
-</body>
-</html>
+{{end}}

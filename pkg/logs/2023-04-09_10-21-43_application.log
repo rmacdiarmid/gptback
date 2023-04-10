@@ -1,0 +1,1 @@
+2023/04/09 10:21:43 handlers.go:37: Error parsing templates: template: base.gohtml:25: unexpected ".Template" in template clause

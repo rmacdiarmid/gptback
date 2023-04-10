@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="stylesheet" href="/static/css/main.css">
     <title>MyGeePeeTeeDragon</title>
 </head>
@@ -19,11 +20,16 @@
         </ul>
     </nav>
 </header>
-  <main class="container">
-    {{template "index.gohtml" .}}
-  </main>
+    ...
+<main>
+    {{block "content" .}}
+        {{render .Template .Data}}
+    {{end}}
+</main>
   <footer>
-    <p>&copy; MyGeePeeTeeDragon 2023. All rights reserved.</p>
+    <div class="container">
+        <p>&copy; MyGeePeeTeeDragon 2023. All rights reserved.</p>
+    </div>
   </footer>
 </body>
 </html>

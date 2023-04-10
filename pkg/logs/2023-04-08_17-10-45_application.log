@@ -1,0 +1,23 @@
+2023/04/08 17:10:45 handlers.go:40: Loaded templates:
+2023/04/08 17:10:45 handlers.go:42: - activity.gohtml
+2023/04/08 17:10:45 handlers.go:42: - contact.gohtml
+2023/04/08 17:10:45 handlers.go:42: - index.gohtml
+2023/04/08 17:10:45 handlers.go:42: - base
+2023/04/08 17:10:45 handlers.go:42: - content
+2023/04/08 17:10:45 handlers.go:42: - task_list.gohtml
+2023/04/08 17:10:45 handlers.go:42: - 404.gohtml
+2023/04/08 17:10:45 handlers.go:42: - about.gohtml
+2023/04/08 17:10:45 handlers.go:42: - article_generator.gohtml
+2023/04/08 17:10:45 handlers.go:42: - base.gohtml
+2023/04/08 17:10:45 main.go:60: Reading the database path from the config...
+2023/04/08 17:10:45 main.go:64: Read database path from config successfully
+2023/04/08 17:10:45 main.go:67: Initializing database...
+2023/04/08 17:10:45 main.go:73: Database initialized successfully
+2023/04/08 17:10:45 main.go:76: Loading environmental variables...
+2023/04/08 17:10:45 load.go:12: Starting LoadEnvFile function with path .env...
+2023/04/08 17:10:45 load.go:20: .env file opened successfully.
+2023/04/08 17:10:45 load.go:36: Environment variable CONFIG_FILE_PATH set successfully.
+2023/04/08 17:10:45 load.go:43: .env file read successfully.
+2023/04/08 17:10:45 load.go:45: Exiting LoadEnvFile function.
+2023/04/08 17:10:45 main.go:82: Environmental variables loaded successfully
+2023/04/08 17:10:45 main.go:85: Handlers package initialized

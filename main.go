@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"html/template"
 	"log"
 	"net/http"
 	"os"
@@ -9,11 +10,13 @@ import (
 	"time"
 
 	"github.com/gorilla/mux"
-	"github.com/rmacdiarmid/GPTSite/database"
-	"github.com/rmacdiarmid/GPTSite/handlers"
+	handlers "github.com/rmacdiarmid/GPTSite/internal"
 	"github.com/rmacdiarmid/GPTSite/logger"
+	"github.com/rmacdiarmid/GPTSite/pkg/database"
 	"github.com/spf13/viper"
 )
+
+var templates *template.Template
 
 func init() {
 
@@ -45,6 +48,9 @@ func init() {
 	if err != nil {
 		log.Fatal("Error creating log file:", err)
 	}
+
+	funcMap := template.FuncMap{"ExecTemplate": handlers.ExecTemplate}
+	templates = template.Must(template.New("").Funcs(funcMap).ParseFiles("templates/base.gohtml", "templates/index.gohtml"))
 
 	// Initialize the logger with the custom dual writer
 	logger.InitLogger(f)
@@ -83,6 +89,9 @@ func main() {
 
 	// Add the logger usage that was removed from the handlers package
 	logger.DualLog.Println("Handlers package initialized")
+
+	//Call this before routing the templates
+	handlers.LoadTemplates()
 	// Create the router and add the routes
 	r := mux.NewRouter()
 
@@ -98,6 +107,7 @@ func main() {
 	r.HandleFunc("/contact", handlers.ContactHandler)
 	//r.HandleFunc("/activity", handlers.ActivityHandler)
 	r.HandleFunc("/task_list", handlers.TaskListHandler)
+	r.HandleFunc("/success", handlers.SuccessHandler)
 
 	// New routes for generating and accepting articles
 	r.HandleFunc("/generate-article", handlers.GenerateArticleHandler)
@@ -107,10 +117,8 @@ func main() {
 	r.NotFoundHandler = http.HandlerFunc(handlers.NotFoundHandler)
 
 	// Static file handling
-	r.PathPrefix("/favicon.ico").Handler(http.FileServer(http.Dir("./static/images")))
-	// ...
-	fs := http.FileServer(http.Dir("static/images"))
-	http.Handle("/favicon.ico", fs)
+	r.PathPrefix("/static/").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
+	r.HandleFunc("/favicon.ico", func(w http.ResponseWriter, r *http.Request) { http.ServeFile(w, r, "static/images/favicon.ico") })
 
 	// Start the server
 	logger.DualLog.Println("Starting server on :8080...")

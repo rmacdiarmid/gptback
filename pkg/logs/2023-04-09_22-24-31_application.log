@@ -1,0 +1,1 @@
+2023/04/09 22:24:31 handlers.go:38: Error parsing templates: template: base.gohtml:25: function "ExecTemplate" not defined
