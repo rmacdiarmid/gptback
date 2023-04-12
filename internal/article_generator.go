@@ -1,4 +1,4 @@
-package handlers
+package internal
 
 import (
 	"net/http"
@@ -18,10 +18,10 @@ func ArticleGeneratorHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	data := map[string]interface{}{
-		"Content": "article_generator.gohtml",
+		"ContentTemplateName": "article_generator",
 	}
 
-	RenderTemplateWithData(w, r, "article_generator.gohtml", data)
+	RenderTemplateWithData(w, "base.gohtml", data)
 }
 
 func GenerateArticleHandler(w http.ResponseWriter, r *http.Request) {
@@ -55,7 +55,7 @@ func GenerateArticleHandler(w http.ResponseWriter, r *http.Request) {
 		"ArticleText": articleText,
 	}
 
-	RenderTemplateWithData(w, r, "base.gohtml", data)
+	RenderTemplateWithData(w, "base.gohtml", data)
 }
 
 func AcceptArticleHandler(w http.ResponseWriter, r *http.Request) {
@@ -88,7 +88,9 @@ func SuccessHandler(w http.ResponseWriter, r *http.Request) {
 	logger.DualLog.Println("Starting the SuccessHandler function...")
 	defer logger.DualLog.Println("Exiting the SuccessHandler function.")
 
-	data := make(map[string]interface{})
+	data := map[string]interface{}{
+		"ContentTemplateName": "success",
+	}
 
-	RenderTemplateWithData(w, r, "article_generator.gohtml", data)
+	RenderTemplateWithData(w, "base.gohtml", data)
 }

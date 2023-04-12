@@ -1,0 +1,51 @@
+2023/04/11 21:32:58 handlers.go:15: Starting LoadTemplates function...
+2023/04/11 21:32:58 handlers.go:20: - 404.gohtml
+2023/04/11 21:32:58 handlers.go:20: - article_generator.gohtml
+2023/04/11 21:32:58 handlers.go:20: - base.gohtml
+2023/04/11 21:32:58 handlers.go:20: - index.gohtml
+2023/04/11 21:32:58 handlers.go:20: - success.gohtml
+2023/04/11 21:32:58 handlers.go:20: - task_list.gohtml
+2023/04/11 21:32:58 handlers.go:20: - content
+2023/04/11 21:32:58 handlers.go:20: - about.gohtml
+2023/04/11 21:32:58 handlers.go:20: - activity.gohtml
+2023/04/11 21:32:58 handlers.go:20: - contact.gohtml
+2023/04/11 21:32:58 handlers.go:22: Exiting LoadTemplates function.
+2023/04/11 21:32:58 main.go:66: Reading the database path from the config...
+2023/04/11 21:32:58 main.go:70: Read database path from config successfully
+2023/04/11 21:32:58 main.go:73: Initializing database...
+2023/04/11 21:32:58 database.go:13: Initializing database with path pkg/database/tasks.db
+2023/04/11 21:32:58 database.go:43: Database initialized successfully
+2023/04/11 21:32:58 main.go:79: Database initialized successfully
+2023/04/11 21:32:58 main.go:82: Loading environmental variables...
+2023/04/11 21:32:58 load.go:12: Starting LoadEnvFile function with path .env...
+2023/04/11 21:32:58 load.go:20: .env file opened successfully.
+2023/04/11 21:32:58 load.go:36: Environment variable CONFIG_FILE_PATH set successfully.
+2023/04/11 21:32:58 load.go:43: .env file read successfully.
+2023/04/11 21:32:58 load.go:45: Exiting LoadEnvFile function.
+2023/04/11 21:32:58 main.go:88: Environmental variables loaded successfully
+2023/04/11 21:32:58 main.go:91: Internal handlers package initialized
+2023/04/11 21:32:58 handlers.go:15: Starting LoadTemplates function...
+2023/04/11 21:32:58 handlers.go:20: - 404.gohtml
+2023/04/11 21:32:58 handlers.go:20: - article_generator.gohtml
+2023/04/11 21:32:58 handlers.go:20: - base.gohtml
+2023/04/11 21:32:58 handlers.go:20: - index.gohtml
+2023/04/11 21:32:58 handlers.go:20: - success.gohtml
+2023/04/11 21:32:58 handlers.go:20: - task_list.gohtml
+2023/04/11 21:32:58 handlers.go:20: - content
+2023/04/11 21:32:58 handlers.go:20: - about.gohtml
+2023/04/11 21:32:58 handlers.go:20: - activity.gohtml
+2023/04/11 21:32:58 handlers.go:20: - contact.gohtml
+2023/04/11 21:32:58 handlers.go:22: Exiting LoadTemplates function.
+2023/04/11 21:32:58 main.go:124: Starting server on :8080...
+2023/04/11 21:33:40 about.go:15: Starting the AboutHandler function...
+2023/04/11 21:33:40 database.go:100: Fetching all tasks
+2023/04/11 21:33:40 database.go:118: Fetched task: database.Task{ID:1, Title:"Task 1", Description:"Do something"}
+2023/04/11 21:33:40 database.go:118: Fetched task: database.Task{ID:2, Title:"Task 2", Description:"Do something else"}
+2023/04/11 21:33:40 database.go:118: Fetched task: database.Task{ID:3, Title:"I want to add something", Description:"Did it work?"}
+2023/04/11 21:33:40 database.go:127: Fetched tasks: []database.Task{database.Task{ID:1, Title:"Task 1", Description:"Do something"}, database.Task{ID:2, Title:"Task 2", Description:"Do something else"}, database.Task{ID:3, Title:"I want to add something", Description:"Did it work?"}}
+2023/04/11 21:33:40 handlers.go:25: Starting RenderTemplateWithData function...
+2023/04/11 21:33:40 handlers.go:26: Rendering template: templates/base
+2023/04/11 21:33:40 handlers.go:55: Parsing templates with pattern: templates/templates/base.gohtml
+2023/04/11 21:33:40 handlers.go:59: Error parsing templates: html/template: pattern matches no files: `templates/templates/base.gohtml`
+2023/04/11 21:33:40 handlers.go:29: Exiting RenderTemplateWithData function.
+2023/04/11 21:33:40 about.go:33: Exiting the AboutHandler function.

@@ -1,0 +1,63 @@
+2023/04/11 21:52:37 handlers.go:13: Starting LoadTemplates function...
+2023/04/11 21:52:37 handlers.go:18: - article_generator.gohtml
+2023/04/11 21:52:37 handlers.go:18: - contact.gohtml
+2023/04/11 21:52:37 handlers.go:18: - success.gohtml
+2023/04/11 21:52:37 handlers.go:18: - content
+2023/04/11 21:52:37 handlers.go:18: - about.gohtml
+2023/04/11 21:52:37 handlers.go:18: - base.gohtml
+2023/04/11 21:52:37 handlers.go:18: - index.gohtml
+2023/04/11 21:52:37 handlers.go:18: - task_list.gohtml
+2023/04/11 21:52:37 handlers.go:18: - 404.gohtml
+2023/04/11 21:52:37 handlers.go:18: - activity.gohtml
+2023/04/11 21:52:37 handlers.go:20: Exiting LoadTemplates function.
+2023/04/11 21:52:37 main.go:66: Reading the database path from the config...
+2023/04/11 21:52:37 main.go:70: Read database path from config successfully
+2023/04/11 21:52:37 main.go:73: Initializing database...
+2023/04/11 21:52:37 database.go:13: Initializing database with path pkg/database/tasks.db
+2023/04/11 21:52:37 database.go:43: Database initialized successfully
+2023/04/11 21:52:37 main.go:79: Database initialized successfully
+2023/04/11 21:52:37 main.go:82: Loading environmental variables...
+2023/04/11 21:52:37 load.go:12: Starting LoadEnvFile function with path .env...
+2023/04/11 21:52:37 load.go:20: .env file opened successfully.
+2023/04/11 21:52:37 load.go:36: Environment variable CONFIG_FILE_PATH set successfully.
+2023/04/11 21:52:37 load.go:43: .env file read successfully.
+2023/04/11 21:52:37 load.go:45: Exiting LoadEnvFile function.
+2023/04/11 21:52:37 main.go:88: Environmental variables loaded successfully
+2023/04/11 21:52:37 main.go:91: Internal handlers package initialized
+2023/04/11 21:52:37 handlers.go:13: Starting LoadTemplates function...
+2023/04/11 21:52:37 handlers.go:18: - 404.gohtml
+2023/04/11 21:52:37 handlers.go:18: - activity.gohtml
+2023/04/11 21:52:37 handlers.go:18: - base.gohtml
+2023/04/11 21:52:37 handlers.go:18: - index.gohtml
+2023/04/11 21:52:37 handlers.go:18: - task_list.gohtml
+2023/04/11 21:52:37 handlers.go:18: - content
+2023/04/11 21:52:37 handlers.go:18: - about.gohtml
+2023/04/11 21:52:37 handlers.go:18: - article_generator.gohtml
+2023/04/11 21:52:37 handlers.go:18: - contact.gohtml
+2023/04/11 21:52:37 handlers.go:18: - success.gohtml
+2023/04/11 21:52:37 handlers.go:20: Exiting LoadTemplates function.
+2023/04/11 21:52:37 main.go:124: Starting server on :8080...
+2023/04/11 21:52:44 index.go:11: IndexHandler called
+2023/04/11 21:52:44 database.go:48: Fetching articles
+2023/04/11 21:52:44 database.go:67: Fetched article: database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}
+2023/04/11 21:52:44 database.go:67: Fetched article: database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}
+2023/04/11 21:52:44 database.go:67: Fetched article: database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}
+2023/04/11 21:52:44 database.go:76: Fetched articles: []database.Article{database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}, database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}, database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}}
+2023/04/11 21:52:44 index.go:19: Fetched articles: [{1 The Whimsical Dragon's Guide to the Meaning of Life /static/images/dragon1.jpg Once upon a time, in a land far, far away...} {2 Dragon Tales and the Meaning of Life /static/images/dragon2.jpg Dragons are known for their powerful and often misunderstood nature...} {3 The Treasure of Dragon Island and the Meaning of Life /static/images/dragon3.jpg Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons...}]
+2023/04/11 21:52:44 handlers.go:23: Starting RenderTemplateWithData function...
+2023/04/11 21:52:44 handlers.go:24: Rendering template: base
+2023/04/11 21:52:44 handlers.go:31: Global templates variable contains the following templates:
+2023/04/11 21:52:44 handlers.go:33: - content
+2023/04/11 21:52:44 handlers.go:33: - about.gohtml
+2023/04/11 21:52:44 handlers.go:33: - article_generator.gohtml
+2023/04/11 21:52:44 handlers.go:33: - contact.gohtml
+2023/04/11 21:52:44 handlers.go:33: - success.gohtml
+2023/04/11 21:52:44 handlers.go:33: - 404.gohtml
+2023/04/11 21:52:44 handlers.go:33: - activity.gohtml
+2023/04/11 21:52:44 handlers.go:33: - base.gohtml
+2023/04/11 21:52:44 handlers.go:33: - index.gohtml
+2023/04/11 21:52:44 handlers.go:33: - task_list.gohtml
+2023/04/11 21:52:44 handlers.go:37: Executing base template...
+2023/04/11 21:52:44 handlers.go:40: Error executing base template: html/template: "base" is undefined
+2023/04/11 21:52:44 handlers.go:27: Exiting RenderTemplateWithData function.
+2023/04/11 21:52:44 index.go:27: Indexhandler exited

@@ -1,4 +1,4 @@
-package handlers
+package internal
 
 import (
 	"encoding/json"
@@ -23,16 +23,13 @@ func AboutHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// Execute the template with the tasks data
-	data := struct {
-		Tasks   []database.Task
-		Content string
-	}{
-		Tasks:   tasks,
-		Content: "about.gohtml",
+	// Prepare the data for the template
+	data := map[string]interface{}{
+		"Tasks":               tasks,
+		"ContentTemplateName": "about",
 	}
 
-	renderTemplateWithData(w, "about.gohtml", data)
+	RenderTemplateWithData(w, "base.gohtml", data)
 }
 
 func CreateAboutTaskHandler(w http.ResponseWriter, r *http.Request) {
@@ -94,25 +91,4 @@ func GetTasksHandler(w http.ResponseWriter, r *http.Request) {
 	w.Write(jsonData)
 
 	logger.DualLog.Println("Tasks data successfully sent as JSON response")
-}
-
-func renderTemplateWithData(w http.ResponseWriter, tmpl string, data interface{}) {
-	logger.DualLog.Println("Starting the renderTemplateWithData function...")
-	defer logger.DualLog.Println("Exiting the renderTemplateWithData function.")
-
-	tmplObj := templates.Lookup(tmpl)
-	if tmplObj == nil {
-		logger.DualLog.Println(fmt.Sprintf("Error: template '%v' not found.", tmpl))
-		http.Error(w, "Template not found.", http.StatusInternalServerError)
-		return
-	}
-
-	err := tmplObj.Execute(w, data)
-	if err != nil {
-		logger.DualLog.Println(fmt.Sprintf("Error executing template '%v': %v", tmpl, err))
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-		return
-	}
-
-	logger.DualLog.Println(fmt.Sprintf("Template '%v' executed successfully", tmpl))
 }

@@ -1,10 +1,12 @@
 {{define "content"}}
     <h1>Article Generator</h1>
+    <div class="container">
     <form method="POST" action="/generate-article">
         <label for="prompt">Prompt:</label>
         <input type="text" id="prompt" name="prompt" required>
         <button type="submit">Generate</button>
     </form>
+    </div>
 
     {{ if .Generated }}
         <h2>Generated Article</h2>

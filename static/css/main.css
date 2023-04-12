@@ -9,31 +9,98 @@ body {
   background-color: #ffffff;
 }
 
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
 header {
   display: flex;
   background-color: black;
   color: white;
   height: 50px;
+  width: 100%;
 }
 
 .navbar {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
-  flex-grow: 1;
   padding: 0 40px;
-}
-
-.navbar a {
-  color: #ffffff;
-  margin-right: 20px;
-  padding: 10px;
-  text-decoration: none;
+  flex-grow: 1;
+  list-style: none;
 }
 
 .navbar a:hover {
   color: #00aaff;
 }
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.navbar a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 10px;
+  font-size: .9rem;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+  
+  .navbar ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    padding: 20px;
+  }
+
+  .navbar li {
+    margin-bottom: 10px;
+    text-align: left;
+  }
+
+  .navbar a {
+    font-size: .5rem;
+  }
+
+  .menu-icon {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  .menu-icon .icon-bar {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: #ffffff;
+    margin: 3px 0;
+  }
+}
+
 
 /* Hero Styles */
 .hero {

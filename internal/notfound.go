@@ -1,4 +1,4 @@
-package handlers
+package internal
 
 import (
 	"net/http"
@@ -12,8 +12,10 @@ func NotFoundHandler(w http.ResponseWriter, r *http.Request) {
 
 	w.WriteHeader(http.StatusNotFound)
 
-	data := make(map[string]interface{})
+	data := map[string]interface{}{
+		"ContentTemplateName": "404",
+	}
 
 	// Call the function without using the result as a value
-	RenderTemplateWithData(w, r, "404.gohtml", data)
+	RenderTemplateWithData(w, "base.gohtml", data)
 }

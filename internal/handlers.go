@@ -1,121 +1,65 @@
-package handlers
+package internal
 
 import (
-	"bytes"
-	"fmt"
 	"html/template"
-	"io/ioutil"
 	"net/http"
+	"os"
 	"path/filepath"
+	"strings"
 
 	"github.com/rmacdiarmid/GPTSite/logger"
 )
 
-var templates *template.Template
+var templates = template.Must(template.ParseGlob("templates/*.gohtml"))
 
-func render(tmplName string, data interface{}) (template.HTML, error) {
-	var buf bytes.Buffer
-	t := templates.Lookup(tmplName)
-	if t == nil {
-		return "", fmt.Errorf("template not found: %s", tmplName)
-	}
-	err := t.Execute(&buf, data)
-	if err != nil {
-		return "", err
-	}
-	return template.HTML(buf.String()), nil
-}
-
-func LoadTemplates() {
+func LoadTemplates(pattern string) {
 	logger.DualLog.Println("Starting LoadTemplates function...")
 	defer logger.DualLog.Println("Exiting LoadTemplates function.")
 
-	// Create a new template
-	templates = template.New("").Funcs(template.FuncMap{
-		"render": render,
-	})
-
-	// Read all files in the templates directory
-	templateFiles, err := ioutil.ReadDir("templates")
-	if err != nil {
-		logger.DualLog.Printf("Error reading templates directory: %v", err)
-		return
-	}
-
-	// Iterate through the template files and add them to the templates object
-	for _, file := range templateFiles {
-		if !file.IsDir() {
-			filePath := filepath.Join("templates", file.Name())
-			templates, err = templates.ParseFiles(filePath)
-			if err != nil {
-				logger.DualLog.Printf("Error parsing template file %s: %v", file.Name(), err)
-				return
-			}
-			logger.DualLog.Printf("- %s", file.Name())
-		}
-	}
-}
-
-func parsePartialTemplates() *template.Template {
-	tmpl := template.New("").Funcs(template.FuncMap{})
-	partialDirs := []string{"./templates/partials"}
-	for _, dir := range partialDirs {
-		partials, err := filepath.Glob(filepath.Join(dir, "*.gohtml"))
+	// Load templates
+	var allFiles []string
+	err := filepath.Walk(".", func(path string, info os.FileInfo, err error) error {
 		if err != nil {
-			logger.DualLog.Fatalf("Error reading partial templates directory: %v", err)
+			return err
 		}
-
-		for _, partial := range partials {
-			_, err := tmpl.ParseFiles(partial)
-			if err != nil {
-				logger.DualLog.Printf("Error parsing partial template: %v", err)
-			}
+		if !info.IsDir() && strings.HasSuffix(path, ".gohtml") {
+			allFiles = append(allFiles, path)
 		}
-	}
-	return tmpl
-}
-
-func RenderTemplate(w http.ResponseWriter, templateName string) error {
-	t := templates.Lookup(templateName)
-	if t == nil {
-		logger.DualLog.Printf("Template not found: %s", templateName)
-		http.Error(w, "Template not found.", http.StatusInternalServerError)
-		return fmt.Errorf("Template not found: %s", templateName)
-	}
-
-	logger.DualLog.Printf("Rendering template: %s", templateName)
-	err := t.Execute(w, nil)
+		return nil
+	})
 	if err != nil {
-		logger.DualLog.Printf("Error executing template: %v", err)
-		return err
-	}
-
-	return nil
-}
-
-func ExecTemplate(templateName string, data interface{}) (string, error) {
-	var buf bytes.Buffer
-	t := templates.Lookup(templateName)
-	if t == nil {
-		return "", fmt.Errorf("template not found: %s", templateName)
-	}
-	err := t.Execute(&buf, data)
-	if err != nil {
-		return "", err
-	}
-	return buf.String(), nil
-}
-
-func RenderTemplateWithData(w http.ResponseWriter, r *http.Request, templateName string, data map[string]interface{}) {
-	logger.DualLog.Printf("Rendering template: %s with content: %s", "base.gohtml", templateName)
-
-	data["ContentTemplateName"] = templateName
-
-	// Execute the base template
-	err := templates.ExecuteTemplate(w, "base.gohtml", data)
-	if err != nil {
-		logger.DualLog.Printf("Error executing template: %v", err)
-		http.Error(w, "Error executing template", http.StatusInternalServerError)
+		logger.DualLog.Printf("Error walking the path %q: %v\n", pattern, err)
 		return
+	}
+
+	templates, err = template.ParseFiles(allFiles...)
+	if err != nil {
+		logger.DualLog.Printf("Error loading templates: %v\n", err)
+		return
+	}
+
+	// Log the loaded template names
+	for _, tmpl := range templates.Templates() {
+		logger.DualLog.Printf("- %s", tmpl.Name())
+	}
+}
+
+func RenderTemplateWithData(w http.ResponseWriter, tmpl string, data interface{}) {
+	logger.DualLog.Println("Starting RenderTemplateWithData function...")
+	defer logger.DualLog.Println("Exiting RenderTemplateWithData function.")
+
+	logger.DualLog.Printf("Rendering template: %s", tmpl)
+
+	// Log the loaded template names
+	logger.DualLog.Println("Global templates variable contains the following templates:")
+	for _, t := range templates.Templates() {
+		logger.DualLog.Printf("- %s", t.Name())
+	}
+
+	// Render the template
+	err := templates.ExecuteTemplate(w, tmpl, data)
+	if err != nil {
+		logger.DualLog.Printf("Error executing template: %v", err)
+		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}
 }

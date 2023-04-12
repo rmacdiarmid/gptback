@@ -1,4 +1,4 @@
-package handlers
+package internal
 
 import (
 	"net/http"
@@ -10,8 +10,10 @@ func ContactHandler(w http.ResponseWriter, r *http.Request) {
 	logger.DualLog.Println("ContactHandler called")
 
 	// Prepare the data structure for the base template
-	data := make(map[string]interface{})
+	data := map[string]interface{}{
+		"ContentTemplateName": "contact",
+	}
 
 	// Render the Base template with the content template name
-	RenderTemplateWithData(w, r, "contact.gohtml", data)
+	RenderTemplateWithData(w, "base.gohtml", data)
 }

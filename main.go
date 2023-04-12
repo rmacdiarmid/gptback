@@ -10,7 +10,7 @@ import (
 	"time"
 
 	"github.com/gorilla/mux"
-	handlers "github.com/rmacdiarmid/GPTSite/internal"
+	"github.com/rmacdiarmid/GPTSite/internal"
 	"github.com/rmacdiarmid/GPTSite/logger"
 	"github.com/rmacdiarmid/GPTSite/pkg/database"
 	"github.com/spf13/viper"
@@ -56,7 +56,7 @@ func init() {
 	logger.InitLogger(f)
 
 	// Load templates
-	handlers.LoadTemplates()
+	internal.LoadTemplates("templates/*.gohtml")
 }
 
 func main() {
@@ -81,40 +81,38 @@ func main() {
 	// Load environment variables from .env file
 	logger.DualLog.Println("Loading environmental variables...")
 
-	err = handlers.LoadEnvFile(".env")
+	err = internal.LoadEnvFile(".env")
 	if err != nil {
 		logger.DualLog.Fatalf("Failed to load environment variables from .env file: %s", err)
 	}
 	logger.DualLog.Println("Environmental variables loaded successfully")
 
 	// Add the logger usage that was removed from the handlers package
-	logger.DualLog.Println("Handlers package initialized")
+	logger.DualLog.Println("Internal handlers package initialized")
 
-	//Call this before routing the templates
-	handlers.LoadTemplates()
 	// Create the router and add the routes
 	r := mux.NewRouter()
 
 	// Task CRUD handlers
-	r.HandleFunc("/tasks", handlers.CreateTaskHandler).Methods("POST")
-	r.HandleFunc("/tasks/{id}", handlers.ReadTaskHandler).Methods("GET")
-	r.HandleFunc("/tasks/{id}", handlers.UpdateTaskHandler).Methods("PUT")
-	r.HandleFunc("/tasks/{id}", handlers.DeleteTaskHandler).Methods("DELETE")
+	r.HandleFunc("/tasks", internal.CreateTaskHandler).Methods("POST")
+	r.HandleFunc("/tasks/{id}", internal.ReadTaskHandler).Methods("GET")
+	r.HandleFunc("/tasks/{id}", internal.UpdateTaskHandler).Methods("PUT")
+	r.HandleFunc("/tasks/{id}", internal.DeleteTaskHandler).Methods("DELETE")
 
 	// Route handlers
-	r.HandleFunc("/", handlers.IndexHandler)
-	r.HandleFunc("/about", handlers.AboutHandler)
-	r.HandleFunc("/contact", handlers.ContactHandler)
+	r.HandleFunc("/", internal.IndexHandler)
+	r.HandleFunc("/about", internal.AboutHandler)
+	r.HandleFunc("/contact", internal.ContactHandler)
 	//r.HandleFunc("/activity", handlers.ActivityHandler)
-	r.HandleFunc("/task_list", handlers.TaskListHandler)
-	r.HandleFunc("/success", handlers.SuccessHandler)
+	r.HandleFunc("/task_list", internal.TaskListHandler)
+	r.HandleFunc("/success", internal.SuccessHandler)
 
 	// New routes for generating and accepting articles
-	r.HandleFunc("/generate-article", handlers.GenerateArticleHandler)
-	r.HandleFunc("/accept-article", handlers.AcceptArticleHandler)
-	r.HandleFunc("/article-generator", handlers.ArticleGeneratorHandler)
+	r.HandleFunc("/generate-article", internal.GenerateArticleHandler)
+	r.HandleFunc("/accept-article", internal.AcceptArticleHandler)
+	r.HandleFunc("/article-generator", internal.ArticleGeneratorHandler)
 
-	r.NotFoundHandler = http.HandlerFunc(handlers.NotFoundHandler)
+	r.NotFoundHandler = http.HandlerFunc(internal.NotFoundHandler)
 
 	// Static file handling
 	r.PathPrefix("/static/").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))

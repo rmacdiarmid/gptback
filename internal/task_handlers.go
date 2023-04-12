@@ -1,4 +1,4 @@
-package handlers
+package internal
 
 import (
 	"database/sql"
@@ -20,7 +20,7 @@ type Task struct {
 func CreateTaskHandler(w http.ResponseWriter, r *http.Request) {
 	logger.DualLog.Println("Starting CreateTaskHandler function...")
 
-	var task Task
+	var task database.Task
 	err := json.NewDecoder(r.Body).Decode(&task)
 	if err != nil {
 		logger.DualLog.Printf("Error decoding JSON request body: %v", err)
@@ -52,7 +52,7 @@ func ReadTaskHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	task, err := database.ReadTask(database.DB, id)
+	task, err := database.ReadTask(id)
 	if err != nil {
 		if err == sql.ErrNoRows {
 			logger.DualLog.Println("Task not found.")
@@ -72,6 +72,7 @@ func ReadTaskHandler(w http.ResponseWriter, r *http.Request) {
 func UpdateTaskHandler(w http.ResponseWriter, r *http.Request) {
 	logger.DualLog.Println("Starting UpdateTaskHandler function...")
 
+	// Extract task ID from request URL
 	vars := mux.Vars(r)
 	id, err := strconv.Atoi(vars["id"])
 	if err != nil {
@@ -80,6 +81,7 @@ func UpdateTaskHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	// Decode JSON request body into task object
 	var updatedTask Task
 	err = json.NewDecoder(r.Body).Decode(&updatedTask)
 	if err != nil {
@@ -88,6 +90,7 @@ func UpdateTaskHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	// Call database.UpdateTask to update the task
 	err = database.UpdateTask(database.DB, id, updatedTask.Title, updatedTask.Description)
 	if err != nil {
 		logger.DualLog.Printf("Error updating task: %v", err)
@@ -95,6 +98,7 @@ func UpdateTaskHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	// Send a success response
 	w.WriteHeader(http.StatusNoContent)
 
 	logger.DualLog.Println("UpdateTaskHandler function completed successfully.")
