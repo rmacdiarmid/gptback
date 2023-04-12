@@ -1,0 +1,14 @@
+2023/04/12 10:23:35 handlers.go:21: Starting LoadTemplates function...
+2023/04/12 10:23:35 handlers.go:53: - article_generator.gohtml
+2023/04/12 10:23:35 handlers.go:53: - base.gohtml
+2023/04/12 10:23:35 handlers.go:53: - contact.gohtml
+2023/04/12 10:23:35 handlers.go:53: - navbar.gohtml
+2023/04/12 10:23:35 handlers.go:53: - task_list.gohtml
+2023/04/12 10:23:35 handlers.go:53: - 
+2023/04/12 10:23:35 handlers.go:53: - content
+2023/04/12 10:23:35 handlers.go:53: - about.gohtml
+2023/04/12 10:23:35 handlers.go:53: - activity.gohtml
+2023/04/12 10:23:35 handlers.go:53: - index.gohtml
+2023/04/12 10:23:35 handlers.go:53: - success.gohtml
+2023/04/12 10:23:35 handlers.go:53: - 404.gohtml
+2023/04/12 10:23:35 handlers.go:55: Exiting LoadTemplates function.

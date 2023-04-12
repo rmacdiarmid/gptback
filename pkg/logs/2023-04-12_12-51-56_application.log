@@ -1,0 +1,67 @@
+2023/04/12 12:51:56 main.go:64: Reading the database path from the config...
+2023/04/12 12:51:56 main.go:68: Read database path from config successfully
+2023/04/12 12:51:56 main.go:71: Initializing database...
+2023/04/12 12:51:56 database.go:13: Initializing database with path pkg/database/tasks.db
+2023/04/12 12:51:56 database.go:43: Database initialized successfully
+2023/04/12 12:51:56 main.go:77: Database initialized successfully
+2023/04/12 12:51:56 main.go:80: Loading environmental variables...
+2023/04/12 12:51:56 load.go:12: Starting LoadEnvFile function with path .env...
+2023/04/12 12:51:56 load.go:20: .env file opened successfully.
+2023/04/12 12:51:56 load.go:36: Environment variable CONFIG_FILE_PATH set successfully.
+2023/04/12 12:51:56 load.go:43: .env file read successfully.
+2023/04/12 12:51:56 load.go:45: Exiting LoadEnvFile function.
+2023/04/12 12:51:56 main.go:86: Environmental variables loaded successfully
+2023/04/12 12:51:56 main.go:89: Internal handlers package initialized
+2023/04/12 12:51:56 main.go:120: Starting server on :8080...
+2023/04/12 12:52:03 index.go:11: IndexHandler called
+2023/04/12 12:52:03 database.go:48: Fetching articles
+2023/04/12 12:52:03 database.go:67: Fetched article: database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}
+2023/04/12 12:52:03 database.go:67: Fetched article: database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}
+2023/04/12 12:52:03 database.go:67: Fetched article: database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}
+2023/04/12 12:52:03 database.go:76: Fetched articles: []database.Article{database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}, database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}, database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}}
+2023/04/12 12:52:03 index.go:19: Fetched articles: [{1 The Whimsical Dragon's Guide to the Meaning of Life /static/images/dragon1.jpg Once upon a time, in a land far, far away...} {2 Dragon Tales and the Meaning of Life /static/images/dragon2.jpg Dragons are known for their powerful and often misunderstood nature...} {3 The Treasure of Dragon Island and the Meaning of Life /static/images/dragon3.jpg Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons...}]
+2023/04/12 12:52:03 handlers.go:29: Starting RenderTemplateWithData function...
+2023/04/12 12:52:03 handlers.go:32: Rendering template: index.gohtml
+2023/04/12 12:52:03 handlers.go:53: Exiting RenderTemplateWithData function.
+2023/04/12 12:52:03 index.go:27: Indexhandler exited
+2023/04/12 12:52:09 index.go:11: IndexHandler called
+2023/04/12 12:52:09 database.go:48: Fetching articles
+2023/04/12 12:52:09 database.go:67: Fetched article: database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}
+2023/04/12 12:52:09 database.go:67: Fetched article: database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}
+2023/04/12 12:52:09 database.go:67: Fetched article: database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}
+2023/04/12 12:52:09 database.go:76: Fetched articles: []database.Article{database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}, database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}, database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}}
+2023/04/12 12:52:09 index.go:19: Fetched articles: [{1 The Whimsical Dragon's Guide to the Meaning of Life /static/images/dragon1.jpg Once upon a time, in a land far, far away...} {2 Dragon Tales and the Meaning of Life /static/images/dragon2.jpg Dragons are known for their powerful and often misunderstood nature...} {3 The Treasure of Dragon Island and the Meaning of Life /static/images/dragon3.jpg Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons...}]
+2023/04/12 12:52:09 handlers.go:29: Starting RenderTemplateWithData function...
+2023/04/12 12:52:09 handlers.go:32: Rendering template: index.gohtml
+2023/04/12 12:52:09 handlers.go:53: Exiting RenderTemplateWithData function.
+2023/04/12 12:52:09 index.go:27: Indexhandler exited
+2023/04/12 12:52:10 about.go:15: Starting the AboutHandler function...
+2023/04/12 12:52:10 database.go:100: Fetching all tasks
+2023/04/12 12:52:10 database.go:118: Fetched task: database.Task{ID:1, Title:"Task 1", Description:"Do something"}
+2023/04/12 12:52:10 database.go:118: Fetched task: database.Task{ID:2, Title:"Task 2", Description:"Do something else"}
+2023/04/12 12:52:10 database.go:118: Fetched task: database.Task{ID:3, Title:"I want to add something", Description:"Did it work?"}
+2023/04/12 12:52:10 database.go:127: Fetched tasks: []database.Task{database.Task{ID:1, Title:"Task 1", Description:"Do something"}, database.Task{ID:2, Title:"Task 2", Description:"Do something else"}, database.Task{ID:3, Title:"I want to add something", Description:"Did it work?"}}
+2023/04/12 12:52:10 handlers.go:29: Starting RenderTemplateWithData function...
+2023/04/12 12:52:10 handlers.go:32: Rendering template: base.gohtml
+2023/04/12 12:52:10 handlers.go:53: Exiting RenderTemplateWithData function.
+2023/04/12 12:52:10 about.go:33: Exiting the AboutHandler function.
+2023/04/12 12:52:11 contact.go:10: ContactHandler called
+2023/04/12 12:52:11 handlers.go:29: Starting RenderTemplateWithData function...
+2023/04/12 12:52:11 handlers.go:32: Rendering template: base.gohtml
+2023/04/12 12:52:11 handlers.go:53: Exiting RenderTemplateWithData function.
+2023/04/12 12:52:11 task_list_handler.go:12: Starting TaskListHandler function...
+2023/04/12 12:52:11 database.go:100: Fetching all tasks
+2023/04/12 12:52:11 database.go:118: Fetched task: database.Task{ID:1, Title:"Task 1", Description:"Do something"}
+2023/04/12 12:52:11 database.go:118: Fetched task: database.Task{ID:2, Title:"Task 2", Description:"Do something else"}
+2023/04/12 12:52:11 database.go:118: Fetched task: database.Task{ID:3, Title:"I want to add something", Description:"Did it work?"}
+2023/04/12 12:52:11 database.go:127: Fetched tasks: []database.Task{database.Task{ID:1, Title:"Task 1", Description:"Do something"}, database.Task{ID:2, Title:"Task 2", Description:"Do something else"}, database.Task{ID:3, Title:"I want to add something", Description:"Did it work?"}}
+2023/04/12 12:52:11 handlers.go:29: Starting RenderTemplateWithData function...
+2023/04/12 12:52:11 handlers.go:32: Rendering template: base.gohtml
+2023/04/12 12:52:11 handlers.go:53: Exiting RenderTemplateWithData function.
+2023/04/12 12:52:11 task_list_handler.go:30: TaskListHandler function completed successfully.
+2023/04/12 12:52:11 task_list_handler.go:31: All tasks read successfully.
+2023/04/12 12:52:12 article_generator.go:11: Starting the ArticleGeneratorHandler function...
+2023/04/12 12:52:12 handlers.go:29: Starting RenderTemplateWithData function...
+2023/04/12 12:52:12 handlers.go:32: Rendering template: base.gohtml
+2023/04/12 12:52:12 handlers.go:53: Exiting RenderTemplateWithData function.
+2023/04/12 12:52:12 article_generator.go:25: Exiting the ArticleGeneratorHandler function.

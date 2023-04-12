@@ -21,7 +21,7 @@ func ArticleGeneratorHandler(w http.ResponseWriter, r *http.Request) {
 		"ContentTemplateName": "article_generator",
 	}
 
-	RenderTemplateWithData(w, "base.gohtml", data)
+	RenderTemplateWithData(w, "base.gohtml", "article_generator.gohtml", data)
 }
 
 func GenerateArticleHandler(w http.ResponseWriter, r *http.Request) {
@@ -55,7 +55,7 @@ func GenerateArticleHandler(w http.ResponseWriter, r *http.Request) {
 		"ArticleText": articleText,
 	}
 
-	RenderTemplateWithData(w, "base.gohtml", data)
+	RenderTemplateWithData(w, "base.gohtml", "article_generator.gohtml", data)
 }
 
 func AcceptArticleHandler(w http.ResponseWriter, r *http.Request) {
@@ -92,5 +92,5 @@ func SuccessHandler(w http.ResponseWriter, r *http.Request) {
 		"ContentTemplateName": "success",
 	}
 
-	RenderTemplateWithData(w, "base.gohtml", data)
+	RenderTemplateWithData(w, "base.gohtml", "article_generator.gohtml", data)
 }

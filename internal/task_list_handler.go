@@ -24,7 +24,7 @@ func TaskListHandler(w http.ResponseWriter, r *http.Request) {
 		"Tasks": tasks,
 	}
 
-	RenderTemplateWithData(w, "base.gohtml", data)
+	RenderTemplateWithData(w, "base.gohtml", "taskListContent", data)
 
 	// Log message for successful completion of TaskListHandler function
 	logger.DualLog.Println("TaskListHandler function completed successfully.")

@@ -1,50 +1,36 @@
 package internal
 
 import (
+	"bytes"
+	"fmt"
 	"html/template"
 	"net/http"
-	"os"
-	"path/filepath"
-	"strings"
 
 	"github.com/rmacdiarmid/GPTSite/logger"
 )
 
-var templates = template.Must(template.ParseGlob("templates/*.gohtml"))
+var templates *template.Template
 
-func LoadTemplates(pattern string) {
-	logger.DualLog.Println("Starting LoadTemplates function...")
-	defer logger.DualLog.Println("Exiting LoadTemplates function.")
-
-	// Load templates
-	var allFiles []string
-	err := filepath.Walk(".", func(path string, info os.FileInfo, err error) error {
-		if err != nil {
-			return err
-		}
-		if !info.IsDir() && strings.HasSuffix(path, ".gohtml") {
-			allFiles = append(allFiles, path)
-		}
-		return nil
-	})
-	if err != nil {
-		logger.DualLog.Printf("Error walking the path %q: %v\n", pattern, err)
-		return
-	}
-
-	templates, err = template.ParseFiles(allFiles...)
-	if err != nil {
-		logger.DualLog.Printf("Error loading templates: %v\n", err)
-		return
-	}
-
-	// Log the loaded template names
-	for _, tmpl := range templates.Templates() {
-		logger.DualLog.Printf("- %s", tmpl.Name())
-	}
+type TemplateData struct {
+	Content string
+	Data    interface{}
 }
 
-func RenderTemplateWithData(w http.ResponseWriter, tmpl string, data interface{}) {
+func init() {
+	// Create a FuncMap with the custom printData function
+	var funcMap = template.FuncMap{
+		"printData": printData,
+	}
+
+	// Initialize the global templates variable with the custom function map
+	templates = template.Must(template.New("").Funcs(funcMap).ParseGlob("templates/*.gohtml"))
+}
+
+func printData(data interface{}) string {
+	return fmt.Sprintf("%+v", data)
+}
+
+func RenderTemplateWithData(w http.ResponseWriter, tmpl string, contentTemplateName string, data interface{}) {
 	logger.DualLog.Println("Starting RenderTemplateWithData function...")
 	defer logger.DualLog.Println("Exiting RenderTemplateWithData function.")
 
@@ -56,10 +42,26 @@ func RenderTemplateWithData(w http.ResponseWriter, tmpl string, data interface{}
 		logger.DualLog.Printf("- %s", t.Name())
 	}
 
-	// Render the template
-	err := templates.ExecuteTemplate(w, tmpl, data)
+	// Execute the content template and store the output in a buffer
+	var contentBuf bytes.Buffer
+	err := templates.ExecuteTemplate(&contentBuf, contentTemplateName, data)
 	if err != nil {
-		logger.DualLog.Printf("Error executing template: %v", err)
+		logger.DualLog.Printf("Error executing content template: %v", err)
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+	logger.DualLog.Printf("Content template output: %s", contentBuf.String())
+
+	// Create a TemplateData instance with the content template's output as a string
+	templateData := TemplateData{
+		Content: contentBuf.String(),
+		Data:    data,
+	}
+
+	// Render the base template with the content template's output
+	err = templates.ExecuteTemplate(w, tmpl, templateData)
+	if err != nil {
+		logger.DualLog.Printf("Error executing base template: %v", err)
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}
 }

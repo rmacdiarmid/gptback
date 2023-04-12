@@ -49,14 +49,12 @@ func init() {
 		log.Fatal("Error creating log file:", err)
 	}
 
-	//funcMap := template.FuncMap{"ExecTemplate": handlers.ExecTemplate}
-	//templates = template.Must(template.New("").Funcs(funcMap).ParseFiles("templates/base.gohtml", "templates/index.gohtml"))
-
 	// Initialize the logger with the custom dual writer
 	logger.InitLogger(f)
 
-	// Load templates
-	internal.LoadTemplates("templates/*.gohtml")
+	/* // Load templates
+	internal.LoadTemplates("templates/*.gohtml") */
+
 }
 
 func main() {

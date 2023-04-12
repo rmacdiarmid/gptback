@@ -23,5 +23,5 @@ func IndexHandler(w http.ResponseWriter, r *http.Request) {
 		"Articles":            articles,
 	}
 
-	RenderTemplateWithData(w, "base.gohtml", data) // Pass "base" instead of "templates/base"
+	RenderTemplateWithData(w, "index.gohtml", "indexContent", data) // Pass "base" instead of "templates/base"
 }
