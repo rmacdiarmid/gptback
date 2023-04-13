@@ -15,5 +15,5 @@ func ContactHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// Render the Base template with the content template name
-	RenderTemplateWithData(w, "base.gohtml", "contact.gohtml", data)
+	RenderTemplateWithData(w, "base.gohtml", "contactContent", data)
 }
