@@ -12,7 +12,7 @@ import (
 var templates *template.Template
 
 type TemplateData struct {
-	Content string
+	Content template.HTML
 	Data    interface{}
 }
 
@@ -54,7 +54,7 @@ func RenderTemplateWithData(w http.ResponseWriter, tmpl string, contentTemplateN
 
 	// Create a TemplateData instance with the content template's output as a string
 	templateData := TemplateData{
-		Content: contentBuf.String(),
+		Content: template.HTML(contentBuf.String()),
 		Data:    data,
 	}
 
