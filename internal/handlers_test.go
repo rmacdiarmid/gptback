@@ -123,3 +123,58 @@ func TestReadTaskHandler(t *testing.T) {
 		t.Errorf("ReadTaskHandler returned incorrect task: got %v, want %v", resp, task)
 	}
 }
+
+func TestUpdateTaskHandler(t *testing.T) {
+	taskTitle := "Test Task"
+	taskDescription := "This is a test task for integration testing."
+	newTaskTitle := "Updated Test Task"
+	newTaskDescription := "This is an updated test task for integration testing."
+
+	// Create a task to update
+	taskID, err := database.CreateTask(taskTitle, taskDescription)
+	if err != nil {
+		t.Fatalf("Failed to create task for testing: %v", err)
+	}
+
+	// Prepare the request body
+	updatedTask := Task{
+		ID:          taskID,
+		Title:       newTaskTitle,
+		Description: newTaskDescription,
+	}
+	reqBody, err := json.Marshal(updatedTask)
+	if err != nil {
+		t.Fatalf("Failed to marshal task JSON: %v", err)
+	}
+
+	// Create a request to update the task
+	req, err := http.NewRequest("PUT", fmt.Sprintf("/tasks/%d", taskID), bytes.NewBuffer(reqBody))
+	if err != nil {
+		t.Fatalf("Failed to create request: %v", err)
+	}
+	req = mux.SetURLVars(req, map[string]string{"id": strconv.Itoa(int(taskID))})
+
+	// Create a ResponseRecorder to record the response
+	rr := httptest.NewRecorder()
+
+	handler := http.HandlerFunc(UpdateTaskHandler)
+
+	// Call the handler
+	handler.ServeHTTP(rr, req)
+
+	// Check the status code
+	if status := rr.Code; status != http.StatusNoContent {
+		t.Errorf("UpdateTaskHandler returned wrong status code: got %v, want %v", status, http.StatusNoContent)
+	}
+
+	// Read the updated task
+	updatedTaskFromDB, err := database.ReadTask(int(taskID))
+	if err != nil {
+		t.Fatalf("Failed to read updated task: %v", err)
+	}
+
+	// Check if the task was updated correctly
+	if updatedTaskFromDB.Title != newTaskTitle || updatedTaskFromDB.Description != newTaskDescription {
+		t.Errorf("UpdateTaskHandler did not update task correctly: got %+v, want %+v", updatedTaskFromDB, updatedTask)
+	}
+}
