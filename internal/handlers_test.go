@@ -280,3 +280,112 @@ func TestPrintData(t *testing.T) {
 		t.Errorf("printData returned wrong result: got %v, want %v", result, expected)
 	}
 }
+
+func TestRenderTemplateWithData(t *testing.T) {
+	// Create a mock response writer
+	recorder := httptest.NewRecorder()
+
+	// Define a test data struct
+	type Article struct {
+		Image   string
+		Title   string
+		Preview string
+	}
+
+	testData := struct {
+		Articles []Article
+	}{
+		Articles: []Article{
+			{
+				Image:   "https://example.com/image1.jpg",
+				Title:   "Article 1",
+				Preview: "This is a preview of article 1.",
+			},
+			{
+				Image:   "https://example.com/image2.jpg",
+				Title:   "Article 2",
+				Preview: "This is a preview of article 2.",
+			},
+		},
+	}
+
+	// Render the template with the test data
+	RenderTemplateWithData(recorder, "base", "content", testData)
+
+	// Check that the response writer contains the expected output
+	expected := `<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+		<link rel="stylesheet" href="/static/css/main.css">
+		<title>myFireGPT</title>
+	</head>
+	<body>
+	  <header>
+		<div >
+			<nav class="container">
+			   <div class="logo-container">
+				  <img src="/static/images/logo.png" alt="Logo" class="logo">
+				</div>
+				<ul class="navbar">
+					<li><a href="/">Home</a></li>
+					<li><a href="/about">About</a></li>
+					<li><a href="/contact">Contact</a></li>
+					<li><a href="/task_list">Task List</a></li>
+					<li><a href="/article-generator">Article Generator</a></li>
+				</ul>
+			</nav>
+		</div>
+	  </header>
+	<div class="main-content">
+	<section class="hero">
+	<div class="hero-text-container">
+	  <div class="search-container">
+		<form class="myform">
+		  <input type="text" placeholder="Search for articles...">
+		  <button type="submit">Search</button>
+		</form>
+	  </div>
+	</div>
+  </section>
+  <div class="article-container">
+	<h2>Featured Articles</h2>
+	<div class="articles">
+	  {{range .Articles}}
+	  <div class="article">
+	  <div class="article-img-container">
+		<img src="{{.Image}}" alt="Article Image">
+	  </div>
+		<h3 class="article-title">{{.Title}}</h3>
+		<p class="article-preview">{{.Preview}}</p>
+	  </div>
+	  {{end}}
+	</div>
+  </div>
+  
+  <div id="task-list-container">
+	
+  </div>
+	</div>
+	  <footer>
+		<div class="container">
+			<p class="footer-text">&copy; MyPetGPT 2023. All rights reserved.</p>
+		</div>
+	  </footer>
+	</body>
+	</html>`
+	if recorder.Body.String() != expected {
+		t.Errorf("RenderTemplateWithData returned wrong result: got %v, want %v", recorder.Body.String(), expected)
+	}
+
+	// Render the template with the test data
+	RenderTemplateWithData(recorder, "base", "indexContent", testData)
+
+	// Print the actual output for debugging purposes
+	fmt.Printf("Actual output: %v\n", recorder.Body.String())
+
+	// Check that the response writer contains the expected output
+	// ... (rest of the code)
+}
