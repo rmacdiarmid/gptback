@@ -263,3 +263,20 @@ func TestArticlesHandler(t *testing.T) {
 		t.Errorf("ArticlesHandler did not return the test article: %v", article)
 	}
 }
+
+func TestPrintData(t *testing.T) {
+	// Define a test case
+	testData := map[string]interface{}{
+		"foo": 123,
+		"bar": "hello",
+	}
+
+	// Call the printData function
+	result := printData(testData)
+
+	// Check that the result matches the expected output
+	expected := "map[bar:hello foo:123]"
+	if result != expected {
+		t.Errorf("printData returned wrong result: got %v, want %v", result, expected)
+	}
+}
