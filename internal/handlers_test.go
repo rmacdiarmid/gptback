@@ -2,6 +2,7 @@ package internal
 
 import (
 	"bytes"
+	"database/sql"
 	"encoding/json"
 	"fmt"
 	"net/http"
@@ -176,5 +177,38 @@ func TestUpdateTaskHandler(t *testing.T) {
 	// Check if the task was updated correctly
 	if updatedTaskFromDB.Title != newTaskTitle || updatedTaskFromDB.Description != newTaskDescription {
 		t.Errorf("UpdateTaskHandler did not update task correctly: got %+v, want %+v", updatedTaskFromDB, updatedTask)
+	}
+}
+
+func TestDeleteTaskHandler(t *testing.T) {
+	// Create a task to be deleted
+	task := database.Task{
+		Title:       "Test Task",
+		Description: "This is a test task for integration testing.",
+	}
+	taskID, err := database.CreateTask(task.Title, task.Description)
+	if err != nil {
+		t.Fatalf("Failed to create task for testing: %v", err)
+	}
+
+	// Create a request
+	req, err := http.NewRequest("DELETE", fmt.Sprintf("/tasks/%d", taskID), nil)
+	req = mux.SetURLVars(req, map[string]string{"id": strconv.Itoa(int(taskID))})
+
+	// Create a ResponseRecorder to record the response
+	rr := httptest.NewRecorder()
+
+	// Call the DeleteTaskHandler with the request and ResponseRecorder
+	DeleteTaskHandler(rr, req)
+
+	// Check the status code
+	if status := rr.Code; status != http.StatusNoContent {
+		t.Errorf("DeleteTaskHandler returned wrong status code: got %v, want %v", status, http.StatusNoContent)
+	}
+
+	// Try to read the deleted task
+	_, err = database.ReadTask(int(taskID))
+	if err != sql.ErrNoRows {
+		t.Errorf("DeleteTaskHandler did not delete task: task with ID %d still exists", taskID)
 	}
 }
