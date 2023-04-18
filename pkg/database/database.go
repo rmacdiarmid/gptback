@@ -44,58 +44,6 @@ func InitDB(dbPath string) (*sql.DB, error) {
 	return DB, nil
 }
 
-func GetArticles() ([]Article, error) {
-	logger.DualLog.Printf("Fetching articles")
-
-	rows, err := DB.Query("SELECT id, title, image, preview FROM articles")
-	if err != nil {
-		logger.DualLog.Printf("Error fetching articles: %s", err.Error())
-		return nil, err
-	}
-	defer rows.Close()
-
-	var articles []Article
-	for rows.Next() {
-		var article Article
-		err := rows.Scan(&article.ID, &article.Title, &article.Image, &article.Preview)
-		if err != nil {
-			logger.DualLog.Printf("Error scanning article: %s", err.Error())
-			return nil, err
-		}
-		articles = append(articles, article)
-
-		logger.DualLog.Printf("Fetched article: %#v", article)
-	}
-
-	err = rows.Err()
-	if err != nil {
-		logger.DualLog.Printf("Error iterating through rows: %s", err.Error())
-		return nil, err
-	}
-
-	logger.DualLog.Printf("Fetched articles: %#v", articles)
-	return articles, nil
-}
-
-func InsertArticle(title, image, preview string) (int64, error) {
-	logger.DualLog.Printf("Inserting article with title: %s, image: %s, preview: %s", title, image, preview)
-
-	result, err := DB.Exec("INSERT INTO articles(title, image, preview) VALUES (?, ?, ?)", title, image, preview)
-	if err != nil {
-		logger.DualLog.Printf("Error inserting article: %s", err.Error())
-		return 0, err
-	}
-
-	id, err := result.LastInsertId()
-	if err != nil {
-		logger.DualLog.Printf("Error getting last insert id: %s", err.Error())
-		return 0, err
-	}
-
-	logger.DualLog.Printf("Inserted article with ID: %d, title: %s, image: %s, preview: %s", id, title, image, preview)
-	return id, nil
-}
-
 func ReadAllTasks() ([]Task, error) {
 	logger.DualLog.Printf("Fetching all tasks")
 	rows, err := DB.Query("SELECT id, title, description FROM tasks")
@@ -247,4 +195,80 @@ func DeleteArticle(id int64) error {
 	}
 
 	return nil
+}
+
+// database.go
+
+// UpdateArticle updates an existing article with the given ID and returns the updated article
+func UpdateArticle(id int64, title, image, preview string) (*Article, error) {
+	// Replace this with your own implementation to update the article in the database
+	stmt, err := DB.Prepare("UPDATE articles SET title=?, image=?, preview=? WHERE id=?")
+	if err != nil {
+		return nil, err
+	}
+
+	_, err = stmt.Exec(title, image, preview, id)
+	if err != nil {
+		return nil, err
+	}
+
+	updatedArticle, err := ReadArticle(id)
+	if err != nil {
+		return nil, err
+	}
+
+	return &updatedArticle, nil
+
+}
+
+func GetArticles() ([]Article, error) {
+	logger.DualLog.Printf("Fetching articles")
+
+	rows, err := DB.Query("SELECT id, title, image, preview FROM articles")
+	if err != nil {
+		logger.DualLog.Printf("Error fetching articles: %s", err.Error())
+		return nil, err
+	}
+	defer rows.Close()
+
+	var articles []Article
+	for rows.Next() {
+		var article Article
+		err := rows.Scan(&article.ID, &article.Title, &article.Image, &article.Preview)
+		if err != nil {
+			logger.DualLog.Printf("Error scanning article: %s", err.Error())
+			return nil, err
+		}
+		articles = append(articles, article)
+
+		logger.DualLog.Printf("Fetched article: %#v", article)
+	}
+
+	err = rows.Err()
+	if err != nil {
+		logger.DualLog.Printf("Error iterating through rows: %s", err.Error())
+		return nil, err
+	}
+
+	logger.DualLog.Printf("Fetched articles: %#v", articles)
+	return articles, nil
+}
+
+func InsertArticle(title, image, preview string) (int64, error) {
+	logger.DualLog.Printf("Inserting article with title: %s, image: %s, preview: %s", title, image, preview)
+
+	result, err := DB.Exec("INSERT INTO articles(title, image, preview) VALUES (?, ?, ?)", title, image, preview)
+	if err != nil {
+		logger.DualLog.Printf("Error inserting article: %s", err.Error())
+		return 0, err
+	}
+
+	id, err := result.LastInsertId()
+	if err != nil {
+		logger.DualLog.Printf("Error getting last insert id: %s", err.Error())
+		return 0, err
+	}
+
+	logger.DualLog.Printf("Inserted article with ID: %d, title: %s, image: %s, preview: %s", id, title, image, preview)
+	return id, nil
 }

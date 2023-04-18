@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"reflect"
 	"testing"
 
 	"github.com/graphql-go/graphql"
@@ -117,4 +118,95 @@ func TestGraphQLArticlesQuery(t *testing.T) {
 			t.Errorf("Article data does not match: expected %+v, got %+v", articles[i], articleMap)
 		}
 	}
+}
+
+func TestGraphQLCreateArticleMutation(t *testing.T) {
+	mutation := `
+        mutation {
+            createArticle(title: "New Test Article", image: "new-test-image.jpg", preview: "This is a new test article") {
+                id
+                title
+                image
+                preview
+            }
+        }
+    `
+
+	params := graphql.Params{Schema: graphqlschema.Schema, RequestString: mutation}
+	result := graphql.Do(params)
+	if len(result.Errors) > 0 {
+		t.Fatalf("Failed to execute GraphQL mutation: %v", result.Errors)
+	}
+
+	expected := map[string]interface{}{
+		"title":   "New Test Article",
+		"image":   "new-test-image.jpg",
+		"preview": "This is a new test article",
+	}
+
+	data, ok := result.Data.(map[string]interface{})
+	if !ok {
+		t.Fatal("Failed to type assert result.Data to map[string]interface{}")
+	}
+
+	actual := data["createArticle"].(map[string]interface{})
+	delete(actual, "id")
+
+	if !reflect.DeepEqual(actual, expected) {
+		t.Errorf("GraphQL mutation result doesn't match expected output\nexpected: %v\nactual: %v", expected, actual)
+	}
+}
+
+func TestGraphQLUpdateArticleMutation(t *testing.T) {
+	articleID, err := database.CreateArticle("Test title", "Test image", "Test preview")
+	assert.Nil(t, err, "Failed to create test article")
+
+	mutation := fmt.Sprintf(`
+		mutation {
+			updateArticle(id: %d, title: "Updated Test Article", image: "updated-test-image.jpg", preview: "This is an updated test article") {
+				id
+				title
+				image
+				preview
+			}
+		}
+	`, articleID)
+
+	params := graphql.Params{Schema: graphqlschema.Schema, RequestString: mutation}
+	result := graphql.Do(params)
+
+	assert.Empty(t, result.Errors, "GraphQL mutation returned errors")
+
+	expected := map[string]interface{}{
+		"updateArticle": map[string]interface{}{
+			"id":      6,
+			"title":   "Updated Test Article",
+			"image":   "updated-test-image.jpg",
+			"preview": "This is an updated test article",
+		},
+	}
+
+	assert.Equal(t, expected, result.Data, "GraphQL mutation result doesn't match expected output")
+}
+
+func TestGraphQLDeleteArticleMutation(t *testing.T) {
+	articleID, err := database.CreateArticle("Test title", "Test image", "Test preview")
+	assert.Nil(t, err, "Failed to create test article")
+
+	mutation := fmt.Sprintf(`
+		mutation {
+			deleteArticle(id: %d)
+		}
+	`, articleID)
+
+	params := graphql.Params{Schema: graphqlschema.Schema, RequestString: mutation}
+	result := graphql.Do(params)
+
+	assert.Empty(t, result.Errors, "GraphQL mutation returned errors")
+
+	expected := map[string]interface{}{
+		"deleteArticle": true,
+	}
+
+	assert.Equal(t, expected, result.Data, "GraphQL mutation result doesn't match expected output")
 }
