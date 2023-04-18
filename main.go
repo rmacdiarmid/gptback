@@ -11,6 +11,9 @@ import (
 
 	"github.com/gorilla/handlers"
 	"github.com/gorilla/mux"
+	"github.com/graphql-go/graphql"
+	"github.com/graphql-go/handler"
+	"github.com/rmacdiarmid/GPTSite/graphqlschema"
 	"github.com/rmacdiarmid/GPTSite/internal"
 	"github.com/rmacdiarmid/GPTSite/logger"
 	"github.com/rmacdiarmid/GPTSite/pkg/database"
@@ -53,9 +56,6 @@ func init() {
 
 	// Initialize the logger with the custom dual writer
 	logger.InitLogger(f)
-
-	/* // Load templates
-	internal.LoadTemplates("templates/*.gohtml") */
 
 	// Modify the server starting code inside the main() function
 
@@ -119,8 +119,23 @@ func main() {
 	// Add the logger usage that was removed from the handlers package
 	logger.DualLog.Println("Internal handlers package initialized")
 
+	// GraphQL schema
+	schema, _ := graphql.NewSchema(graphql.SchemaConfig{
+		Query: graphqlschema.Query,
+	})
+
+	// GraphQL handler
+	h := handler.New(&handler.Config{
+		Schema:   &schema,
+		Pretty:   true,
+		GraphiQL: true,
+	})
+
 	// Create the router and add the routes
 	r := mux.NewRouter()
+
+	// GraphQL Router
+	r.Handle("/graphql", h)
 
 	// Task CRUD handlers
 	r.HandleFunc("/tasks", internal.CreateTaskHandler).Methods("POST")

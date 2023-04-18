@@ -219,3 +219,32 @@ func CreateArticle(title, image, preview string) (int64, error) {
 	logger.DualLog.Printf("Created article with ID: %d, title: %s, image: %s, preview: %s", id, title, image, preview)
 	return id, nil
 }
+
+func ReadArticle(id int64) (Article, error) {
+	logger.DualLog.Printf("Reading article with ID: %d", id)
+
+	var article Article
+	err := DB.QueryRow("SELECT id, title, image, preview FROM articles WHERE id = ?", id).Scan(&article.ID, &article.Title, &article.Image, &article.Preview)
+	if err != nil {
+		logger.DualLog.Printf("Error reading article: %s", err.Error())
+		return Article{}, err
+	}
+
+	logger.DualLog.Printf("Read article with ID: %d, title: %s, image: %s, preview: %s", id, article.Title, article.Image, article.Preview)
+	return article, nil
+}
+
+func DeleteArticle(id int64) error {
+	stmt, err := DB.Prepare("DELETE FROM articles WHERE id = ?")
+	if err != nil {
+		return err
+	}
+	defer stmt.Close()
+
+	_, err = stmt.Exec(id)
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
