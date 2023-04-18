@@ -212,3 +212,54 @@ func TestDeleteTaskHandler(t *testing.T) {
 		t.Errorf("DeleteTaskHandler did not delete task: task with ID %d still exists", taskID)
 	}
 }
+
+func TestArticlesHandler(t *testing.T) {
+	// Create an article to be retrieved
+	article := database.Article{
+		Title:   "Test Article",
+		Image:   "test_image.jpg",
+		Preview: "This is a test article for integration testing.",
+	}
+
+	_, err := database.CreateArticle(article.Title, article.Image, article.Preview)
+	if err != nil {
+		t.Fatalf("Failed to create article for testing: %v", err)
+	}
+
+	// Create a request
+	req, err := http.NewRequest("GET", "/articles", nil)
+	if err != nil {
+		t.Fatalf("Failed to create request: %v", err)
+	}
+
+	// Create a ResponseRecorder to record the response
+	rr := httptest.NewRecorder()
+
+	// Call the ArticlesHandler with the request and ResponseRecorder
+	ArticlesHandler(rr, req)
+
+	// Check the status code
+	if status := rr.Code; status != http.StatusOK {
+		t.Errorf("ArticlesHandler returned wrong status code: got %v, want %v", status, http.StatusOK)
+	}
+
+	// Check the response body
+	var resp []map[string]interface{}
+	err = json.Unmarshal(rr.Body.Bytes(), &resp)
+	if err != nil {
+		t.Fatalf("Failed to parse response body: %v", err)
+	}
+
+	// Find the article in the response
+	found := false
+	for _, a := range resp {
+		if a["Title"] == article.Title && a["Image"] == article.Image && a["Preview"] == article.Preview {
+			found = true
+			break
+		}
+	}
+
+	if !found {
+		t.Errorf("ArticlesHandler did not return the test article: %v", article)
+	}
+}

@@ -200,3 +200,22 @@ func ReadTask(id int) (Task, error) {
 	logger.DualLog.Printf("Read task with ID: %d, title: %s, description: %s", id, task.Title, task.Description)
 	return task, nil
 }
+
+func CreateArticle(title, image, preview string) (int64, error) {
+	logger.DualLog.Printf("Creating article with title: %s, image: %s, preview: %s", title, image, preview)
+
+	result, err := DB.Exec("INSERT INTO articles(title, image, preview) VALUES (?, ?, ?)", title, image, preview)
+	if err != nil {
+		logger.DualLog.Printf("Error creating article: %s", err.Error())
+		return 0, err
+	}
+
+	id, err := result.LastInsertId()
+	if err != nil {
+		logger.DualLog.Printf("Error getting last insert id: %s", err.Error())
+		return 0, err
+	}
+
+	logger.DualLog.Printf("Created article with ID: %d, title: %s, image: %s, preview: %s", id, title, image, preview)
+	return id, nil
+}
