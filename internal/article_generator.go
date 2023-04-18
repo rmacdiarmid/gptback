@@ -18,10 +18,10 @@ func ArticleGeneratorHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	data := map[string]interface{}{
-		"ContentTemplateName": "article_generator",
+		"ContentTemplateName": "articleGeneratorContent",
 	}
 
-	RenderTemplateWithData(w, "base.gohtml", data)
+	RenderTemplateWithData(w, "base.gohtml", "articleGeneratorContent", data)
 }
 
 func GenerateArticleHandler(w http.ResponseWriter, r *http.Request) {
@@ -55,7 +55,7 @@ func GenerateArticleHandler(w http.ResponseWriter, r *http.Request) {
 		"ArticleText": articleText,
 	}
 
-	RenderTemplateWithData(w, "base.gohtml", data)
+	RenderTemplateWithData(w, "base.gohtml", "articleGeneratorContent", data)
 }
 
 func AcceptArticleHandler(w http.ResponseWriter, r *http.Request) {
@@ -92,5 +92,5 @@ func SuccessHandler(w http.ResponseWriter, r *http.Request) {
 		"ContentTemplateName": "success",
 	}
 
-	RenderTemplateWithData(w, "base.gohtml", data)
+	RenderTemplateWithData(w, "base.gohtml", "articleGeneratorContent", data)
 }

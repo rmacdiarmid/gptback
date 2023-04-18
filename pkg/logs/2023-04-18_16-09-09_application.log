@@ -1,0 +1,27 @@
+2023/04/18 16:09:09 database.go:13: Initializing database with path :memory:
+2023/04/18 16:09:09 database.go:43: Database initialized successfully
+2023/04/18 16:09:09 database.go:153: Creating article with title: Test title, image: Test image, preview: Test preview
+2023/04/18 16:09:09 database.go:167: Created article with ID: 1, title: Test title, image: Test image, preview: Test preview
+2023/04/18 16:09:09 database.go:172: Reading article with ID: 1
+2023/04/18 16:09:09 database.go:181: Read article with ID: 1, title: Test title, image: Test image, preview: Test preview
+2023/04/18 16:09:09 database.go:153: Creating article with title: Test Article 1, image: test-image-1.jpg, preview: This is test article 1
+2023/04/18 16:09:09 database.go:167: Created article with ID: 2, title: Test Article 1, image: test-image-1.jpg, preview: This is test article 1
+2023/04/18 16:09:09 database.go:153: Creating article with title: Test Article 2, image: test-image-2.jpg, preview: This is test article 2
+2023/04/18 16:09:09 database.go:167: Created article with ID: 3, title: Test Article 2, image: test-image-2.jpg, preview: This is test article 2
+2023/04/18 16:09:09 database.go:153: Creating article with title: Test Article 3, image: test-image-3.jpg, preview: This is test article 3
+2023/04/18 16:09:09 database.go:167: Created article with ID: 4, title: Test Article 3, image: test-image-3.jpg, preview: This is test article 3
+2023/04/18 16:09:09 database.go:225: Fetching articles
+2023/04/18 16:09:09 database.go:244: Fetched article: database.Article{ID:2, Title:"Test Article 1", Image:"test-image-1.jpg", Preview:"This is test article 1"}
+2023/04/18 16:09:09 database.go:244: Fetched article: database.Article{ID:3, Title:"Test Article 2", Image:"test-image-2.jpg", Preview:"This is test article 2"}
+2023/04/18 16:09:09 database.go:244: Fetched article: database.Article{ID:4, Title:"Test Article 3", Image:"test-image-3.jpg", Preview:"This is test article 3"}
+2023/04/18 16:09:09 database.go:253: Fetched articles: []database.Article{database.Article{ID:2, Title:"Test Article 1", Image:"test-image-1.jpg", Preview:"This is test article 1"}, database.Article{ID:3, Title:"Test Article 2", Image:"test-image-2.jpg", Preview:"This is test article 2"}, database.Article{ID:4, Title:"Test Article 3", Image:"test-image-3.jpg", Preview:"This is test article 3"}}
+2023/04/18 16:09:09 database.go:153: Creating article with title: New Test Article, image: new-test-image.jpg, preview: This is a new test article
+2023/04/18 16:09:09 database.go:167: Created article with ID: 5, title: New Test Article, image: new-test-image.jpg, preview: This is a new test article
+2023/04/18 16:09:09 database.go:172: Reading article with ID: 5
+2023/04/18 16:09:09 database.go:181: Read article with ID: 5, title: New Test Article, image: new-test-image.jpg, preview: This is a new test article
+2023/04/18 16:09:09 database.go:153: Creating article with title: Test title, image: Test image, preview: Test preview
+2023/04/18 16:09:09 database.go:167: Created article with ID: 6, title: Test title, image: Test image, preview: Test preview
+2023/04/18 16:09:09 database.go:172: Reading article with ID: 6
+2023/04/18 16:09:09 database.go:181: Read article with ID: 6, title: Updated Test Article, image: updated-test-image.jpg, preview: This is an updated test article
+2023/04/18 16:09:09 database.go:153: Creating article with title: Test title, image: Test image, preview: Test preview
+2023/04/18 16:09:09 database.go:167: Created article with ID: 7, title: Test title, image: Test image, preview: Test preview

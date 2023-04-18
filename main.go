@@ -9,10 +9,15 @@ import (
 	"path/filepath"
 	"time"
 
+	"github.com/gorilla/handlers"
 	"github.com/gorilla/mux"
+	"github.com/graphql-go/graphql"
+	"github.com/graphql-go/handler"
+	"github.com/rmacdiarmid/GPTSite/graphqlschema"
 	"github.com/rmacdiarmid/GPTSite/internal"
 	"github.com/rmacdiarmid/GPTSite/logger"
 	"github.com/rmacdiarmid/GPTSite/pkg/database"
+	"github.com/rmacdiarmid/GPTSite/pkg/storage"
 	"github.com/spf13/viper"
 )
 
@@ -49,18 +54,42 @@ func init() {
 		log.Fatal("Error creating log file:", err)
 	}
 
-	//funcMap := template.FuncMap{"ExecTemplate": handlers.ExecTemplate}
-	//templates = template.Must(template.New("").Funcs(funcMap).ParseFiles("templates/base.gohtml", "templates/index.gohtml"))
-
 	// Initialize the logger with the custom dual writer
 	logger.InitLogger(f)
 
-	// Load templates
-	internal.LoadTemplates("templates/*.gohtml")
+	// Modify the server starting code inside the main() function
+
 }
 
 func main() {
 	var err error
+	corsMiddleware := handlers.CORS(
+		handlers.AllowedOrigins([]string{"*"}),
+		handlers.AllowedMethods([]string{"GET", "POST", "PUT", "DELETE"}),
+		handlers.AllowedHeaders([]string{"Content-Type", "Authorization"}),
+	)
+
+	//fileStorage
+	useS3 := viper.GetBool("storage.useS3")
+	var fileStorage storage.FileStorage
+	if useS3 {
+		region := viper.GetString("storage.region")
+		bucket := viper.GetString("storage.bucket")
+		s3Storage, err := storage.NewS3FileStorage(region, bucket)
+		if err != nil {
+			logger.DualLog.Fatalf("Failed to initialize S3 file storage: %v", err)
+		}
+		fileStorage = s3Storage
+	} else {
+		basePath := viper.GetString("storage.basePath")
+		fileStorage = &storage.LocalFileStorage{BasePath: basePath}
+	}
+
+	http.HandleFunc("/static/", func(w http.ResponseWriter, r *http.Request) {
+		internal.HandleFile(fileStorage, w, r)
+	})
+
+	// Use the 'fileStorage' variable throughout your code to get file URLs.
 
 	// Use logger.DualLog instead of the previously used dualLog variable
 	logger.DualLog.Println("Reading the database path from the config...")
@@ -90,8 +119,23 @@ func main() {
 	// Add the logger usage that was removed from the handlers package
 	logger.DualLog.Println("Internal handlers package initialized")
 
+	// GraphQL schema
+	schema, _ := graphql.NewSchema(graphql.SchemaConfig{
+		Query: graphqlschema.Query,
+	})
+
+	// GraphQL handler
+	h := handler.New(&handler.Config{
+		Schema:   &schema,
+		Pretty:   true,
+		GraphiQL: true,
+	})
+
 	// Create the router and add the routes
 	r := mux.NewRouter()
+
+	// GraphQL Router
+	r.Handle("/graphql", h)
 
 	// Task CRUD handlers
 	r.HandleFunc("/tasks", internal.CreateTaskHandler).Methods("POST")
@@ -111,6 +155,7 @@ func main() {
 	r.HandleFunc("/generate-article", internal.GenerateArticleHandler)
 	r.HandleFunc("/accept-article", internal.AcceptArticleHandler)
 	r.HandleFunc("/article-generator", internal.ArticleGeneratorHandler)
+	r.HandleFunc("/api/articles", internal.ArticlesHandler).Methods("GET")
 
 	r.NotFoundHandler = http.HandlerFunc(internal.NotFoundHandler)
 
@@ -120,7 +165,7 @@ func main() {
 
 	// Start the server
 	logger.DualLog.Println("Starting server on :8080...")
-	if err := http.ListenAndServe(":8080", r); err != nil {
+	if err := http.ListenAndServe(":8080", corsMiddleware(r)); err != nil {
 		logger.DualLog.Fatalf("Error starting server: %s", err)
 	}
 }

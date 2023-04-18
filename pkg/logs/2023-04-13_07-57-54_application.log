@@ -1,0 +1,191 @@
+2023/04/13 07:57:54 main.go:64: Reading the database path from the config...
+2023/04/13 07:57:54 main.go:68: Read database path from config successfully
+2023/04/13 07:57:54 main.go:71: Initializing database...
+2023/04/13 07:57:54 database.go:13: Initializing database with path pkg/database/tasks.db
+2023/04/13 07:57:54 database.go:43: Database initialized successfully
+2023/04/13 07:57:54 main.go:77: Database initialized successfully
+2023/04/13 07:57:54 main.go:80: Loading environmental variables...
+2023/04/13 07:57:54 load.go:12: Starting LoadEnvFile function with path .env...
+2023/04/13 07:57:54 load.go:20: .env file opened successfully.
+2023/04/13 07:57:54 load.go:36: Environment variable CONFIG_FILE_PATH set successfully.
+2023/04/13 07:57:54 load.go:43: .env file read successfully.
+2023/04/13 07:57:54 load.go:45: Exiting LoadEnvFile function.
+2023/04/13 07:57:54 main.go:86: Environmental variables loaded successfully
+2023/04/13 07:57:54 main.go:89: Internal handlers package initialized
+2023/04/13 07:57:54 main.go:120: Starting server on :8080...
+2023/04/13 07:57:56 task_list_handler.go:12: Starting TaskListHandler function...
+2023/04/13 07:57:56 database.go:100: Fetching all tasks
+2023/04/13 07:57:56 database.go:118: Fetched task: database.Task{ID:1, Title:"Task 1", Description:"Do something"}
+2023/04/13 07:57:56 database.go:118: Fetched task: database.Task{ID:2, Title:"Task 2", Description:"Do something else"}
+2023/04/13 07:57:56 database.go:118: Fetched task: database.Task{ID:3, Title:"I want to add something", Description:"Did it work?"}
+2023/04/13 07:57:56 database.go:127: Fetched tasks: []database.Task{database.Task{ID:1, Title:"Task 1", Description:"Do something"}, database.Task{ID:2, Title:"Task 2", Description:"Do something else"}, database.Task{ID:3, Title:"I want to add something", Description:"Did it work?"}}
+2023/04/13 07:57:56 handlers.go:34: Starting RenderTemplateWithData function...
+2023/04/13 07:57:56 handlers.go:37: Rendering template: base.gohtml
+2023/04/13 07:57:56 handlers.go:40: Global templates variable contains the following templates:
+2023/04/13 07:57:56 handlers.go:42: - 404.gohtml
+2023/04/13 07:57:56 handlers.go:42: - about.gohtml
+2023/04/13 07:57:56 handlers.go:42: - aboutContent
+2023/04/13 07:57:56 handlers.go:42: - activityContent
+2023/04/13 07:57:56 handlers.go:42: - base.gohtml
+2023/04/13 07:57:56 handlers.go:42: - contact.gohtml
+2023/04/13 07:57:56 handlers.go:42: - 
+2023/04/13 07:57:56 handlers.go:42: - activity.gohtml
+2023/04/13 07:57:56 handlers.go:42: - success.gohtml
+2023/04/13 07:57:56 handlers.go:42: - successContent
+2023/04/13 07:57:56 handlers.go:42: - task_list.gohtml
+2023/04/13 07:57:56 handlers.go:42: - taskListContent
+2023/04/13 07:57:56 handlers.go:42: - 404Content
+2023/04/13 07:57:56 handlers.go:42: - article_generator.gohtml
+2023/04/13 07:57:56 handlers.go:42: - articleGeneratorContent
+2023/04/13 07:57:56 handlers.go:42: - contactContent
+2023/04/13 07:57:56 handlers.go:42: - index.gohtml
+2023/04/13 07:57:56 handlers.go:42: - indexContent
+2023/04/13 07:57:56 handlers.go:53: Content template output: 
+  <div class="container">
+    <form id="taskForm" class="form-container">
+      <h1>Add a Task</h1>
+      <div class="form-element">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" required>
+      </div>
+      <div class="form-element">
+        <label for="description" rows="4">Description:</label>
+        <textarea id="description" rows="4" name="description" required></textarea>
+      </div>
+      <div class="form-element">
+        <button type="submit" class="submit-button">Submit</button>
+      </div>
+    </form>
+    <div class="row">
+      <div class="column column-8">
+        <h1>Task List</h1>
+        <div class="table-container">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>1</td>
+                  <td>Task 1</td>
+                  <td>Do something</td>
+                </tr>
+              
+                <tr>
+                  <td>2</td>
+                  <td>Task 2</td>
+                  <td>Do something else</td>
+                </tr>
+              
+                <tr>
+                  <td>3</td>
+                  <td>I want to add something</td>
+                  <td>Did it work?</td>
+                </tr>
+              
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="column column-4">
+        <h1>Recent Activity</h1>
+        <ul id="recent-activity"></ul>
+      </div>
+    </div>
+  </div>
+2023/04/13 07:57:56 handlers.go:67: Exiting RenderTemplateWithData function.
+2023/04/13 07:57:56 task_list_handler.go:30: TaskListHandler function completed successfully.
+2023/04/13 07:57:56 task_list_handler.go:31: All tasks read successfully.
+2023/04/13 07:57:58 task_list_handler.go:12: Starting TaskListHandler function...
+2023/04/13 07:57:58 database.go:100: Fetching all tasks
+2023/04/13 07:57:58 database.go:118: Fetched task: database.Task{ID:1, Title:"Task 1", Description:"Do something"}
+2023/04/13 07:57:58 database.go:118: Fetched task: database.Task{ID:2, Title:"Task 2", Description:"Do something else"}
+2023/04/13 07:57:58 database.go:118: Fetched task: database.Task{ID:3, Title:"I want to add something", Description:"Did it work?"}
+2023/04/13 07:57:58 database.go:127: Fetched tasks: []database.Task{database.Task{ID:1, Title:"Task 1", Description:"Do something"}, database.Task{ID:2, Title:"Task 2", Description:"Do something else"}, database.Task{ID:3, Title:"I want to add something", Description:"Did it work?"}}
+2023/04/13 07:57:58 handlers.go:34: Starting RenderTemplateWithData function...
+2023/04/13 07:57:58 handlers.go:37: Rendering template: base.gohtml
+2023/04/13 07:57:58 handlers.go:40: Global templates variable contains the following templates:
+2023/04/13 07:57:58 handlers.go:42: - contactContent
+2023/04/13 07:57:58 handlers.go:42: - index.gohtml
+2023/04/13 07:57:58 handlers.go:42: - indexContent
+2023/04/13 07:57:58 handlers.go:42: - activityContent
+2023/04/13 07:57:58 handlers.go:42: - base.gohtml
+2023/04/13 07:57:58 handlers.go:42: - contact.gohtml
+2023/04/13 07:57:58 handlers.go:42: - 404.gohtml
+2023/04/13 07:57:58 handlers.go:42: - about.gohtml
+2023/04/13 07:57:58 handlers.go:42: - aboutContent
+2023/04/13 07:57:58 handlers.go:42: - successContent
+2023/04/13 07:57:58 handlers.go:42: - task_list.gohtml
+2023/04/13 07:57:58 handlers.go:42: - taskListContent
+2023/04/13 07:57:58 handlers.go:42: - 
+2023/04/13 07:57:58 handlers.go:42: - activity.gohtml
+2023/04/13 07:57:58 handlers.go:42: - success.gohtml
+2023/04/13 07:57:58 handlers.go:42: - 404Content
+2023/04/13 07:57:58 handlers.go:42: - article_generator.gohtml
+2023/04/13 07:57:58 handlers.go:42: - articleGeneratorContent
+2023/04/13 07:57:58 handlers.go:53: Content template output: 
+  <div class="container">
+    <form id="taskForm" class="form-container">
+      <h1>Add a Task</h1>
+      <div class="form-element">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" required>
+      </div>
+      <div class="form-element">
+        <label for="description" rows="4">Description:</label>
+        <textarea id="description" rows="4" name="description" required></textarea>
+      </div>
+      <div class="form-element">
+        <button type="submit" class="submit-button">Submit</button>
+      </div>
+    </form>
+    <div class="row">
+      <div class="column column-8">
+        <h1>Task List</h1>
+        <div class="table-container">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>1</td>
+                  <td>Task 1</td>
+                  <td>Do something</td>
+                </tr>
+              
+                <tr>
+                  <td>2</td>
+                  <td>Task 2</td>
+                  <td>Do something else</td>
+                </tr>
+              
+                <tr>
+                  <td>3</td>
+                  <td>I want to add something</td>
+                  <td>Did it work?</td>
+                </tr>
+              
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="column column-4">
+        <h1>Recent Activity</h1>
+        <ul id="recent-activity"></ul>
+      </div>
+    </div>
+  </div>
+2023/04/13 07:57:58 handlers.go:67: Exiting RenderTemplateWithData function.
+2023/04/13 07:57:58 task_list_handler.go:30: TaskListHandler function completed successfully.
+2023/04/13 07:57:58 task_list_handler.go:31: All tasks read successfully.

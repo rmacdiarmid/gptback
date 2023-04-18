@@ -1,0 +1,4 @@
+2023/04/18 12:46:10 database.go:13: Initializing database with path /pkg/database/tasks.db
+2023/04/18 12:46:10 database.go:23: Error pinging database: unable to open database file: no such file or directory
+2023/04/18 12:46:10 database.go:205: Creating article with title: Test title, image: Test image, preview: Test preview
+2023/04/18 12:46:10 database.go:209: Error creating article: unable to open database file: no such file or directory

@@ -3,6 +3,7 @@ package internal
 import (
 	"database/sql"
 	"encoding/json"
+	"log"
 	"net/http"
 	"strconv"
 
@@ -36,6 +37,7 @@ func CreateTaskHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	task.ID = id
+	w.WriteHeader(http.StatusCreated)
 	json.NewEncoder(w).Encode(task)
 
 	logger.DualLog.Println("CreateTaskHandler function completed successfully.")
@@ -69,39 +71,31 @@ func ReadTaskHandler(w http.ResponseWriter, r *http.Request) {
 	logger.DualLog.Println("ReadTaskHandler function completed successfully.")
 }
 
-func UpdateTaskHandler(w http.ResponseWriter, r *http.Request) {
-	logger.DualLog.Println("Starting UpdateTaskHandler function...")
+func UpdateTaskHandler(w http.ResponseWriter, req *http.Request) {
+	log.Println("Starting UpdateTaskHandler function...")
 
-	// Extract task ID from request URL
-	vars := mux.Vars(r)
-	id, err := strconv.Atoi(vars["id"])
+	id, err := strconv.Atoi(mux.Vars(req)["id"])
 	if err != nil {
-		logger.DualLog.Printf("Error converting ID to integer: %v", err)
+		log.Printf("Error converting ID to integer: %v", err)
+		http.Error(w, "Invalid task ID", http.StatusBadRequest)
+		return
+	}
+
+	var task Task
+	err = json.NewDecoder(req.Body).Decode(&task)
+	if err != nil {
 		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
 	}
 
-	// Decode JSON request body into task object
-	var updatedTask Task
-	err = json.NewDecoder(r.Body).Decode(&updatedTask)
+	err = database.UpdateTask(database.DB, id, task.Title, task.Description)
 	if err != nil {
-		logger.DualLog.Printf("Error decoding JSON request body: %v", err)
-		http.Error(w, err.Error(), http.StatusBadRequest)
-		return
-	}
-
-	// Call database.UpdateTask to update the task
-	err = database.UpdateTask(database.DB, id, updatedTask.Title, updatedTask.Description)
-	if err != nil {
-		logger.DualLog.Printf("Error updating task: %v", err)
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
 
-	// Send a success response
 	w.WriteHeader(http.StatusNoContent)
-
-	logger.DualLog.Println("UpdateTaskHandler function completed successfully.")
+	log.Println("UpdateTaskHandler function completed successfully.")
 }
 
 func DeleteTaskHandler(w http.ResponseWriter, r *http.Request) {

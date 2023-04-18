@@ -17,5 +17,5 @@ func NotFoundHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// Call the function without using the result as a value
-	RenderTemplateWithData(w, "base.gohtml", data)
+	RenderTemplateWithData(w, "base.gohtml", "404.gohtml", data)
 }

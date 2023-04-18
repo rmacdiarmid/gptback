@@ -1,50 +1,61 @@
 package internal
 
 import (
+	"bytes"
+	"encoding/json"
+	"fmt"
 	"html/template"
+	"log"
 	"net/http"
 	"os"
 	"path/filepath"
 	"strings"
+	"time"
 
 	"github.com/rmacdiarmid/GPTSite/logger"
+	"github.com/rmacdiarmid/GPTSite/pkg/database"
+	"github.com/rmacdiarmid/GPTSite/pkg/storage"
 )
 
-var templates = template.Must(template.ParseGlob("templates/*.gohtml"))
+var templates *template.Template
 
-func LoadTemplates(pattern string) {
-	logger.DualLog.Println("Starting LoadTemplates function...")
-	defer logger.DualLog.Println("Exiting LoadTemplates function.")
-
-	// Load templates
-	var allFiles []string
-	err := filepath.Walk(".", func(path string, info os.FileInfo, err error) error {
-		if err != nil {
-			return err
-		}
-		if !info.IsDir() && strings.HasSuffix(path, ".gohtml") {
-			allFiles = append(allFiles, path)
-		}
-		return nil
-	})
-	if err != nil {
-		logger.DualLog.Printf("Error walking the path %q: %v\n", pattern, err)
-		return
-	}
-
-	templates, err = template.ParseFiles(allFiles...)
-	if err != nil {
-		logger.DualLog.Printf("Error loading templates: %v\n", err)
-		return
-	}
-
-	// Log the loaded template names
-	for _, tmpl := range templates.Templates() {
-		logger.DualLog.Printf("- %s", tmpl.Name())
-	}
+type TemplateData struct {
+	Content template.HTML
+	Data    interface{}
 }
 
-func RenderTemplateWithData(w http.ResponseWriter, tmpl string, data interface{}) {
+func init() {
+	// Get the templates path from the environment variable
+	templatesPath := os.Getenv("TEMPLATES_PATH")
+
+	if templatesPath == "" {
+		// If the environment variable is not set, use the default path
+		cwd, err := os.Getwd()
+		if err != nil {
+			log.Fatal("Error getting the current working directory:", err)
+		}
+		// Check if the templates folder is in the current working directory
+		if _, err := os.Stat(filepath.Join(cwd, "templates")); err == nil {
+			templatesPath = filepath.Join(cwd, "templates/*.gohtml")
+		} else {
+			templatesPath = filepath.Join(cwd, "../templates/*.gohtml")
+		}
+	}
+
+	// Create a FuncMap with the custom printData function
+	var funcMap = template.FuncMap{
+		"printData": printData,
+	}
+
+	// Initialize the global templates variable with the custom function map
+	templates = template.Must(template.New("").Funcs(funcMap).ParseGlob(templatesPath))
+}
+
+func printData(data interface{}) string {
+	return fmt.Sprintf("%+v", data)
+}
+
+func RenderTemplateWithData(w http.ResponseWriter, tmpl string, contentTemplateName string, data interface{}) {
 	logger.DualLog.Println("Starting RenderTemplateWithData function...")
 	defer logger.DualLog.Println("Exiting RenderTemplateWithData function.")
 
@@ -56,10 +67,59 @@ func RenderTemplateWithData(w http.ResponseWriter, tmpl string, data interface{}
 		logger.DualLog.Printf("- %s", t.Name())
 	}
 
-	// Render the template
-	err := templates.ExecuteTemplate(w, tmpl, data)
+	// Execute the content template and store the output in a buffer
+	var contentBuf bytes.Buffer
+	err := templates.ExecuteTemplate(&contentBuf, contentTemplateName, data)
 	if err != nil {
-		logger.DualLog.Printf("Error executing template: %v", err)
+		logger.DualLog.Printf("Error executing content template: %v", err)
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+
+	// Uncomment the line when troubleshooting
+	//logger.DualLog.Printf("Content template output: %s", contentBuf.String())
+
+	// Create a TemplateData instance with the content template's output as a string
+	templateData := TemplateData{
+		Content: template.HTML(contentBuf.String()),
+		Data:    data,
+	}
+
+	// Render the base template with the content template's output
+	err = templates.ExecuteTemplate(w, tmpl, templateData)
+	if err != nil {
+		logger.DualLog.Printf("Error executing base template: %v", err)
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}
+}
+
+// internal/handlers.go
+
+func ArticlesHandler(w http.ResponseWriter, r *http.Request) {
+	logger.DualLog.Println("ArticlesHandler called")
+	defer logger.DualLog.Println("ArticlesHandler exited")
+
+	articles, err := database.GetArticles()
+	if err != nil {
+		logger.DualLog.Printf("Error fetching articles: %s", err.Error()) // Log the error with DualLog
+		http.Error(w, "Error fetching articles", http.StatusInternalServerError)
+		return
+	}
+	logger.DualLog.Printf("Fetched articles: %v", articles)
+
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(http.StatusOK)
+	json.NewEncoder(w).Encode(articles)
+}
+
+//handle File storage
+func HandleFile(fileStorage storage.FileStorage, w http.ResponseWriter, r *http.Request) {
+	filePath := strings.TrimPrefix(r.URL.Path, "/static")
+	file, err := fileStorage.GetFile(filePath)
+	if err != nil {
+		http.Error(w, "File not found", http.StatusNotFound)
+		return
+	}
+
+	http.ServeContent(w, r, filePath, time.Now(), file)
 }

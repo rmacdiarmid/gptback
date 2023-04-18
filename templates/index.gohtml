@@ -1,7 +1,7 @@
-{{ define "content" }}
-    <div class="hero">
+
+{{ define "indexContent" }}
+    <section class="hero">
       <div class="hero-text-container">
-        <h1 class="hero-text">MyGeePeeTeeDragon</h1>
         <div class="search-container">
           <form class="myform">
             <input type="text" placeholder="Search for articles...">
@@ -9,7 +9,7 @@
           </form>
         </div>
       </div>
-    </div>
+    </section>
     <div class="article-container">
       <h2>Featured Articles</h2>
       <div class="articles">
@@ -29,3 +29,5 @@
       
     </div>
 {{end}}
+
+{{template "base.gohtml" .}}

@@ -29,7 +29,7 @@ func AboutHandler(w http.ResponseWriter, r *http.Request) {
 		"ContentTemplateName": "about",
 	}
 
-	RenderTemplateWithData(w, "base.gohtml", data)
+	RenderTemplateWithData(w, "base.gohtml", "aboutContent", data)
 }
 
 func CreateAboutTaskHandler(w http.ResponseWriter, r *http.Request) {

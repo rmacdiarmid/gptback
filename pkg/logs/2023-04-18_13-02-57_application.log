@@ -1,0 +1,4 @@
+2023/04/18 13:02:57 database.go:13: Initializing database with path :memory:
+2023/04/18 13:02:57 database.go:43: Database initialized successfully
+2023/04/18 13:02:57 database.go:205: Creating article with title: Test title, image: Test image, preview: Test preview
+2023/04/18 13:02:57 database.go:219: Created article with ID: 1, title: Test title, image: Test image, preview: Test preview
