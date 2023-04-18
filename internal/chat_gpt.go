@@ -89,18 +89,18 @@ func ChatGPTRequest(prompt string) (string, error) {
 }
 
 func GenerateArticle(prompt string) (string, string, string, error) {
-	logger.DualLog.Printf("GenerateArticle", "Starting GenerateArticle function...")
-	defer logger.DualLog.Printf("GenerateArticle", "Exiting GenerateArticle function.")
+	logger.DualLog.Printf("GenerateArticle: Starting GenerateArticle function...")
+	defer logger.DualLog.Printf("GenerateArticle: Exiting GenerateArticle function.")
 
 	// Call ChatGPTRequest with the prompt to generate the article text
 	articleText, err := ChatGPTRequest(prompt)
 	if err != nil {
-		logger.DualLog.Panicf("GenerateArticle", fmt.Sprintf("Error generating article: %v", err))
+		logger.DualLog.Panicf("GenerateArticle: Error generating article: %v", err)
 		return "", "", "", err
 	}
 
 	// Log message for article generation success
-	logger.DualLog.Printf("GenerateArticle", "Article generated successfully.")
+	logger.DualLog.Printf("GenerateArticle: Article generated successfully.")
 
 	// Generate the title and image URL here
 	// For now, we'll use placeholders

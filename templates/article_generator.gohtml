@@ -1,24 +1,32 @@
 {{define "articleGeneratorContent"}}
-    <h1>Article Generator</h1>
-    <div class="container">
-    <form method="POST" action="/generate-article">
+  <h1>Article Generator</h1>
+  <div class="container">
+    <form method="POST" action="/generate-article" class="form-container">
+      <div class="form-element">
         <label for="prompt">Prompt:</label>
         <input type="text" id="prompt" name="prompt" required>
-        <button type="submit">Generate</button>
+      </div>
+      <div class="form-element">
+        <button type="submit" class="submit-button">Generate</button>
+      </div>
     </form>
-    </div>
+  </div>
 
-    {{ if .Generated }}
-        <h2>Generated Article</h2>
-        <p>Title: {{ .Title }}</p>
-        <p>Image URL: {{ .ImageURL }}</p>
-        <p>Content:</p>
-        <p>{{ .ArticleText }}</p>
-        <form method="POST" action="/accept-article">
-            <input type="hidden" name="title" value="{{ .Title }}">
-            <input type="hidden" name="image_url" value="{{ .ImageURL }}">
-            <input type="hidden" name="article_text" value="{{ .ArticleText }}">
-            <button type="submit">Accept and Upload</button>
-        </form>
-    {{ end }}
+  {{ if .Generated }}
+    <h2>Generated Article</h2>
+    <p>Title: {{ .Title }}</p>
+    <p>Image URL: {{ .ImageURL }}</p>
+    <p>Content:</p>
+    <p>{{ .ArticleText }}</p>
+    <div class="container">
+      <form method="POST" action="/accept-article" class="form-container">
+        <input type="hidden" name="title" value="{{ .Title }}">
+        <input type="hidden" name="image_url" value="{{ .ImageURL }}">
+        <input type="hidden" name="article_text" value="{{ .ArticleText }}">
+        <div class="form-element">
+          <button type="submit" class="submit-button">Accept and Upload</button>
+        </div>
+      </form>
+    </div>
+  {{ end }}
 {{end}}

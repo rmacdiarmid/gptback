@@ -36,6 +36,7 @@ func CreateTaskHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	task.ID = id
+	w.WriteHeader(http.StatusCreated)
 	json.NewEncoder(w).Encode(task)
 
 	logger.DualLog.Println("CreateTaskHandler function completed successfully.")
