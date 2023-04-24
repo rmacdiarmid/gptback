@@ -219,6 +219,17 @@ var Query = graphql.NewObject(graphql.ObjectConfig{
 			},
 		},
 		"frontendLog": readFrontendLogField,
+		"frontendLogs": &graphql.Field{
+			Type:        graphql.NewList(frontendLogType),
+			Description: "List of frontend logs",
+			Resolve: func(p graphql.ResolveParams) (interface{}, error) {
+				frontendLogs, err := database.GetAllFrontendLogs()
+				if err != nil {
+					return nil, err
+				}
+				return frontendLogs, nil
+			},
+		},
 	},
 })
 

@@ -14,3 +14,8 @@
 2023/04/24 09:40:30 main.go:116: Environmental variables loaded successfully
 2023/04/24 09:40:30 main.go:119: Internal handlers package initialized
 2023/04/24 09:40:30 main.go:159: Starting server on :8080...
+2023/04/24 09:46:40 database.go:227: Fetching articles
+2023/04/24 09:46:40 database.go:246: Fetched article: database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}
+2023/04/24 09:46:40 database.go:246: Fetched article: database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}
+2023/04/24 09:46:40 database.go:246: Fetched article: database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}
+2023/04/24 09:46:40 database.go:255: Fetched articles: []database.Article{database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}, database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}, database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}}
