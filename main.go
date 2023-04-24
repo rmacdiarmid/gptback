@@ -136,12 +136,6 @@ func main() {
 	// GraphQL Router
 	r.Handle("/graphql", h)
 
-	// Task CRUD handlers
-	r.HandleFunc("/tasks", internal.CreateTaskHandler).Methods("POST")
-	r.HandleFunc("/tasks/{id}", internal.ReadTaskHandler).Methods("GET")
-	r.HandleFunc("/tasks/{id}", internal.UpdateTaskHandler).Methods("PUT")
-	r.HandleFunc("/tasks/{id}", internal.DeleteTaskHandler).Methods("DELETE")
-
 	// Route handlers
 	r.HandleFunc("/", internal.IndexHandler)
 	r.HandleFunc("/about", internal.AboutHandler)
@@ -150,17 +144,10 @@ func main() {
 	r.HandleFunc("/task_list", internal.TaskListHandler)
 	r.HandleFunc("/success", internal.SuccessHandler)
 
-	// Frontend log CRUD handlers
-	r.HandleFunc("/api/frontendlogs", internal.CreateFrontendLogHandler).Methods("POST")
-	r.HandleFunc("/api/frontendlogs/{id}", internal.ReadFrontendLogHandler).Methods("GET")
-	r.HandleFunc("/api/frontendlogs/{id}", internal.UpdateFrontendLogHandler).Methods("PUT")
-	r.HandleFunc("/api/frontendlogs/{id}", internal.DeleteFrontendLogHandler).Methods("DELETE")
-
 	// New routes for generating and accepting articles
 	r.HandleFunc("/generate-article", internal.GenerateArticleHandler)
 	r.HandleFunc("/accept-article", internal.AcceptArticleHandler)
 	r.HandleFunc("/article-generator", internal.ArticleGeneratorHandler)
-	r.HandleFunc("/api/articles", internal.ArticlesHandler).Methods("GET")
 
 	r.NotFoundHandler = http.HandlerFunc(internal.NotFoundHandler)
 

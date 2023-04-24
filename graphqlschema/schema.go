@@ -131,20 +131,13 @@ var updateFrontendLogField = &graphql.Field{
 		},
 	},
 	Resolve: func(params graphql.ResolveParams) (interface{}, error) {
-		message, ok := params.Args["message"].(string)
-		if !ok {
-			return nil, fmt.Errorf("message should be a string")
-		}
-
-		timestamp, ok := params.Args["timestamp"].(string)
-		if !ok {
-			return nil, fmt.Errorf("timestamp should be a string")
-		}
-
 		id, _ := params.Args["id"].(int)
+		message, _ := params.Args["message"].(string)
+		timestamp, _ := params.Args["timestamp"].(string)
+
 		currentLogEntry, err := database.GetFrontendLogByID(strconv.Itoa(id))
 		if err != nil {
-			return nil, err
+			return nil, fmt.Errorf("failed to get frontend log by ID: %w", err)
 		}
 
 		if message != "" {
@@ -153,18 +146,18 @@ var updateFrontendLogField = &graphql.Field{
 		if timestamp != "" {
 			parsedTimestamp, err := time.Parse(time.RFC3339, timestamp)
 			if err != nil {
-				return nil, err
+				return nil, fmt.Errorf("failed to parse timestamp: %w", err)
 			}
 			currentLogEntry.Timestamp = parsedTimestamp
 		}
 		err = database.UpdateFrontendLogByID(strconv.Itoa(id), currentLogEntry)
 		if err != nil {
-			return nil, err
+			return nil, fmt.Errorf("failed to update frontend log by ID: %w", err)
 		}
 
 		updatedLogEntry, err := database.GetFrontendLogByID(strconv.Itoa(id))
 		if err != nil {
-			return nil, err
+			return nil, fmt.Errorf("failed to get updated frontend log by ID: %w", err)
 		}
 
 		return updatedLogEntry, nil
