@@ -1,0 +1,23 @@
+2023/04/24 05:07:16 main.go:94: Reading the database path from the config...
+2023/04/24 05:07:16 main.go:98: Read database path from config successfully
+2023/04/24 05:07:16 main.go:101: Initializing database...
+2023/04/24 05:07:16 database.go:13: Initializing database with path pkg/database/data.db
+2023/04/24 05:07:16 database.go:294: Frontend_logs table created successfully
+2023/04/24 05:07:16 database.go:47: Database initialized successfully
+2023/04/24 05:07:16 main.go:107: Database initialized successfully
+2023/04/24 05:07:16 main.go:110: Loading environmental variables...
+2023/04/24 05:07:16 load.go:12: Starting LoadEnvFile function with path .env...
+2023/04/24 05:07:16 load.go:20: .env file opened successfully.
+2023/04/24 05:07:16 load.go:36: Environment variable CONFIG_FILE_PATH set successfully.
+2023/04/24 05:07:16 load.go:43: .env file read successfully.
+2023/04/24 05:07:16 load.go:45: Exiting LoadEnvFile function.
+2023/04/24 05:07:16 main.go:116: Environmental variables loaded successfully
+2023/04/24 05:07:16 main.go:119: Internal handlers package initialized
+2023/04/24 05:07:16 main.go:172: Starting server on :8080...
+2023/04/24 05:07:28 database.go:227: Fetching articles
+2023/04/24 05:07:28 database.go:246: Fetched article: database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}
+2023/04/24 05:07:28 database.go:246: Fetched article: database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}
+2023/04/24 05:07:28 database.go:246: Fetched article: database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}
+2023/04/24 05:07:28 database.go:255: Fetched articles: []database.Article{database.Article{ID:1, Title:"The Whimsical Dragon's Guide to the Meaning of Life", Image:"/static/images/dragon1.jpg", Preview:"Once upon a time, in a land far, far away..."}, database.Article{ID:2, Title:"Dragon Tales and the Meaning of Life", Image:"/static/images/dragon2.jpg", Preview:"Dragons are known for their powerful and often misunderstood nature..."}, database.Article{ID:3, Title:"The Treasure of Dragon Island and the Meaning of Life", Image:"/static/images/dragon3.jpg", Preview:"Deep in the heart of the ocean lay a mysterious island known only to the most daring of dragons..."}}
+2023/04/24 05:07:30 database.go:318: Fetching all frontend logs
+2023/04/24 05:07:30 database.go:345: Fetched frontend logs: []database.FrontendLog(nil)

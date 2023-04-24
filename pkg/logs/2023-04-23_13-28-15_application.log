@@ -1,0 +1,16 @@
+2023/04/23 13:28:15 main.go:94: Reading the database path from the config...
+2023/04/23 13:28:15 main.go:98: Read database path from config successfully
+2023/04/23 13:28:15 main.go:101: Initializing database...
+2023/04/23 13:28:15 database.go:13: Initializing database with path pkg/database/tasks.db
+2023/04/23 13:28:15 database.go:294: Frontend_logs table created successfully
+2023/04/23 13:28:15 database.go:47: Database initialized successfully
+2023/04/23 13:28:15 main.go:107: Database initialized successfully
+2023/04/23 13:28:15 main.go:110: Loading environmental variables...
+2023/04/23 13:28:15 load.go:12: Starting LoadEnvFile function with path .env...
+2023/04/23 13:28:15 load.go:20: .env file opened successfully.
+2023/04/23 13:28:15 load.go:36: Environment variable CONFIG_FILE_PATH set successfully.
+2023/04/23 13:28:15 load.go:43: .env file read successfully.
+2023/04/23 13:28:15 load.go:45: Exiting LoadEnvFile function.
+2023/04/23 13:28:15 main.go:116: Environmental variables loaded successfully
+2023/04/23 13:28:15 main.go:119: Internal handlers package initialized
+2023/04/23 13:28:15 main.go:172: Starting server on :8080...

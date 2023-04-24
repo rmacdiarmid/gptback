@@ -71,6 +71,7 @@ func main() {
 
 	//fileStorage
 	useS3 := viper.GetBool("storage.useS3")
+
 	var fileStorage storage.FileStorage
 	if useS3 {
 		region := viper.GetString("storage.region")
@@ -88,8 +89,6 @@ func main() {
 	http.HandleFunc("/static/", func(w http.ResponseWriter, r *http.Request) {
 		internal.HandleFile(fileStorage, w, r)
 	})
-
-	// Use the 'fileStorage' variable throughout your code to get file URLs.
 
 	// Use logger.DualLog instead of the previously used dualLog variable
 	logger.DualLog.Println("Reading the database path from the config...")
@@ -150,6 +149,12 @@ func main() {
 	//r.HandleFunc("/activity", handlers.ActivityHandler)
 	r.HandleFunc("/task_list", internal.TaskListHandler)
 	r.HandleFunc("/success", internal.SuccessHandler)
+
+	// Frontend log CRUD handlers
+	r.HandleFunc("/api/frontendlogs", internal.CreateFrontendLogHandler).Methods("POST")
+	r.HandleFunc("/api/frontendlogs/{id}", internal.ReadFrontendLogHandler).Methods("GET")
+	r.HandleFunc("/api/frontendlogs/{id}", internal.UpdateFrontendLogHandler).Methods("PUT")
+	r.HandleFunc("/api/frontendlogs/{id}", internal.DeleteFrontendLogHandler).Methods("DELETE")
 
 	// New routes for generating and accepting articles
 	r.HandleFunc("/generate-article", internal.GenerateArticleHandler)

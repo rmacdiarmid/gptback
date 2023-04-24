@@ -1,0 +1,16 @@
+2023/04/23 13:23:36 main.go:103: Reading the database path from the config...
+2023/04/23 13:23:36 main.go:107: Read database path from config successfully
+2023/04/23 13:23:36 main.go:110: Initializing database...
+2023/04/23 13:23:36 database.go:13: Initializing database with path pkg/database/tasks.db
+2023/04/23 13:23:36 database.go:294: Frontend_logs table created successfully
+2023/04/23 13:23:36 database.go:47: Database initialized successfully
+2023/04/23 13:23:36 main.go:116: Database initialized successfully
+2023/04/23 13:23:36 main.go:119: Loading environmental variables...
+2023/04/23 13:23:36 load.go:12: Starting LoadEnvFile function with path .env...
+2023/04/23 13:23:36 load.go:20: .env file opened successfully.
+2023/04/23 13:23:36 load.go:36: Environment variable CONFIG_FILE_PATH set successfully.
+2023/04/23 13:23:36 load.go:43: .env file read successfully.
+2023/04/23 13:23:36 load.go:45: Exiting LoadEnvFile function.
+2023/04/23 13:23:36 main.go:125: Environmental variables loaded successfully
+2023/04/23 13:23:36 main.go:128: Internal handlers package initialized
+2023/04/23 13:23:36 main.go:137: Failed to connect to MongoDB: error parsing uri: scheme must be "mongodb" or "mongodb+srv"
