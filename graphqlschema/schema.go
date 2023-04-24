@@ -9,7 +9,8 @@ import (
 
 var Schema graphql.Schema
 
-func init() {
+// Change the init function to an exported function
+func InitSchema() {
 	var err error
 	Schema, err = graphql.NewSchema(SchemaConfig)
 	if err != nil {

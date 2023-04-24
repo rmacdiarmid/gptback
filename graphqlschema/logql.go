@@ -1,9 +1,6 @@
-// graphqlschema/log.go
-
 package graphqlschema
 
 import (
-	"fmt"
 	"strconv"
 	"time"
 
@@ -26,7 +23,6 @@ var FrontendLogType = graphql.NewObject(graphql.ObjectConfig{
 	},
 })
 
-// Define the frontend log resolvers
 var CreateFrontendLogField = &graphql.Field{
 	Type: FrontendLogType,
 	Args: graphql.FieldConfigArgument{
@@ -55,7 +51,6 @@ var CreateFrontendLogField = &graphql.Field{
 		if err != nil {
 			return nil, err
 		}
-
 		return newFrontendLog, nil
 	},
 }
@@ -64,11 +59,10 @@ var ReadFrontendLogField = &graphql.Field{
 	Type: FrontendLogType,
 	Args: graphql.FieldConfigArgument{
 		"id": &graphql.ArgumentConfig{
-			Type: graphql.Int, // Remove graphql.NewNonNull()
+			Type: graphql.Int,
 		},
 	},
 	Resolve: func(params graphql.ResolveParams) (interface{}, error) {
-		// Check if the ID argument is provided
 		if id, ok := params.Args["id"].(int); ok {
 			frontendLog, err := database.GetFrontendLogByID(strconv.Itoa(id))
 			if err != nil {
@@ -76,7 +70,6 @@ var ReadFrontendLogField = &graphql.Field{
 			}
 			return frontendLog, nil
 		} else {
-			// Return all frontend logs if the ID argument is not provided
 			frontendLogs, err := database.GetAllFrontendLogs()
 			if err != nil {
 				return nil, err
@@ -106,7 +99,7 @@ var UpdateFrontendLogField = &graphql.Field{
 
 		currentLogEntry, err := database.GetFrontendLogByID(strconv.Itoa(id))
 		if err != nil {
-			return nil, fmt.Errorf("failed to get frontend log by ID: %w", err)
+			return nil, err
 		}
 
 		if message != "" {
@@ -115,20 +108,19 @@ var UpdateFrontendLogField = &graphql.Field{
 		if timestamp != "" {
 			parsedTimestamp, err := time.Parse(time.RFC3339, timestamp)
 			if err != nil {
-				return nil, fmt.Errorf("failed to parse timestamp: %w", err)
+				return nil, err
 			}
 			currentLogEntry.Timestamp = parsedTimestamp
 		}
 		err = database.UpdateFrontendLogByID(strconv.Itoa(id), currentLogEntry)
 		if err != nil {
-			return nil, fmt.Errorf("failed to update frontend log by ID: %w", err)
+			return nil, err
 		}
 
 		updatedLogEntry, err := database.GetFrontendLogByID(strconv.Itoa(id))
 		if err != nil {
-			return nil, fmt.Errorf("failed to get updated frontend log by ID: %w", err)
+			return nil, err
 		}
-
 		return updatedLogEntry, nil
 	},
 }

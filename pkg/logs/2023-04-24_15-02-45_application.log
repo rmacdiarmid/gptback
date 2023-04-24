@@ -1,0 +1,48 @@
+2023/04/24 15:02:45 main.go:95: Reading the database path from the config...
+2023/04/24 15:02:45 main.go:99: Read database path from config successfully
+2023/04/24 15:02:45 main.go:102: Initializing database...
+2023/04/24 15:02:45 database.go:13: Initializing database with path pkg/database/data.db
+2023/04/24 15:02:45 database.go:294: Frontend_logs table created successfully
+2023/04/24 15:02:45 database.go:47: Database initialized successfully
+2023/04/24 15:02:45 main.go:108: Database initialized successfully
+2023/04/24 15:02:45 main.go:111: Loading environmental variables...
+2023/04/24 15:02:45 load.go:12: Starting LoadEnvFile function with path .env...
+2023/04/24 15:02:45 load.go:20: .env file opened successfully.
+2023/04/24 15:02:45 load.go:36: Environment variable CONFIG_FILE_PATH set successfully.
+2023/04/24 15:02:45 load.go:43: .env file read successfully.
+2023/04/24 15:02:45 load.go:45: Exiting LoadEnvFile function.
+2023/04/24 15:02:45 main.go:117: Environmental variables loaded successfully
+2023/04/24 15:02:45 main.go:120: Internal handlers package initialized
+2023/04/24 15:02:45 main.go:155: Starting server on :8080...
+2023/04/24 15:08:17 database.go:299: Inserting frontend log: database.FrontendLog{ID:0, Message:"Posting Via Postman to test API", Timestamp:time.Date(2023, time.April, 24, 12, 34, 56, 0, time.Location(""))}
+2023/04/24 15:08:17 database.go:313: Inserted frontend log: database.FrontendLog{ID:0, Message:"Posting Via Postman to test API", Timestamp:time.Date(2023, time.April, 24, 12, 34, 56, 0, time.Location(""))}
+2023/04/24 15:08:17 database.go:350: Getting frontend log with ID: 1
+2023/04/24 15:08:17 database.go:359: Fetched frontend log with ID: 1
+2023/04/24 15:10:14 database.go:227: Fetching articles
+2023/04/24 15:10:14 database.go:255: Fetched articles: []database.Article(nil)
+2023/04/24 15:10:14 database.go:299: Inserting frontend log: database.FrontendLog{ID:0, Message:"Test log message", Timestamp:time.Date(2023, time.April, 24, 22, 10, 14, 182000000, time.UTC)}
+2023/04/24 15:10:14 database.go:313: Inserted frontend log: database.FrontendLog{ID:0, Message:"Test log message", Timestamp:time.Date(2023, time.April, 24, 22, 10, 14, 182000000, time.UTC)}
+2023/04/24 15:10:14 database.go:350: Getting frontend log with ID: 2
+2023/04/24 15:10:14 database.go:359: Fetched frontend log with ID: 2
+2023/04/24 15:38:26 database.go:318: Fetching all frontend logs
+2023/04/24 15:38:26 database.go:336: Fetched frontend log: database.FrontendLog{ID:1, Message:"Posting Via Postman to test API", Timestamp:time.Date(2023, time.April, 24, 12, 34, 56, 0, time.UTC)}
+2023/04/24 15:38:26 database.go:336: Fetched frontend log: database.FrontendLog{ID:2, Message:"Test log message", Timestamp:time.Date(2023, time.April, 24, 22, 10, 14, 182000000, time.UTC)}
+2023/04/24 15:38:26 database.go:345: Fetched frontend logs: []database.FrontendLog{database.FrontendLog{ID:1, Message:"Posting Via Postman to test API", Timestamp:time.Date(2023, time.April, 24, 12, 34, 56, 0, time.UTC)}, database.FrontendLog{ID:2, Message:"Test log message", Timestamp:time.Date(2023, time.April, 24, 22, 10, 14, 182000000, time.UTC)}}
+2023/04/24 15:39:04 database.go:227: Fetching articles
+2023/04/24 15:39:04 database.go:255: Fetched articles: []database.Article(nil)
+2023/04/24 15:39:04 database.go:299: Inserting frontend log: database.FrontendLog{ID:0, Message:"Test log message", Timestamp:time.Date(2023, time.April, 24, 22, 39, 4, 854000000, time.UTC)}
+2023/04/24 15:39:04 database.go:313: Inserted frontend log: database.FrontendLog{ID:0, Message:"Test log message", Timestamp:time.Date(2023, time.April, 24, 22, 39, 4, 854000000, time.UTC)}
+2023/04/24 15:39:04 database.go:350: Getting frontend log with ID: 3
+2023/04/24 15:39:04 database.go:359: Fetched frontend log with ID: 3
+2023/04/24 15:39:07 database.go:227: Fetching articles
+2023/04/24 15:39:07 database.go:255: Fetched articles: []database.Article(nil)
+2023/04/24 15:39:07 database.go:299: Inserting frontend log: database.FrontendLog{ID:0, Message:"Test log message", Timestamp:time.Date(2023, time.April, 24, 22, 39, 7, 967000000, time.UTC)}
+2023/04/24 15:39:07 database.go:313: Inserted frontend log: database.FrontendLog{ID:0, Message:"Test log message", Timestamp:time.Date(2023, time.April, 24, 22, 39, 7, 967000000, time.UTC)}
+2023/04/24 15:39:07 database.go:350: Getting frontend log with ID: 4
+2023/04/24 15:39:07 database.go:359: Fetched frontend log with ID: 4
+2023/04/24 15:47:22 database.go:318: Fetching all frontend logs
+2023/04/24 15:47:22 database.go:336: Fetched frontend log: database.FrontendLog{ID:1, Message:"Posting Via Postman to test API", Timestamp:time.Date(2023, time.April, 24, 12, 34, 56, 0, time.UTC)}
+2023/04/24 15:47:22 database.go:336: Fetched frontend log: database.FrontendLog{ID:2, Message:"Test log message", Timestamp:time.Date(2023, time.April, 24, 22, 10, 14, 182000000, time.UTC)}
+2023/04/24 15:47:22 database.go:336: Fetched frontend log: database.FrontendLog{ID:3, Message:"Test log message", Timestamp:time.Date(2023, time.April, 24, 22, 39, 4, 854000000, time.UTC)}
+2023/04/24 15:47:22 database.go:336: Fetched frontend log: database.FrontendLog{ID:4, Message:"Test log message", Timestamp:time.Date(2023, time.April, 24, 22, 39, 7, 967000000, time.UTC)}
+2023/04/24 15:47:22 database.go:345: Fetched frontend logs: []database.FrontendLog{database.FrontendLog{ID:1, Message:"Posting Via Postman to test API", Timestamp:time.Date(2023, time.April, 24, 12, 34, 56, 0, time.UTC)}, database.FrontendLog{ID:2, Message:"Test log message", Timestamp:time.Date(2023, time.April, 24, 22, 10, 14, 182000000, time.UTC)}, database.FrontendLog{ID:3, Message:"Test log message", Timestamp:time.Date(2023, time.April, 24, 22, 39, 4, 854000000, time.UTC)}, database.FrontendLog{ID:4, Message:"Test log message", Timestamp:time.Date(2023, time.April, 24, 22, 39, 7, 967000000, time.UTC)}}

@@ -11,7 +11,6 @@ import (
 
 	"github.com/gorilla/handlers"
 	"github.com/gorilla/mux"
-	"github.com/graphql-go/graphql"
 	"github.com/graphql-go/handler"
 	"github.com/rmacdiarmid/GPTSite/graphqlschema"
 	"github.com/rmacdiarmid/GPTSite/internal"
@@ -68,6 +67,8 @@ func main() {
 		handlers.AllowedMethods([]string{"GET", "POST", "PUT", "DELETE"}),
 		handlers.AllowedHeaders([]string{"Content-Type", "Authorization"}),
 	)
+	//Initiate GraphQl
+	graphqlschema.InitSchema()
 
 	//fileStorage
 	useS3 := viper.GetBool("storage.useS3")
@@ -118,14 +119,9 @@ func main() {
 	// Add the logger usage that was removed from the handlers package
 	logger.DualLog.Println("Internal handlers package initialized")
 
-	// GraphQL schema
-	schema, _ := graphql.NewSchema(graphql.SchemaConfig{
-		Query: graphqlschema.Query,
-	})
-
 	// GraphQL handler
 	h := handler.New(&handler.Config{
-		Schema:   &schema,
+		Schema:   &graphqlschema.Schema, // Use the new schema here
 		Pretty:   true,
 		GraphiQL: true,
 	})
