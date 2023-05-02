@@ -1,0 +1,11 @@
+2023/04/25 06:31:10 database.go:13: Initializing database with path :memory:
+2023/04/25 06:31:10 database.go:294: Frontend_logs table created successfully
+2023/04/25 06:31:10 database.go:47: Database initialized successfully
+2023/04/25 06:31:10 database.go:157: Creating article with title: Test title, image: Test image, preview: Test preview, text: Test text
+2023/04/25 06:31:10 database.go:161: Error creating article: table articles has no column named text
+2023/04/25 06:31:10 database.go:157: Creating article with title: Test Article 1, image: test-image-1.jpg, preview: This is test preview of article 1, text: This is test article 1
+2023/04/25 06:31:10 database.go:161: Error creating article: table articles has no column named text
+2023/04/25 06:31:10 database.go:157: Creating article with title: Test title, image: Test image, preview: Test preview, text: Test text
+2023/04/25 06:31:10 database.go:161: Error creating article: table articles has no column named text
+2023/04/25 06:31:10 database.go:157: Creating article with title: Test title, image: Test image, preview: Test preview, text: Test text
+2023/04/25 06:31:10 database.go:161: Error creating article: table articles has no column named text

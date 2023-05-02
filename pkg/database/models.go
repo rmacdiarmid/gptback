@@ -11,6 +11,7 @@ type Article struct {
 	Title   string
 	Image   string
 	Preview string
+	Text    string
 }
 
 type Task struct {

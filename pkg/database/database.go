@@ -29,7 +29,8 @@ func InitDB(dbPath string) (*sql.DB, error) {
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         title TEXT NOT NULL,
         image TEXT NOT NULL,
-        preview TEXT NOT NULL
+        preview TEXT NOT NULL,
+		text TEXT NOT NULL
     );
     `
 
@@ -153,10 +154,10 @@ func ReadTask(id int) (Task, error) {
 	return task, nil
 }
 
-func CreateArticle(title, image, preview string) (int64, error) {
-	logger.DualLog.Printf("Creating article with title: %s, image: %s, preview: %s", title, image, preview)
+func CreateArticle(title, image, preview, text string) (int64, error) {
+	logger.DualLog.Printf("Creating article with title: %s, image: %s, preview: %s, text: %s", title, image, preview, text)
 
-	result, err := DB.Exec("INSERT INTO articles(title, image, preview) VALUES (?, ?, ?)", title, image, preview)
+	result, err := DB.Exec("INSERT INTO articles(title, image, preview, text) VALUES (?, ?, ?, ?)", title, image, preview, text)
 	if err != nil {
 		logger.DualLog.Printf("Error creating article: %s", err.Error())
 		return 0, err
@@ -168,7 +169,7 @@ func CreateArticle(title, image, preview string) (int64, error) {
 		return 0, err
 	}
 
-	logger.DualLog.Printf("Created article with ID: %d, title: %s, image: %s, preview: %s", id, title, image, preview)
+	logger.DualLog.Printf("Created article with ID: %d, title: %s, image: %s, preview: %s, text: %s", id, title, image, preview, text)
 	return id, nil
 }
 
@@ -176,13 +177,13 @@ func ReadArticle(id int64) (Article, error) {
 	logger.DualLog.Printf("Reading article with ID: %d", id)
 
 	var article Article
-	err := DB.QueryRow("SELECT id, title, image, preview FROM articles WHERE id = ?", id).Scan(&article.ID, &article.Title, &article.Image, &article.Preview)
+	err := DB.QueryRow("SELECT id, title, image, preview, text FROM articles WHERE id = ?", id).Scan(&article.ID, &article.Title, &article.Image, &article.Preview, &article.Text)
 	if err != nil {
 		logger.DualLog.Printf("Error reading article: %s", err.Error())
 		return Article{}, err
 	}
 
-	logger.DualLog.Printf("Read article with ID: %d, title: %s, image: %s, preview: %s", id, article.Title, article.Image, article.Preview)
+	logger.DualLog.Printf("Read article with ID: %d, title: %s, image: %s, preview: %s, text: %s", id, article.Title, article.Image, article.Preview, article.Text)
 	return article, nil
 }
 
@@ -202,14 +203,14 @@ func DeleteArticle(id int64) error {
 }
 
 // UpdateArticle updates an existing article with the given ID and returns the updated article
-func UpdateArticle(id int64, title, image, preview string) (*Article, error) {
+func UpdateArticle(id int64, title, image, preview, text string) (*Article, error) {
 	// Replace this with your own implementation to update the article in the database
-	stmt, err := DB.Prepare("UPDATE articles SET title=?, image=?, preview=? WHERE id=?")
+	stmt, err := DB.Prepare("UPDATE articles SET title=?, image=?, preview=?, text=? WHERE id=?")
 	if err != nil {
 		return nil, err
 	}
 
-	_, err = stmt.Exec(title, image, preview, id)
+	_, err = stmt.Exec(title, image, preview, text, id)
 	if err != nil {
 		return nil, err
 	}
@@ -226,7 +227,7 @@ func UpdateArticle(id int64, title, image, preview string) (*Article, error) {
 func GetArticles() ([]Article, error) {
 	logger.DualLog.Printf("Fetching articles")
 
-	rows, err := DB.Query("SELECT id, title, image, preview FROM articles")
+	rows, err := DB.Query("SELECT id, title, image, preview, text FROM articles")
 	if err != nil {
 		logger.DualLog.Printf("Error fetching articles: %s", err.Error())
 		return nil, err
@@ -236,7 +237,7 @@ func GetArticles() ([]Article, error) {
 	var articles []Article
 	for rows.Next() {
 		var article Article
-		err := rows.Scan(&article.ID, &article.Title, &article.Image, &article.Preview)
+		err := rows.Scan(&article.ID, &article.Title, &article.Image, &article.Preview, &article.Text)
 		if err != nil {
 			logger.DualLog.Printf("Error scanning article: %s", err.Error())
 			return nil, err
@@ -256,10 +257,10 @@ func GetArticles() ([]Article, error) {
 	return articles, nil
 }
 
-func InsertArticle(title, image, preview string) (int64, error) {
-	logger.DualLog.Printf("Inserting article with title: %s, image: %s, preview: %s", title, image, preview)
+func InsertArticle(title, image, preview, text string) (int64, error) {
+	logger.DualLog.Printf("Inserting article with title: %s, image: %s, preview: %s, text: %s", title, image, preview, text)
 
-	result, err := DB.Exec("INSERT INTO articles(title, image, preview) VALUES (?, ?, ?)", title, image, preview)
+	result, err := DB.Exec("INSERT INTO articles(title, image, preview, text) VALUES (?, ?, ?, ?)", title, image, preview, text)
 	if err != nil {
 		logger.DualLog.Printf("Error inserting article: %s", err.Error())
 		return 0, err
@@ -271,7 +272,7 @@ func InsertArticle(title, image, preview string) (int64, error) {
 		return 0, err
 	}
 
-	logger.DualLog.Printf("Inserted article with ID: %d, title: %s, image: %s, preview: %s", id, title, image, preview)
+	logger.DualLog.Printf("Inserted article with ID: %d, title: %s, image: %s, preview: %s, text: %s", id, title, image, preview, text)
 	return id, nil
 }
 

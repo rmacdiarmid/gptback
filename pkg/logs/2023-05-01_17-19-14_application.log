@@ -1,0 +1,7 @@
+2023/05/01 17:19:14 database.go:13: Initializing database with path :memory:
+2023/05/01 17:19:14 database.go:295: Frontend_logs table created successfully
+2023/05/01 17:19:14 database.go:48: Database initialized successfully
+2023/05/01 17:19:14 database.go:158: Creating article with title: Test title, image: Test image, preview: Test preview, text: Test text
+2023/05/01 17:19:14 database.go:172: Created article with ID: 1, title: Test title, image: Test image, preview: Test preview, text: Test text
+2023/05/01 17:19:14 database.go:177: Reading article with ID: 1
+2023/05/01 17:19:14 database.go:186: Read article with ID: 1, title: Updated Test Article, image: updated-test-image.jpg, preview: This is an updated test article, text: This is an updated test article

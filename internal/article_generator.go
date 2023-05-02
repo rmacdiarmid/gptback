@@ -2,6 +2,7 @@ package internal
 
 import (
 	"net/http"
+	"strings"
 
 	"github.com/rmacdiarmid/GPTSite/logger"
 	"github.com/rmacdiarmid/GPTSite/pkg/database"
@@ -47,12 +48,16 @@ func GenerateArticleHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	// Generate the preview by taking the first 25 words of the articleText
+	preview := generatePreview(articleText, 25)
+
 	data := map[string]interface{}{
 		"Content":     "article_generator.gohtml",
 		"Generated":   true,
 		"Title":       title,
 		"ImageURL":    imageURL,
 		"ArticleText": articleText,
+		"Preview":     preview,
 	}
 
 	RenderTemplateWithData(w, "base.gohtml", "articleGeneratorContent", data)
@@ -72,7 +77,10 @@ func AcceptArticleHandler(w http.ResponseWriter, r *http.Request) {
 	imageURL := r.FormValue("image_url")
 	articleText := r.FormValue("article_text")
 
-	_, err := database.InsertArticle(title, imageURL, articleText)
+	// Generate the preview by taking the first 25 words of the articleText
+	preview := generatePreview(articleText, 25)
+
+	_, err := database.InsertArticle(title, imageURL, preview, articleText)
 	if err != nil {
 		// Handle error
 		logger.DualLog.Printf("Error uploading article: %v", err)
@@ -82,6 +90,14 @@ func AcceptArticleHandler(w http.ResponseWriter, r *http.Request) {
 
 	// Redirect to a success or confirmation page, or any other desired page
 	http.Redirect(w, r, "/success", http.StatusSeeOther)
+}
+
+func generatePreview(text string, wordLimit int) string {
+	words := strings.Fields(text)
+	if len(words) > wordLimit {
+		words = words[:wordLimit]
+	}
+	return strings.Join(words, " ")
 }
 
 func SuccessHandler(w http.ResponseWriter, r *http.Request) {

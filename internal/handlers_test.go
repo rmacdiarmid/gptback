@@ -219,9 +219,10 @@ func TestArticlesHandler(t *testing.T) {
 		Title:   "Test Article",
 		Image:   "test_image.jpg",
 		Preview: "This is a test article for integration testing.",
+		Text:    "This is the main text of the article it should be longer than the preview but I really don't want to type much more",
 	}
 
-	_, err := database.CreateArticle(article.Title, article.Image, article.Preview)
+	_, err := database.CreateArticle(article.Title, article.Image, article.Preview, article.Text)
 	if err != nil {
 		t.Fatalf("Failed to create article for testing: %v", err)
 	}
@@ -253,7 +254,7 @@ func TestArticlesHandler(t *testing.T) {
 	// Find the article in the response
 	found := false
 	for _, a := range resp {
-		if a["Title"] == article.Title && a["Image"] == article.Image && a["Preview"] == article.Preview {
+		if a["Title"] == article.Title && a["Image"] == article.Image && a["Preview"] == article.Preview && a["Preview"] == article.Text {
 			found = true
 			break
 		}
@@ -290,6 +291,7 @@ func TestRenderTemplateWithData(t *testing.T) {
 		Image   string
 		Title   string
 		Preview string
+		Text    string
 	}
 
 	testData := struct {
@@ -300,11 +302,13 @@ func TestRenderTemplateWithData(t *testing.T) {
 				Image:   "https://example.com/image1.jpg",
 				Title:   "Article 1",
 				Preview: "This is a preview of article 1.",
+				Text:    "This is a fake text about a fake thing, it's the main body",
 			},
 			{
 				Image:   "https://example.com/image2.jpg",
 				Title:   "Article 2",
 				Preview: "This is a preview of article 2.",
+				Text:    "This is a fake text about a fake thing, it's the main body for a second thing",
 			},
 		},
 	}

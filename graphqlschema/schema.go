@@ -88,18 +88,22 @@ var Mutation = graphql.NewObject(graphql.ObjectConfig{
 				"preview": &graphql.ArgumentConfig{
 					Type: graphql.String,
 				},
+				"text": &graphql.ArgumentConfig{
+					Type: graphql.String,
+				},
 			},
 			Resolve: func(p graphql.ResolveParams) (interface{}, error) {
 				id, _ := p.Args["id"].(int)
 				title, _ := p.Args["title"].(string)
 				image, _ := p.Args["image"].(string)
 				preview, _ := p.Args["preview"].(string)
+				text, _ := p.Args["text"].(string)
 
-				article, err := database.UpdateArticle(int64(id), title, image, preview)
+				updatedArticle, err := database.UpdateArticle(int64(id), title, image, preview, text)
 				if err != nil {
 					return nil, err
 				}
-				return article, nil
+				return updatedArticle, nil
 			},
 		},
 		"deleteArticle": &graphql.Field{
