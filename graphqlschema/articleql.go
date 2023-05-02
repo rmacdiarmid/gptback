@@ -1,8 +1,11 @@
 package graphqlschema
 
 import (
+	"fmt"
+
 	"github.com/graphql-go/graphql"
 	"github.com/rmacdiarmid/GPTSite/pkg/database"
+	"github.com/spf13/viper"
 )
 
 var ArticleType = graphql.NewObject(
@@ -17,6 +20,15 @@ var ArticleType = graphql.NewObject(
 			},
 			"image": &graphql.Field{
 				Type: graphql.String,
+				Resolve: func(p graphql.ResolveParams) (interface{}, error) {
+					article, ok := p.Source.(database.Article)
+					if !ok {
+						return nil, fmt.Errorf("expected type database.Article but got %T", p.Source)
+					}
+					baseURL := viper.GetString("storage.baseURL")
+					imageURL := fmt.Sprintf("%s%s", baseURL, article.Image)
+					return imageURL, nil
+				},
 			},
 			"preview": &graphql.Field{
 				Type: graphql.String,

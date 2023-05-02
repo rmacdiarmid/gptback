@@ -32,6 +32,9 @@ func init() {
 		log.Fatal("Error reading config file:", err)
 	}
 
+	//Set Image Base Url
+	os.Setenv("IMAGE_BASE_URL", viper.GetString("image.base_url"))
+
 	// Load log configuration
 	logDir := viper.GetString("log.dir")
 	logFile := viper.GetString("log.file")
@@ -148,6 +151,7 @@ func main() {
 	r.NotFoundHandler = http.HandlerFunc(internal.NotFoundHandler)
 
 	// Static file handling
+	r.HandleFunc("/graphql/get-image-base-url", internal.GetImageBaseURLHandler)
 	r.PathPrefix("/static/").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
 	r.HandleFunc("/favicon.ico", func(w http.ResponseWriter, r *http.Request) { http.ServeFile(w, r, "static/images/favicon.ico") })
 

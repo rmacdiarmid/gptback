@@ -1,0 +1,263 @@
+2023/05/02 07:13:38 main.go:98: Reading the database path from the config...
+2023/05/02 07:13:38 main.go:102: Read database path from config successfully
+2023/05/02 07:13:38 main.go:105: Initializing database...
+2023/05/02 07:13:38 database.go:13: Initializing database with path pkg/database/data.db
+2023/05/02 07:13:38 database.go:295: Frontend_logs table created successfully
+2023/05/02 07:13:38 database.go:48: Database initialized successfully
+2023/05/02 07:13:38 main.go:111: Database initialized successfully
+2023/05/02 07:13:38 main.go:114: Loading environmental variables...
+2023/05/02 07:13:38 load.go:12: Starting LoadEnvFile function with path .env...
+2023/05/02 07:13:38 load.go:20: .env file opened successfully.
+2023/05/02 07:13:38 load.go:36: Environment variable CONFIG_FILE_PATH set successfully.
+2023/05/02 07:13:38 load.go:43: .env file read successfully.
+2023/05/02 07:13:38 load.go:45: Exiting LoadEnvFile function.
+2023/05/02 07:13:38 main.go:120: Environmental variables loaded successfully
+2023/05/02 07:13:38 main.go:123: Internal handlers package initialized
+2023/05/02 07:13:38 main.go:159: Starting server on :8080...
+2023/05/02 07:13:45 database.go:228: Fetching articles
+2023/05/02 07:13:45 database.go:247: Fetched article: database.Article{ID:1, Title:"The Pacific Blue Dragon", Image:"dragon1.jpg", Preview:"The Pacific Blue Dragon is a magnificent creature with a unique appearance.", Text:"The Pacific Blue Dragon is a rare species of dragon that has recently been spotted in Northern California. These dragons are known for their distinctive blue color and their ability to fly at incredible speeds. Pacific Blue Dragons are native to the Pacific Ocean and are usually found in warm waters around Hawaii and Japan. Scientists believe that the warming of the ocean has caused the Pacific Blue Dragon to move northward in search of cooler waters.\n\nOne of the most interesting things about the Pacific Blue Dragon is its diet. These dragons feed almost exclusively on jellyfish, which can be found in abundance in the waters off the coast of California. Despite the fact that jellyfish are mostly made up of water, Pacific Blue Dragons are able to extract enough nutrients from them to sustain their large bodies.\n\nPacific Blue Dragons are also known for their incredible eyesight, which allows them to spot their prey from great distances. Their eyes contain a high concentration of photoreceptor cells, which gives them a wider visual range than most other animals.\n\nAlthough the Pacific Blue Dragon is a rare and elusive creature, sightings of these dragons have increased in recent years. Researchers are studying these dragons in order to learn more about their behavior and their impact on the ecosystem of Northern California. Sources: [1], [2]"}
+2023/05/02 07:13:45 database.go:247: Fetched article: database.Article{ID:2, Title:"The Sierra Fire Dragon", Image:"dragon2.jpg", Preview:"The Sierra Fire Dragon is a majestic creature with a fiery personality.", Text:"The Sierra Fire Dragon is a type of dragon that has recently made its home in the Sierra Nevada mountains of Northern California. These dragons are known for their bright red scales and their ability to breathe fire. The Sierra Fire Dragon is a cousin to the more well-known European Fire Dragon, but has adapted to the unique environment of the Sierra Nevada mountains.\n\nOne of the most interesting things about the Sierra Fire Dragon is its diet. These dragons feed mostly on small mammals and birds, which they are able to catch using their sharp claws and incredible speed. The Sierra Fire Dragon is also known for its ability to withstand extreme temperatures, which allows it to live in the high-altitude environments of the Sierra Nevada mountains.\n\nThe Sierra Fire Dragon is an important part of the ecosystem of the Sierra Nevada mountains. They help to control populations of small mammals and birds, and their droppings provide valuable nutrients to the soil.\n\nAlthough the Sierra Fire Dragon is a rare and elusive creature, sightings of these dragons have increased in recent years. Researchers are studying these dragons in order to learn more about their behavior and their impact on the ecosystem of Northern California. Sources: [3], [4]"}
+2023/05/02 07:13:45 database.go:247: Fetched article: database.Article{ID:3, Title:"The Redwood Forest Dragon", Image:"dragon3.jpg", Preview:"The Redwood Forest Dragon is a mysterious creature with a unique habitat.", Text:"The Redwood Forest Dragon is a type of dragon that has recently been discovered living in the ancient redwood forests of Northern California. These dragons are known for their green scales and their ability to blend in with their surroundings. The Redwood Forest Dragon is a relatively small dragon, measuring only about 4 feet in length.\n\nOne of the most interesting things about the Redwood Forest Dragon is its habitat. These dragons live in the redwood forests of Northern California, which are among the tallest and oldest trees in the world. The Redwood Forest Dragon has adapted to this unique environment by developing a special climbing ability, which allows it to climb up and down the massive trunks of the redwood trees with ease.\n\nThe diet of the Redwood Forest Dragon is also unique. These dragons feed mostly on insects and small reptiles, which they are able to catch using their long tongues and sharp teeth. The Redwood Forest Dragon is also known for its ability to remain still for long periods of time, allowing it to blend in with its surroundings and avoid detection.\n\nAlthough the Redwood Forest Dragon is a new discovery, researchers are already learning a lot about this fascinating creature. They are studying the Redwood Forest Dragon in order to learn more about its behavior and its impact on the ecosystem of the redwood forests. It is important to protect the habitat of the Redwood Forest Dragon, as the destruction of the redwood forests could have a devastating effect on this unique species.\n\nSources: [5], [6]"}
+2023/05/02 07:13:45 database.go:256: Fetched articles: []database.Article{database.Article{ID:1, Title:"The Pacific Blue Dragon", Image:"dragon1.jpg", Preview:"The Pacific Blue Dragon is a magnificent creature with a unique appearance.", Text:"The Pacific Blue Dragon is a rare species of dragon that has recently been spotted in Northern California. These dragons are known for their distinctive blue color and their ability to fly at incredible speeds. Pacific Blue Dragons are native to the Pacific Ocean and are usually found in warm waters around Hawaii and Japan. Scientists believe that the warming of the ocean has caused the Pacific Blue Dragon to move northward in search of cooler waters.\n\nOne of the most interesting things about the Pacific Blue Dragon is its diet. These dragons feed almost exclusively on jellyfish, which can be found in abundance in the waters off the coast of California. Despite the fact that jellyfish are mostly made up of water, Pacific Blue Dragons are able to extract enough nutrients from them to sustain their large bodies.\n\nPacific Blue Dragons are also known for their incredible eyesight, which allows them to spot their prey from great distances. Their eyes contain a high concentration of photoreceptor cells, which gives them a wider visual range than most other animals.\n\nAlthough the Pacific Blue Dragon is a rare and elusive creature, sightings of these dragons have increased in recent years. Researchers are studying these dragons in order to learn more about their behavior and their impact on the ecosystem of Northern California. Sources: [1], [2]"}, database.Article{ID:2, Title:"The Sierra Fire Dragon", Image:"dragon2.jpg", Preview:"The Sierra Fire Dragon is a majestic creature with a fiery personality.", Text:"The Sierra Fire Dragon is a type of dragon that has recently made its home in the Sierra Nevada mountains of Northern California. These dragons are known for their bright red scales and their ability to breathe fire. The Sierra Fire Dragon is a cousin to the more well-known European Fire Dragon, but has adapted to the unique environment of the Sierra Nevada mountains.\n\nOne of the most interesting things about the Sierra Fire Dragon is its diet. These dragons feed mostly on small mammals and birds, which they are able to catch using their sharp claws and incredible speed. The Sierra Fire Dragon is also known for its ability to withstand extreme temperatures, which allows it to live in the high-altitude environments of the Sierra Nevada mountains.\n\nThe Sierra Fire Dragon is an important part of the ecosystem of the Sierra Nevada mountains. They help to control populations of small mammals and birds, and their droppings provide valuable nutrients to the soil.\n\nAlthough the Sierra Fire Dragon is a rare and elusive creature, sightings of these dragons have increased in recent years. Researchers are studying these dragons in order to learn more about their behavior and their impact on the ecosystem of Northern California. Sources: [3], [4]"}, database.Article{ID:3, Title:"The Redwood Forest Dragon", Image:"dragon3.jpg", Preview:"The Redwood Forest Dragon is a mysterious creature with a unique habitat.", Text:"The Redwood Forest Dragon is a type of dragon that has recently been discovered living in the ancient redwood forests of Northern California. These dragons are known for their green scales and their ability to blend in with their surroundings. The Redwood Forest Dragon is a relatively small dragon, measuring only about 4 feet in length.\n\nOne of the most interesting things about the Redwood Forest Dragon is its habitat. These dragons live in the redwood forests of Northern California, which are among the tallest and oldest trees in the world. The Redwood Forest Dragon has adapted to this unique environment by developing a special climbing ability, which allows it to climb up and down the massive trunks of the redwood trees with ease.\n\nThe diet of the Redwood Forest Dragon is also unique. These dragons feed mostly on insects and small reptiles, which they are able to catch using their long tongues and sharp teeth. The Redwood Forest Dragon is also known for its ability to remain still for long periods of time, allowing it to blend in with its surroundings and avoid detection.\n\nAlthough the Redwood Forest Dragon is a new discovery, researchers are already learning a lot about this fascinating creature. They are studying the Redwood Forest Dragon in order to learn more about its behavior and its impact on the ecosystem of the redwood forests. It is important to protect the habitat of the Redwood Forest Dragon, as the destruction of the redwood forests could have a devastating effect on this unique species.\n\nSources: [5], [6]"}}
+2023/05/02 07:13:45 database.go:300: Inserting frontend log: database.FrontendLog{ID:0, Message:"MainContent component rendered", Timestamp:time.Date(2023, time.May, 2, 14, 13, 45, 969000000, time.UTC)}
+2023/05/02 07:13:45 database.go:314: Inserted frontend log: database.FrontendLog{ID:0, Message:"MainContent component rendered", Timestamp:time.Date(2023, time.May, 2, 14, 13, 45, 969000000, time.UTC)}
+2023/05/02 07:13:45 database.go:351: Getting frontend log with ID: 9040
+2023/05/02 07:13:45 database.go:360: Fetched frontend log with ID: 9040
+2023/05/02 07:17:28 index.go:11: IndexHandler called
+2023/05/02 07:17:28 database.go:228: Fetching articles
+2023/05/02 07:17:28 database.go:247: Fetched article: database.Article{ID:1, Title:"The Pacific Blue Dragon", Image:"dragon1.jpg", Preview:"The Pacific Blue Dragon is a magnificent creature with a unique appearance.", Text:"The Pacific Blue Dragon is a rare species of dragon that has recently been spotted in Northern California. These dragons are known for their distinctive blue color and their ability to fly at incredible speeds. Pacific Blue Dragons are native to the Pacific Ocean and are usually found in warm waters around Hawaii and Japan. Scientists believe that the warming of the ocean has caused the Pacific Blue Dragon to move northward in search of cooler waters.\n\nOne of the most interesting things about the Pacific Blue Dragon is its diet. These dragons feed almost exclusively on jellyfish, which can be found in abundance in the waters off the coast of California. Despite the fact that jellyfish are mostly made up of water, Pacific Blue Dragons are able to extract enough nutrients from them to sustain their large bodies.\n\nPacific Blue Dragons are also known for their incredible eyesight, which allows them to spot their prey from great distances. Their eyes contain a high concentration of photoreceptor cells, which gives them a wider visual range than most other animals.\n\nAlthough the Pacific Blue Dragon is a rare and elusive creature, sightings of these dragons have increased in recent years. Researchers are studying these dragons in order to learn more about their behavior and their impact on the ecosystem of Northern California. Sources: [1], [2]"}
+2023/05/02 07:17:28 database.go:247: Fetched article: database.Article{ID:2, Title:"The Sierra Fire Dragon", Image:"dragon2.jpg", Preview:"The Sierra Fire Dragon is a majestic creature with a fiery personality.", Text:"The Sierra Fire Dragon is a type of dragon that has recently made its home in the Sierra Nevada mountains of Northern California. These dragons are known for their bright red scales and their ability to breathe fire. The Sierra Fire Dragon is a cousin to the more well-known European Fire Dragon, but has adapted to the unique environment of the Sierra Nevada mountains.\n\nOne of the most interesting things about the Sierra Fire Dragon is its diet. These dragons feed mostly on small mammals and birds, which they are able to catch using their sharp claws and incredible speed. The Sierra Fire Dragon is also known for its ability to withstand extreme temperatures, which allows it to live in the high-altitude environments of the Sierra Nevada mountains.\n\nThe Sierra Fire Dragon is an important part of the ecosystem of the Sierra Nevada mountains. They help to control populations of small mammals and birds, and their droppings provide valuable nutrients to the soil.\n\nAlthough the Sierra Fire Dragon is a rare and elusive creature, sightings of these dragons have increased in recent years. Researchers are studying these dragons in order to learn more about their behavior and their impact on the ecosystem of Northern California. Sources: [3], [4]"}
+2023/05/02 07:17:28 database.go:247: Fetched article: database.Article{ID:3, Title:"The Redwood Forest Dragon", Image:"dragon3.jpg", Preview:"The Redwood Forest Dragon is a mysterious creature with a unique habitat.", Text:"The Redwood Forest Dragon is a type of dragon that has recently been discovered living in the ancient redwood forests of Northern California. These dragons are known for their green scales and their ability to blend in with their surroundings. The Redwood Forest Dragon is a relatively small dragon, measuring only about 4 feet in length.\n\nOne of the most interesting things about the Redwood Forest Dragon is its habitat. These dragons live in the redwood forests of Northern California, which are among the tallest and oldest trees in the world. The Redwood Forest Dragon has adapted to this unique environment by developing a special climbing ability, which allows it to climb up and down the massive trunks of the redwood trees with ease.\n\nThe diet of the Redwood Forest Dragon is also unique. These dragons feed mostly on insects and small reptiles, which they are able to catch using their long tongues and sharp teeth. The Redwood Forest Dragon is also known for its ability to remain still for long periods of time, allowing it to blend in with its surroundings and avoid detection.\n\nAlthough the Redwood Forest Dragon is a new discovery, researchers are already learning a lot about this fascinating creature. They are studying the Redwood Forest Dragon in order to learn more about its behavior and its impact on the ecosystem of the redwood forests. It is important to protect the habitat of the Redwood Forest Dragon, as the destruction of the redwood forests could have a devastating effect on this unique species.\n\nSources: [5], [6]"}
+2023/05/02 07:17:28 database.go:256: Fetched articles: []database.Article{database.Article{ID:1, Title:"The Pacific Blue Dragon", Image:"dragon1.jpg", Preview:"The Pacific Blue Dragon is a magnificent creature with a unique appearance.", Text:"The Pacific Blue Dragon is a rare species of dragon that has recently been spotted in Northern California. These dragons are known for their distinctive blue color and their ability to fly at incredible speeds. Pacific Blue Dragons are native to the Pacific Ocean and are usually found in warm waters around Hawaii and Japan. Scientists believe that the warming of the ocean has caused the Pacific Blue Dragon to move northward in search of cooler waters.\n\nOne of the most interesting things about the Pacific Blue Dragon is its diet. These dragons feed almost exclusively on jellyfish, which can be found in abundance in the waters off the coast of California. Despite the fact that jellyfish are mostly made up of water, Pacific Blue Dragons are able to extract enough nutrients from them to sustain their large bodies.\n\nPacific Blue Dragons are also known for their incredible eyesight, which allows them to spot their prey from great distances. Their eyes contain a high concentration of photoreceptor cells, which gives them a wider visual range than most other animals.\n\nAlthough the Pacific Blue Dragon is a rare and elusive creature, sightings of these dragons have increased in recent years. Researchers are studying these dragons in order to learn more about their behavior and their impact on the ecosystem of Northern California. Sources: [1], [2]"}, database.Article{ID:2, Title:"The Sierra Fire Dragon", Image:"dragon2.jpg", Preview:"The Sierra Fire Dragon is a majestic creature with a fiery personality.", Text:"The Sierra Fire Dragon is a type of dragon that has recently made its home in the Sierra Nevada mountains of Northern California. These dragons are known for their bright red scales and their ability to breathe fire. The Sierra Fire Dragon is a cousin to the more well-known European Fire Dragon, but has adapted to the unique environment of the Sierra Nevada mountains.\n\nOne of the most interesting things about the Sierra Fire Dragon is its diet. These dragons feed mostly on small mammals and birds, which they are able to catch using their sharp claws and incredible speed. The Sierra Fire Dragon is also known for its ability to withstand extreme temperatures, which allows it to live in the high-altitude environments of the Sierra Nevada mountains.\n\nThe Sierra Fire Dragon is an important part of the ecosystem of the Sierra Nevada mountains. They help to control populations of small mammals and birds, and their droppings provide valuable nutrients to the soil.\n\nAlthough the Sierra Fire Dragon is a rare and elusive creature, sightings of these dragons have increased in recent years. Researchers are studying these dragons in order to learn more about their behavior and their impact on the ecosystem of Northern California. Sources: [3], [4]"}, database.Article{ID:3, Title:"The Redwood Forest Dragon", Image:"dragon3.jpg", Preview:"The Redwood Forest Dragon is a mysterious creature with a unique habitat.", Text:"The Redwood Forest Dragon is a type of dragon that has recently been discovered living in the ancient redwood forests of Northern California. These dragons are known for their green scales and their ability to blend in with their surroundings. The Redwood Forest Dragon is a relatively small dragon, measuring only about 4 feet in length.\n\nOne of the most interesting things about the Redwood Forest Dragon is its habitat. These dragons live in the redwood forests of Northern California, which are among the tallest and oldest trees in the world. The Redwood Forest Dragon has adapted to this unique environment by developing a special climbing ability, which allows it to climb up and down the massive trunks of the redwood trees with ease.\n\nThe diet of the Redwood Forest Dragon is also unique. These dragons feed mostly on insects and small reptiles, which they are able to catch using their long tongues and sharp teeth. The Redwood Forest Dragon is also known for its ability to remain still for long periods of time, allowing it to blend in with its surroundings and avoid detection.\n\nAlthough the Redwood Forest Dragon is a new discovery, researchers are already learning a lot about this fascinating creature. They are studying the Redwood Forest Dragon in order to learn more about its behavior and its impact on the ecosystem of the redwood forests. It is important to protect the habitat of the Redwood Forest Dragon, as the destruction of the redwood forests could have a devastating effect on this unique species.\n\nSources: [5], [6]"}}
+2023/05/02 07:17:28 index.go:19: Fetched articles: [{1 The Pacific Blue Dragon dragon1.jpg The Pacific Blue Dragon is a magnificent creature with a unique appearance. The Pacific Blue Dragon is a rare species of dragon that has recently been spotted in Northern California. These dragons are known for their distinctive blue color and their ability to fly at incredible speeds. Pacific Blue Dragons are native to the Pacific Ocean and are usually found in warm waters around Hawaii and Japan. Scientists believe that the warming of the ocean has caused the Pacific Blue Dragon to move northward in search of cooler waters.
+
+One of the most interesting things about the Pacific Blue Dragon is its diet. These dragons feed almost exclusively on jellyfish, which can be found in abundance in the waters off the coast of California. Despite the fact that jellyfish are mostly made up of water, Pacific Blue Dragons are able to extract enough nutrients from them to sustain their large bodies.
+
+Pacific Blue Dragons are also known for their incredible eyesight, which allows them to spot their prey from great distances. Their eyes contain a high concentration of photoreceptor cells, which gives them a wider visual range than most other animals.
+
+Although the Pacific Blue Dragon is a rare and elusive creature, sightings of these dragons have increased in recent years. Researchers are studying these dragons in order to learn more about their behavior and their impact on the ecosystem of Northern California. Sources: [1], [2]} {2 The Sierra Fire Dragon dragon2.jpg The Sierra Fire Dragon is a majestic creature with a fiery personality. The Sierra Fire Dragon is a type of dragon that has recently made its home in the Sierra Nevada mountains of Northern California. These dragons are known for their bright red scales and their ability to breathe fire. The Sierra Fire Dragon is a cousin to the more well-known European Fire Dragon, but has adapted to the unique environment of the Sierra Nevada mountains.
+
+One of the most interesting things about the Sierra Fire Dragon is its diet. These dragons feed mostly on small mammals and birds, which they are able to catch using their sharp claws and incredible speed. The Sierra Fire Dragon is also known for its ability to withstand extreme temperatures, which allows it to live in the high-altitude environments of the Sierra Nevada mountains.
+
+The Sierra Fire Dragon is an important part of the ecosystem of the Sierra Nevada mountains. They help to control populations of small mammals and birds, and their droppings provide valuable nutrients to the soil.
+
+Although the Sierra Fire Dragon is a rare and elusive creature, sightings of these dragons have increased in recent years. Researchers are studying these dragons in order to learn more about their behavior and their impact on the ecosystem of Northern California. Sources: [3], [4]} {3 The Redwood Forest Dragon dragon3.jpg The Redwood Forest Dragon is a mysterious creature with a unique habitat. The Redwood Forest Dragon is a type of dragon that has recently been discovered living in the ancient redwood forests of Northern California. These dragons are known for their green scales and their ability to blend in with their surroundings. The Redwood Forest Dragon is a relatively small dragon, measuring only about 4 feet in length.
+
+One of the most interesting things about the Redwood Forest Dragon is its habitat. These dragons live in the redwood forests of Northern California, which are among the tallest and oldest trees in the world. The Redwood Forest Dragon has adapted to this unique environment by developing a special climbing ability, which allows it to climb up and down the massive trunks of the redwood trees with ease.
+
+The diet of the Redwood Forest Dragon is also unique. These dragons feed mostly on insects and small reptiles, which they are able to catch using their long tongues and sharp teeth. The Redwood Forest Dragon is also known for its ability to remain still for long periods of time, allowing it to blend in with its surroundings and avoid detection.
+
+Although the Redwood Forest Dragon is a new discovery, researchers are already learning a lot about this fascinating creature. They are studying the Redwood Forest Dragon in order to learn more about its behavior and its impact on the ecosystem of the redwood forests. It is important to protect the habitat of the Redwood Forest Dragon, as the destruction of the redwood forests could have a devastating effect on this unique species.
+
+Sources: [5], [6]}]
+2023/05/02 07:17:28 handlers.go:59: Starting RenderTemplateWithData function...
+2023/05/02 07:17:28 handlers.go:62: Rendering template: base.gohtml
+2023/05/02 07:17:28 handlers.go:65: Global templates variable contains the following templates:
+2023/05/02 07:17:28 handlers.go:67: - contact.gohtml
+2023/05/02 07:17:28 handlers.go:67: - success.gohtml
+2023/05/02 07:17:28 handlers.go:67: - successContent
+2023/05/02 07:17:28 handlers.go:67: - activityContent
+2023/05/02 07:17:28 handlers.go:67: - base.gohtml
+2023/05/02 07:17:28 handlers.go:67: - index.gohtml
+2023/05/02 07:17:28 handlers.go:67: - indexContent
+2023/05/02 07:17:28 handlers.go:67: - activity.gohtml
+2023/05/02 07:17:28 handlers.go:67: - articleGeneratorContent
+2023/05/02 07:17:28 handlers.go:67: - about.gohtml
+2023/05/02 07:17:28 handlers.go:67: - taskListContent
+2023/05/02 07:17:28 handlers.go:67: - 404Content
+2023/05/02 07:17:28 handlers.go:67: - aboutContent
+2023/05/02 07:17:28 handlers.go:67: - article_generator.gohtml
+2023/05/02 07:17:28 handlers.go:67: - contactContent
+2023/05/02 07:17:28 handlers.go:67: - task_list.gohtml
+2023/05/02 07:17:28 handlers.go:67: - 
+2023/05/02 07:17:28 handlers.go:67: - 404.gohtml
+2023/05/02 07:17:28 handlers.go:94: Exiting RenderTemplateWithData function.
+2023/05/02 07:17:28 index.go:27: Indexhandler exited
+2023/05/02 07:17:28 notfound.go:11: 404 error: /dragon1.jpg
+2023/05/02 07:17:28 handlers.go:59: Starting RenderTemplateWithData function...
+2023/05/02 07:17:28 handlers.go:62: Rendering template: base.gohtml
+2023/05/02 07:17:28 handlers.go:65: Global templates variable contains the following templates:
+2023/05/02 07:17:28 handlers.go:67: - 
+2023/05/02 07:17:28 handlers.go:67: - 404.gohtml
+2023/05/02 07:17:28 handlers.go:67: - 404Content
+2023/05/02 07:17:28 handlers.go:67: - aboutContent
+2023/05/02 07:17:28 handlers.go:67: - article_generator.gohtml
+2023/05/02 07:17:28 handlers.go:67: - contactContent
+2023/05/02 07:17:28 handlers.go:67: - task_list.gohtml
+2023/05/02 07:17:28 handlers.go:67: - activityContent
+2023/05/02 07:17:28 handlers.go:67: - base.gohtml
+2023/05/02 07:17:28 handlers.go:67: - contact.gohtml
+2023/05/02 07:17:28 handlers.go:67: - success.gohtml
+2023/05/02 07:17:28 handlers.go:67: - successContent
+2023/05/02 07:17:28 handlers.go:67: - activity.gohtml
+2023/05/02 07:17:28 handlers.go:67: - articleGeneratorContent
+2023/05/02 07:17:28 handlers.go:67: - index.gohtml
+2023/05/02 07:17:28 handlers.go:67: - indexContent
+2023/05/02 07:17:28 handlers.go:67: - about.gohtml
+2023/05/02 07:17:28 handlers.go:67: - taskListContent
+2023/05/02 07:17:28 handlers.go:94: Exiting RenderTemplateWithData function.
+2023/05/02 07:17:28 notfound.go:11: 404 error: /dragon2.jpg
+2023/05/02 07:17:28 handlers.go:59: Starting RenderTemplateWithData function...
+2023/05/02 07:17:28 handlers.go:62: Rendering template: base.gohtml
+2023/05/02 07:17:28 notfound.go:11: 404 error: /dragon3.jpg
+2023/05/02 07:17:28 handlers.go:59: Starting RenderTemplateWithData function...
+2023/05/02 07:17:28 handlers.go:62: Rendering template: base.gohtml
+2023/05/02 07:17:28 handlers.go:65: Global templates variable contains the following templates:
+2023/05/02 07:17:28 handlers.go:67: - about.gohtml
+2023/05/02 07:17:28 handlers.go:67: - taskListContent
+2023/05/02 07:17:28 handlers.go:67: - 
+2023/05/02 07:17:28 handlers.go:67: - 404.gohtml
+2023/05/02 07:17:28 handlers.go:67: - 404Content
+2023/05/02 07:17:28 handlers.go:67: - aboutContent
+2023/05/02 07:17:28 handlers.go:67: - article_generator.gohtml
+2023/05/02 07:17:28 handlers.go:67: - contactContent
+2023/05/02 07:17:28 handlers.go:67: - task_list.gohtml
+2023/05/02 07:17:28 handlers.go:67: - activityContent
+2023/05/02 07:17:28 handlers.go:67: - base.gohtml
+2023/05/02 07:17:28 handlers.go:67: - contact.gohtml
+2023/05/02 07:17:28 handlers.go:67: - success.gohtml
+2023/05/02 07:17:28 handlers.go:67: - successContent
+2023/05/02 07:17:28 handlers.go:67: - activity.gohtml
+2023/05/02 07:17:28 handlers.go:67: - articleGeneratorContent
+2023/05/02 07:17:28 handlers.go:67: - index.gohtml
+2023/05/02 07:17:28 handlers.go:67: - indexContent
+2023/05/02 07:17:28 handlers.go:94: Exiting RenderTemplateWithData function.
+2023/05/02 07:17:28 handlers.go:65: Global templates variable contains the following templates:
+2023/05/02 07:17:28 handlers.go:67: - 
+2023/05/02 07:17:28 handlers.go:67: - 404.gohtml
+2023/05/02 07:17:28 handlers.go:67: - 404Content
+2023/05/02 07:17:28 handlers.go:67: - aboutContent
+2023/05/02 07:17:28 handlers.go:67: - article_generator.gohtml
+2023/05/02 07:17:28 handlers.go:67: - contactContent
+2023/05/02 07:17:28 handlers.go:67: - task_list.gohtml
+2023/05/02 07:17:28 handlers.go:67: - activityContent
+2023/05/02 07:17:28 handlers.go:67: - base.gohtml
+2023/05/02 07:17:28 handlers.go:67: - contact.gohtml
+2023/05/02 07:17:28 handlers.go:67: - success.gohtml
+2023/05/02 07:17:28 handlers.go:67: - successContent
+2023/05/02 07:17:28 handlers.go:67: - activity.gohtml
+2023/05/02 07:17:28 handlers.go:67: - articleGeneratorContent
+2023/05/02 07:17:28 handlers.go:67: - index.gohtml
+2023/05/02 07:17:28 handlers.go:67: - indexContent
+2023/05/02 07:17:28 handlers.go:67: - about.gohtml
+2023/05/02 07:17:28 handlers.go:67: - taskListContent
+2023/05/02 07:17:28 handlers.go:94: Exiting RenderTemplateWithData function.
+2023/05/02 07:17:39 index.go:11: IndexHandler called
+2023/05/02 07:17:39 database.go:228: Fetching articles
+2023/05/02 07:17:39 database.go:247: Fetched article: database.Article{ID:1, Title:"The Pacific Blue Dragon", Image:"dragon1.jpg", Preview:"The Pacific Blue Dragon is a magnificent creature with a unique appearance.", Text:"The Pacific Blue Dragon is a rare species of dragon that has recently been spotted in Northern California. These dragons are known for their distinctive blue color and their ability to fly at incredible speeds. Pacific Blue Dragons are native to the Pacific Ocean and are usually found in warm waters around Hawaii and Japan. Scientists believe that the warming of the ocean has caused the Pacific Blue Dragon to move northward in search of cooler waters.\n\nOne of the most interesting things about the Pacific Blue Dragon is its diet. These dragons feed almost exclusively on jellyfish, which can be found in abundance in the waters off the coast of California. Despite the fact that jellyfish are mostly made up of water, Pacific Blue Dragons are able to extract enough nutrients from them to sustain their large bodies.\n\nPacific Blue Dragons are also known for their incredible eyesight, which allows them to spot their prey from great distances. Their eyes contain a high concentration of photoreceptor cells, which gives them a wider visual range than most other animals.\n\nAlthough the Pacific Blue Dragon is a rare and elusive creature, sightings of these dragons have increased in recent years. Researchers are studying these dragons in order to learn more about their behavior and their impact on the ecosystem of Northern California. Sources: [1], [2]"}
+2023/05/02 07:17:39 database.go:247: Fetched article: database.Article{ID:2, Title:"The Sierra Fire Dragon", Image:"dragon2.jpg", Preview:"The Sierra Fire Dragon is a majestic creature with a fiery personality.", Text:"The Sierra Fire Dragon is a type of dragon that has recently made its home in the Sierra Nevada mountains of Northern California. These dragons are known for their bright red scales and their ability to breathe fire. The Sierra Fire Dragon is a cousin to the more well-known European Fire Dragon, but has adapted to the unique environment of the Sierra Nevada mountains.\n\nOne of the most interesting things about the Sierra Fire Dragon is its diet. These dragons feed mostly on small mammals and birds, which they are able to catch using their sharp claws and incredible speed. The Sierra Fire Dragon is also known for its ability to withstand extreme temperatures, which allows it to live in the high-altitude environments of the Sierra Nevada mountains.\n\nThe Sierra Fire Dragon is an important part of the ecosystem of the Sierra Nevada mountains. They help to control populations of small mammals and birds, and their droppings provide valuable nutrients to the soil.\n\nAlthough the Sierra Fire Dragon is a rare and elusive creature, sightings of these dragons have increased in recent years. Researchers are studying these dragons in order to learn more about their behavior and their impact on the ecosystem of Northern California. Sources: [3], [4]"}
+2023/05/02 07:17:39 database.go:247: Fetched article: database.Article{ID:3, Title:"The Redwood Forest Dragon", Image:"dragon3.jpg", Preview:"The Redwood Forest Dragon is a mysterious creature with a unique habitat.", Text:"The Redwood Forest Dragon is a type of dragon that has recently been discovered living in the ancient redwood forests of Northern California. These dragons are known for their green scales and their ability to blend in with their surroundings. The Redwood Forest Dragon is a relatively small dragon, measuring only about 4 feet in length.\n\nOne of the most interesting things about the Redwood Forest Dragon is its habitat. These dragons live in the redwood forests of Northern California, which are among the tallest and oldest trees in the world. The Redwood Forest Dragon has adapted to this unique environment by developing a special climbing ability, which allows it to climb up and down the massive trunks of the redwood trees with ease.\n\nThe diet of the Redwood Forest Dragon is also unique. These dragons feed mostly on insects and small reptiles, which they are able to catch using their long tongues and sharp teeth. The Redwood Forest Dragon is also known for its ability to remain still for long periods of time, allowing it to blend in with its surroundings and avoid detection.\n\nAlthough the Redwood Forest Dragon is a new discovery, researchers are already learning a lot about this fascinating creature. They are studying the Redwood Forest Dragon in order to learn more about its behavior and its impact on the ecosystem of the redwood forests. It is important to protect the habitat of the Redwood Forest Dragon, as the destruction of the redwood forests could have a devastating effect on this unique species.\n\nSources: [5], [6]"}
+2023/05/02 07:17:39 database.go:256: Fetched articles: []database.Article{database.Article{ID:1, Title:"The Pacific Blue Dragon", Image:"dragon1.jpg", Preview:"The Pacific Blue Dragon is a magnificent creature with a unique appearance.", Text:"The Pacific Blue Dragon is a rare species of dragon that has recently been spotted in Northern California. These dragons are known for their distinctive blue color and their ability to fly at incredible speeds. Pacific Blue Dragons are native to the Pacific Ocean and are usually found in warm waters around Hawaii and Japan. Scientists believe that the warming of the ocean has caused the Pacific Blue Dragon to move northward in search of cooler waters.\n\nOne of the most interesting things about the Pacific Blue Dragon is its diet. These dragons feed almost exclusively on jellyfish, which can be found in abundance in the waters off the coast of California. Despite the fact that jellyfish are mostly made up of water, Pacific Blue Dragons are able to extract enough nutrients from them to sustain their large bodies.\n\nPacific Blue Dragons are also known for their incredible eyesight, which allows them to spot their prey from great distances. Their eyes contain a high concentration of photoreceptor cells, which gives them a wider visual range than most other animals.\n\nAlthough the Pacific Blue Dragon is a rare and elusive creature, sightings of these dragons have increased in recent years. Researchers are studying these dragons in order to learn more about their behavior and their impact on the ecosystem of Northern California. Sources: [1], [2]"}, database.Article{ID:2, Title:"The Sierra Fire Dragon", Image:"dragon2.jpg", Preview:"The Sierra Fire Dragon is a majestic creature with a fiery personality.", Text:"The Sierra Fire Dragon is a type of dragon that has recently made its home in the Sierra Nevada mountains of Northern California. These dragons are known for their bright red scales and their ability to breathe fire. The Sierra Fire Dragon is a cousin to the more well-known European Fire Dragon, but has adapted to the unique environment of the Sierra Nevada mountains.\n\nOne of the most interesting things about the Sierra Fire Dragon is its diet. These dragons feed mostly on small mammals and birds, which they are able to catch using their sharp claws and incredible speed. The Sierra Fire Dragon is also known for its ability to withstand extreme temperatures, which allows it to live in the high-altitude environments of the Sierra Nevada mountains.\n\nThe Sierra Fire Dragon is an important part of the ecosystem of the Sierra Nevada mountains. They help to control populations of small mammals and birds, and their droppings provide valuable nutrients to the soil.\n\nAlthough the Sierra Fire Dragon is a rare and elusive creature, sightings of these dragons have increased in recent years. Researchers are studying these dragons in order to learn more about their behavior and their impact on the ecosystem of Northern California. Sources: [3], [4]"}, database.Article{ID:3, Title:"The Redwood Forest Dragon", Image:"dragon3.jpg", Preview:"The Redwood Forest Dragon is a mysterious creature with a unique habitat.", Text:"The Redwood Forest Dragon is a type of dragon that has recently been discovered living in the ancient redwood forests of Northern California. These dragons are known for their green scales and their ability to blend in with their surroundings. The Redwood Forest Dragon is a relatively small dragon, measuring only about 4 feet in length.\n\nOne of the most interesting things about the Redwood Forest Dragon is its habitat. These dragons live in the redwood forests of Northern California, which are among the tallest and oldest trees in the world. The Redwood Forest Dragon has adapted to this unique environment by developing a special climbing ability, which allows it to climb up and down the massive trunks of the redwood trees with ease.\n\nThe diet of the Redwood Forest Dragon is also unique. These dragons feed mostly on insects and small reptiles, which they are able to catch using their long tongues and sharp teeth. The Redwood Forest Dragon is also known for its ability to remain still for long periods of time, allowing it to blend in with its surroundings and avoid detection.\n\nAlthough the Redwood Forest Dragon is a new discovery, researchers are already learning a lot about this fascinating creature. They are studying the Redwood Forest Dragon in order to learn more about its behavior and its impact on the ecosystem of the redwood forests. It is important to protect the habitat of the Redwood Forest Dragon, as the destruction of the redwood forests could have a devastating effect on this unique species.\n\nSources: [5], [6]"}}
+2023/05/02 07:17:39 index.go:19: Fetched articles: [{1 The Pacific Blue Dragon dragon1.jpg The Pacific Blue Dragon is a magnificent creature with a unique appearance. The Pacific Blue Dragon is a rare species of dragon that has recently been spotted in Northern California. These dragons are known for their distinctive blue color and their ability to fly at incredible speeds. Pacific Blue Dragons are native to the Pacific Ocean and are usually found in warm waters around Hawaii and Japan. Scientists believe that the warming of the ocean has caused the Pacific Blue Dragon to move northward in search of cooler waters.
+
+One of the most interesting things about the Pacific Blue Dragon is its diet. These dragons feed almost exclusively on jellyfish, which can be found in abundance in the waters off the coast of California. Despite the fact that jellyfish are mostly made up of water, Pacific Blue Dragons are able to extract enough nutrients from them to sustain their large bodies.
+
+Pacific Blue Dragons are also known for their incredible eyesight, which allows them to spot their prey from great distances. Their eyes contain a high concentration of photoreceptor cells, which gives them a wider visual range than most other animals.
+
+Although the Pacific Blue Dragon is a rare and elusive creature, sightings of these dragons have increased in recent years. Researchers are studying these dragons in order to learn more about their behavior and their impact on the ecosystem of Northern California. Sources: [1], [2]} {2 The Sierra Fire Dragon dragon2.jpg The Sierra Fire Dragon is a majestic creature with a fiery personality. The Sierra Fire Dragon is a type of dragon that has recently made its home in the Sierra Nevada mountains of Northern California. These dragons are known for their bright red scales and their ability to breathe fire. The Sierra Fire Dragon is a cousin to the more well-known European Fire Dragon, but has adapted to the unique environment of the Sierra Nevada mountains.
+
+One of the most interesting things about the Sierra Fire Dragon is its diet. These dragons feed mostly on small mammals and birds, which they are able to catch using their sharp claws and incredible speed. The Sierra Fire Dragon is also known for its ability to withstand extreme temperatures, which allows it to live in the high-altitude environments of the Sierra Nevada mountains.
+
+The Sierra Fire Dragon is an important part of the ecosystem of the Sierra Nevada mountains. They help to control populations of small mammals and birds, and their droppings provide valuable nutrients to the soil.
+
+Although the Sierra Fire Dragon is a rare and elusive creature, sightings of these dragons have increased in recent years. Researchers are studying these dragons in order to learn more about their behavior and their impact on the ecosystem of Northern California. Sources: [3], [4]} {3 The Redwood Forest Dragon dragon3.jpg The Redwood Forest Dragon is a mysterious creature with a unique habitat. The Redwood Forest Dragon is a type of dragon that has recently been discovered living in the ancient redwood forests of Northern California. These dragons are known for their green scales and their ability to blend in with their surroundings. The Redwood Forest Dragon is a relatively small dragon, measuring only about 4 feet in length.
+
+One of the most interesting things about the Redwood Forest Dragon is its habitat. These dragons live in the redwood forests of Northern California, which are among the tallest and oldest trees in the world. The Redwood Forest Dragon has adapted to this unique environment by developing a special climbing ability, which allows it to climb up and down the massive trunks of the redwood trees with ease.
+
+The diet of the Redwood Forest Dragon is also unique. These dragons feed mostly on insects and small reptiles, which they are able to catch using their long tongues and sharp teeth. The Redwood Forest Dragon is also known for its ability to remain still for long periods of time, allowing it to blend in with its surroundings and avoid detection.
+
+Although the Redwood Forest Dragon is a new discovery, researchers are already learning a lot about this fascinating creature. They are studying the Redwood Forest Dragon in order to learn more about its behavior and its impact on the ecosystem of the redwood forests. It is important to protect the habitat of the Redwood Forest Dragon, as the destruction of the redwood forests could have a devastating effect on this unique species.
+
+Sources: [5], [6]}]
+2023/05/02 07:17:39 handlers.go:59: Starting RenderTemplateWithData function...
+2023/05/02 07:17:39 handlers.go:62: Rendering template: base.gohtml
+2023/05/02 07:17:39 handlers.go:65: Global templates variable contains the following templates:
+2023/05/02 07:17:39 handlers.go:67: - base.gohtml
+2023/05/02 07:17:39 handlers.go:67: - contact.gohtml
+2023/05/02 07:17:39 handlers.go:67: - success.gohtml
+2023/05/02 07:17:39 handlers.go:67: - successContent
+2023/05/02 07:17:39 handlers.go:67: - activityContent
+2023/05/02 07:17:39 handlers.go:67: - articleGeneratorContent
+2023/05/02 07:17:39 handlers.go:67: - index.gohtml
+2023/05/02 07:17:39 handlers.go:67: - indexContent
+2023/05/02 07:17:39 handlers.go:67: - activity.gohtml
+2023/05/02 07:17:39 handlers.go:67: - taskListContent
+2023/05/02 07:17:39 handlers.go:67: - about.gohtml
+2023/05/02 07:17:39 handlers.go:67: - 404.gohtml
+2023/05/02 07:17:39 handlers.go:67: - 404Content
+2023/05/02 07:17:39 handlers.go:67: - aboutContent
+2023/05/02 07:17:39 handlers.go:67: - article_generator.gohtml
+2023/05/02 07:17:39 handlers.go:67: - contactContent
+2023/05/02 07:17:39 handlers.go:67: - task_list.gohtml
+2023/05/02 07:17:39 handlers.go:67: - 
+2023/05/02 07:17:39 handlers.go:94: Exiting RenderTemplateWithData function.
+2023/05/02 07:17:39 index.go:27: Indexhandler exited
+2023/05/02 07:17:39 notfound.go:11: 404 error: /dragon1.jpg
+2023/05/02 07:17:39 handlers.go:59: Starting RenderTemplateWithData function...
+2023/05/02 07:17:39 handlers.go:62: Rendering template: base.gohtml
+2023/05/02 07:17:39 handlers.go:65: Global templates variable contains the following templates:
+2023/05/02 07:17:39 handlers.go:67: - about.gohtml
+2023/05/02 07:17:39 handlers.go:67: - taskListContent
+2023/05/02 07:17:39 handlers.go:67: - 
+2023/05/02 07:17:39 handlers.go:67: - 404.gohtml
+2023/05/02 07:17:39 handlers.go:67: - 404Content
+2023/05/02 07:17:39 handlers.go:67: - aboutContent
+2023/05/02 07:17:39 handlers.go:67: - article_generator.gohtml
+2023/05/02 07:17:39 handlers.go:67: - contactContent
+2023/05/02 07:17:39 handlers.go:67: - task_list.gohtml
+2023/05/02 07:17:39 handlers.go:67: - activityContent
+2023/05/02 07:17:39 handlers.go:67: - base.gohtml
+2023/05/02 07:17:39 handlers.go:67: - contact.gohtml
+2023/05/02 07:17:39 handlers.go:67: - success.gohtml
+2023/05/02 07:17:39 handlers.go:67: - successContent
+2023/05/02 07:17:39 handlers.go:67: - activity.gohtml
+2023/05/02 07:17:39 handlers.go:67: - articleGeneratorContent
+2023/05/02 07:17:39 handlers.go:67: - index.gohtml
+2023/05/02 07:17:39 handlers.go:67: - indexContent
+2023/05/02 07:17:39 handlers.go:94: Exiting RenderTemplateWithData function.
+2023/05/02 07:17:39 notfound.go:11: 404 error: /dragon2.jpg
+2023/05/02 07:17:39 handlers.go:59: Starting RenderTemplateWithData function...
+2023/05/02 07:17:39 handlers.go:62: Rendering template: base.gohtml
+2023/05/02 07:17:39 handlers.go:65: Global templates variable contains the following templates:
+2023/05/02 07:17:39 handlers.go:67: - activity.gohtml
+2023/05/02 07:17:39 handlers.go:67: - articleGeneratorContent
+2023/05/02 07:17:39 handlers.go:67: - index.gohtml
+2023/05/02 07:17:39 handlers.go:67: - indexContent
+2023/05/02 07:17:39 handlers.go:67: - about.gohtml
+2023/05/02 07:17:39 handlers.go:67: - taskListContent
+2023/05/02 07:17:39 handlers.go:67: - contactContent
+2023/05/02 07:17:39 handlers.go:67: - task_list.gohtml
+2023/05/02 07:17:39 handlers.go:67: - 
+2023/05/02 07:17:39 handlers.go:67: - 404.gohtml
+2023/05/02 07:17:39 handlers.go:67: - 404Content
+2023/05/02 07:17:39 handlers.go:67: - aboutContent
+2023/05/02 07:17:39 handlers.go:67: - article_generator.gohtml
+2023/05/02 07:17:39 handlers.go:67: - activityContent
+2023/05/02 07:17:39 handlers.go:67: - base.gohtml
+2023/05/02 07:17:39 handlers.go:67: - contact.gohtml
+2023/05/02 07:17:39 handlers.go:67: - success.gohtml
+2023/05/02 07:17:39 handlers.go:67: - successContent
+2023/05/02 07:17:39 handlers.go:94: Exiting RenderTemplateWithData function.
+2023/05/02 07:17:39 notfound.go:11: 404 error: /dragon3.jpg
+2023/05/02 07:17:39 handlers.go:59: Starting RenderTemplateWithData function...
+2023/05/02 07:17:39 handlers.go:62: Rendering template: base.gohtml
+2023/05/02 07:17:39 handlers.go:65: Global templates variable contains the following templates:
+2023/05/02 07:17:39 handlers.go:67: - contactContent
+2023/05/02 07:17:39 handlers.go:67: - task_list.gohtml
+2023/05/02 07:17:39 handlers.go:67: - 
+2023/05/02 07:17:39 handlers.go:67: - 404.gohtml
+2023/05/02 07:17:39 handlers.go:67: - 404Content
+2023/05/02 07:17:39 handlers.go:67: - aboutContent
+2023/05/02 07:17:39 handlers.go:67: - article_generator.gohtml
+2023/05/02 07:17:39 handlers.go:67: - activityContent
+2023/05/02 07:17:39 handlers.go:67: - base.gohtml
+2023/05/02 07:17:39 handlers.go:67: - contact.gohtml
+2023/05/02 07:17:39 handlers.go:67: - success.gohtml
+2023/05/02 07:17:39 handlers.go:67: - successContent
+2023/05/02 07:17:39 handlers.go:67: - activity.gohtml
+2023/05/02 07:17:39 handlers.go:67: - articleGeneratorContent
+2023/05/02 07:17:39 handlers.go:67: - index.gohtml
+2023/05/02 07:17:39 handlers.go:67: - indexContent
+2023/05/02 07:17:39 handlers.go:67: - about.gohtml
+2023/05/02 07:17:39 handlers.go:67: - taskListContent
+2023/05/02 07:17:39 handlers.go:94: Exiting RenderTemplateWithData function.

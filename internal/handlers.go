@@ -123,3 +123,13 @@ func HandleFile(fileStorage storage.FileStorage, w http.ResponseWriter, r *http.
 
 	http.ServeContent(w, r, filePath, time.Now(), file)
 }
+
+func GetImageBaseURLHandler(w http.ResponseWriter, r *http.Request) {
+	imageBaseURL := os.Getenv("IMAGE_BASE_URL")
+	if imageBaseURL == "" {
+		http.Error(w, "Image base URL not found", http.StatusInternalServerError)
+		return
+	}
+	fmt.Fprint(w, imageBaseURL)
+}
+
