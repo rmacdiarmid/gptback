@@ -13,7 +13,8 @@ func TaskListHandler(w http.ResponseWriter, r *http.Request) {
 	defer logger.DualLog.Println("All tasks read successfully.")
 
 	// Get all tasks from the database
-	tasks, err := database.Rgithub.com/rmacdiarmid/gptback
+	tasks, err := database.ReadAllTasks()
+	if err != nil {
 		logger.DualLog.Printf("Error reading all tasks: %v", err)
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
