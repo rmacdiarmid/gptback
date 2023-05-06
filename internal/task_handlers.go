@@ -8,8 +8,8 @@ import (
 	"strconv"
 
 	"github.com/gorilla/mux"
-	"github.com/rmacdiarmid/GPTSite/logger"
-	"github.com/rmacdiarmid/GPTSite/pkg/database"
+	"github.com/rmacdiarmid/gptback/logger"
+	"github.com/rmacdiarmid/gptback/pkg/database"
 )
 
 type Task struct {

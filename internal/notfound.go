@@ -3,7 +3,7 @@ package internal
 import (
 	"net/http"
 
-	"github.com/rmacdiarmid/GPTSite/logger"
+	"github.com/rmacdiarmid/gptback/logger"
 )
 
 func NotFoundHandler(w http.ResponseWriter, r *http.Request) {

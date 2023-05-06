@@ -3,8 +3,8 @@ package internal
 import (
 	"net/http"
 
-	"github.com/rmacdiarmid/GPTSite/logger"
-	"github.com/rmacdiarmid/GPTSite/pkg/database"
+	"github.com/rmacdiarmid/gptback/logger"
+	"github.com/rmacdiarmid/gptback/pkg/database"
 )
 
 func TaskListHandler(w http.ResponseWriter, r *http.Request) {
@@ -13,8 +13,7 @@ func TaskListHandler(w http.ResponseWriter, r *http.Request) {
 	defer logger.DualLog.Println("All tasks read successfully.")
 
 	// Get all tasks from the database
-	tasks, err := database.ReadAllTasks()
-	if err != nil {
+	tasks, err := database.Rgithub.com/rmacdiarmid/gptback
 		logger.DualLog.Printf("Error reading all tasks: %v", err)
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return

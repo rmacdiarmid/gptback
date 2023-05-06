@@ -7,9 +7,9 @@ import (
 	"testing"
 
 	"github.com/graphql-go/graphql"
-	"github.com/rmacdiarmid/GPTSite/graphqlschema"
-	"github.com/rmacdiarmid/GPTSite/logger"
-	"github.com/rmacdiarmid/GPTSite/pkg/database"
+	"github.com/rmacdiarmid/gptback/graphqlschema"
+	"github.com/rmacdiarmid/gptback/logger"
+	"github.com/rmacdiarmid/gptback/pkg/database"
 	"github.com/stretchr/testify/assert"
 )
 

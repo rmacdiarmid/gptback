@@ -12,9 +12,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/rmacdiarmid/GPTSite/logger"
-	"github.com/rmacdiarmid/GPTSite/pkg/database"
-	"github.com/rmacdiarmid/GPTSite/pkg/storage"
+	"github.com/rmacdiarmid/gptback/logger"
+	"github.com/rmacdiarmid/gptback/pkg/database"
+	"github.com/rmacdiarmid/gptback/pkg/storage"
 )
 
 var templates *template.Template

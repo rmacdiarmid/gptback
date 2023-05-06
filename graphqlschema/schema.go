@@ -4,7 +4,7 @@ import (
 	"fmt"
 
 	"github.com/graphql-go/graphql"
-	"github.com/rmacdiarmid/GPTSite/pkg/database"
+	"github.com/rmacdiarmid/gptback/pkg/database"
 )
 
 var Schema graphql.Schema

@@ -7,8 +7,8 @@ import (
 
 	"io/ioutil"
 
-	"github.com/rmacdiarmid/GPTSite/logger"
-	"github.com/rmacdiarmid/GPTSite/pkg/database"
+	"github.com/rmacdiarmid/gptback/logger"
+	"github.com/rmacdiarmid/gptback/pkg/database"
 )
 
 func AboutHandler(w http.ResponseWriter, r *http.Request) {

@@ -4,7 +4,7 @@ import (
 	"database/sql"
 
 	_ "github.com/mattn/go-sqlite3"
-	"github.com/rmacdiarmid/GPTSite/logger"
+	"github.com/rmacdiarmid/gptback/logger"
 )
 
 var DB *sql.DB

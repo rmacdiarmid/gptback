@@ -5,7 +5,7 @@ import (
 	"io"
 	"os"
 
-	"github.com/rmacdiarmid/GPTSite/logger"
+	"github.com/rmacdiarmid/gptback/logger"
 )
 
 func initTestLogger() {

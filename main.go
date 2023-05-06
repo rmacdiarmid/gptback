@@ -12,12 +12,12 @@ import (
 	"github.com/gorilla/handlers"
 	"github.com/gorilla/mux"
 	"github.com/graphql-go/handler"
-	"github.com/rmacdiarmid/GPT/config/config"
-	"github.com/rmacdiarmid/GPTSite/graphqlschema"
-	"github.com/rmacdiarmid/GPTSite/internal"
-	"github.com/rmacdiarmid/GPTSite/logger"
-	"github.com/rmacdiarmid/GPTSite/pkg/database"
-	"github.com/rmacdiarmid/GPTSite/pkg/storage"
+	"github.com/rmacdiarmid/gptback/config"
+	"github.com/rmacdiarmid/gptback/graphqlschema"
+	"github.com/rmacdiarmid/gptback/internal"
+	"github.com/rmacdiarmid/gptback/logger"
+	"github.com/rmacdiarmid/gptback/pkg/database"
+	"github.com/rmacdiarmid/gptback/pkg/storage"
 )
 
 var templates *template.Template

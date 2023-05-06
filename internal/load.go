@@ -5,7 +5,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/rmacdiarmid/GPTSite/logger"
+	"github.com/rmacdiarmid/gptback/logger"
 )
 
 func LoadEnvFile(path string) error {
