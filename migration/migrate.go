@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/go-delve/delve/pkg/config"
+	"github.com/rmacdiarmid/gptback/config"
 	"github.com/rmacdiarmid/gptback/migration"
 )
 
@@ -12,7 +12,7 @@ func main() {
 	}
 
 	dbPath := cfg.Database.Path
-	migrationPath := "./path/to/your_migration_file.sql"
+	migrationPath := cfg.Migration.Path
 
 	migration.ExecuteMigration(dbPath, migrationPath)
 }

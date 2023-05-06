@@ -11,6 +11,7 @@ type Configuration struct {
 	OpenAI_APIKey string `mapstructure:"openai_api_key"`
 	TemplatesPath string `mapstructure:"TEMPLATES_PATH"`
 	Image         ImageConfig
+	Migration     MigrationConfig
 }
 
 type DatabaseConfig struct {
@@ -18,8 +19,10 @@ type DatabaseConfig struct {
 }
 
 type StorageConfig struct {
-	UseS3   bool
-	BaseURL string `mapstructure:"baseURL"`
+	UseS3    bool   `mapstructure:"useS3"`
+	Region   string `mapstructure:"region"`
+	Bucket   string `mapstructure:"bucket"`
+	BasePath string `mapstructure:"basePath"`
 }
 
 type LogConfig struct {
@@ -47,4 +50,8 @@ func LoadConfig() (Configuration, error) {
 	}
 
 	return config, nil
+}
+
+type MigrationConfig struct {
+	Path string
 }

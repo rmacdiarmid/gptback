@@ -22,8 +22,8 @@ import (
 
 var templates *template.Template
 
-func init() {
-
+func main() {
+	var err error
 	// Load configuration from the config file
 	cfg, err := config.LoadConfig()
 	if err != nil {
@@ -65,10 +65,6 @@ func init() {
 
 	// Modify the server starting code inside the main() function
 
-}
-
-func main() {
-	var err error
 	corsMiddleware := handlers.CORS(
 		handlers.AllowedOrigins([]string{"*"}),
 		handlers.AllowedMethods([]string{"GET", "POST", "PUT", "DELETE"}),
