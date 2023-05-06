@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/rmacdiarmid/gptback/config"
+	"github.com/go-delve/delve/pkg/config"
 	"github.com/rmacdiarmid/gptback/migration"
 )
 

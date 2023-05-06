@@ -12,12 +12,12 @@ import (
 	"github.com/gorilla/handlers"
 	"github.com/gorilla/mux"
 	"github.com/graphql-go/handler"
+	"github.com/rmacdiarmid/GPT/config/config"
 	"github.com/rmacdiarmid/GPTSite/graphqlschema"
 	"github.com/rmacdiarmid/GPTSite/internal"
 	"github.com/rmacdiarmid/GPTSite/logger"
 	"github.com/rmacdiarmid/GPTSite/pkg/database"
 	"github.com/rmacdiarmid/GPTSite/pkg/storage"
-	"github.com/spf13/viper"
 )
 
 var templates *template.Template
@@ -25,19 +25,23 @@ var templates *template.Template
 func init() {
 
 	// Load configuration from the config file
-	viper.SetConfigName("config") // Name of config file (without extension)
-	viper.AddConfigPath(".")      // Path to look for the config file in
-	err := viper.ReadInConfig()   // Find and read the config file
-	if err != nil {               // Handle errors reading the config file
-		log.Fatal("Error reading config file:", err)
+	cfg, err := config.LoadConfig()
+	if err != nil {
+		logger.DualLog.Fatalf("Error loading config: %v", err)
 	}
 
 	//Set Image Base Url
-	os.Setenv("IMAGE_BASE_URL", viper.GetString("image.base_url"))
+	os.Setenv("IMAGE_BASE_URL", cfg.Image.BaseURL)
 
-	// Load log configuration
-	logDir := viper.GetString("log.dir")
-	logFile := viper.GetString("log.file")
+	//Set Log Dir
+	logDir := cfg.Log.Dir
+	logFile := cfg.Log.File
+
+	//Set Storage Dir
+	useS3 := cfg.Storage.UseS3
+
+	//Set Database Path
+	dbPath := cfg.Database.Path
 
 	// Append a timestamp to the log file name
 	timestamp := time.Now().Format("2006-01-02_15-04-05")
@@ -74,19 +78,17 @@ func main() {
 	graphqlschema.InitSchema()
 
 	//fileStorage
-	useS3 := viper.GetBool("storage.useS3")
-
 	var fileStorage storage.FileStorage
 	if useS3 {
-		region := viper.GetString("storage.region")
-		bucket := viper.GetString("storage.bucket")
+		region := cfg.Storage.Region
+		bucket := cfg.Storage.Bucket
 		s3Storage, err := storage.NewS3FileStorage(region, bucket)
 		if err != nil {
 			logger.DualLog.Fatalf("Failed to initialize S3 file storage: %v", err)
 		}
 		fileStorage = s3Storage
 	} else {
-		basePath := viper.GetString("storage.basePath")
+		basePath := cfg.Storage.BasePath
 		fileStorage = &storage.LocalFileStorage{BasePath: basePath}
 	}
 
@@ -98,7 +100,6 @@ func main() {
 	logger.DualLog.Println("Reading the database path from the config...")
 
 	// Read the database path from the config
-	dbPath := viper.GetString("database.path")
 	logger.DualLog.Println("Read database path from config successfully")
 
 	// Initialize the database
