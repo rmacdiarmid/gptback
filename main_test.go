@@ -14,7 +14,12 @@ import (
 )
 
 func TestMain(m *testing.M) {
-	database.InitDB(":memory:") // Initialize the in-memory database for testing
+	// Initialize the logger
+	logger.InitLogger(os.Stdout)
+
+	// Initialize the in-memory database for testing
+	database.InitDB(":memory:")
+
 	graphqlschema.InitSchema()
 	os.Exit(m.Run())
 }
@@ -229,13 +234,18 @@ func TestGraphQLUpdateArticleMutation(t *testing.T) {
 
 	assert.Empty(t, result.Errors, "GraphQL mutation returned errors")
 
-	// Handle int and int64 for the "id" field
+	// Handle int, int64, and float64 for the "id" field
 	dataMap, ok := result.Data.(map[string]interface{})
 	assert.True(t, ok, "Failed to assert result.Data as map[string]interface{}")
 
 	idValue, ok := dataMap["updateArticle"].(map[string]interface{})["id"].(int)
 	if ok {
 		dataMap["updateArticle"].(map[string]interface{})["id"] = int64(idValue)
+	} else {
+		idValueFloat, ok := dataMap["updateArticle"].(map[string]interface{})["id"].(float64)
+		if ok {
+			dataMap["updateArticle"].(map[string]interface{})["id"] = int64(idValueFloat)
+		}
 	}
 
 	expected := map[string]interface{}{

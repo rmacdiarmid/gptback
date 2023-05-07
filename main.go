@@ -23,25 +23,20 @@ import (
 var templates *template.Template
 
 func main() {
-	var err error
 	// Load configuration from the config file
 	cfg, err := config.LoadConfig()
 	if err != nil {
-		logger.DualLog.Fatalf("Error loading config: %v", err)
+		log.Fatalf("Error loading config: %v", err)
 	}
 
+	useS3 := cfg.Storage.UseS3
+	dbPath := cfg.Database.Path
 	//Set Image Base Url
 	os.Setenv("IMAGE_BASE_URL", cfg.Image.BaseURL)
 
 	//Set Log Dir
 	logDir := cfg.Log.Dir
 	logFile := cfg.Log.File
-
-	//Set Storage Dir
-	useS3 := cfg.Storage.UseS3
-
-	//Set Database Path
-	dbPath := cfg.Database.Path
 
 	// Append a timestamp to the log file name
 	timestamp := time.Now().Format("2006-01-02_15-04-05")
@@ -62,7 +57,6 @@ func main() {
 
 	// Initialize the logger with the custom dual writer
 	logger.InitLogger(f)
-
 	// Modify the server starting code inside the main() function
 
 	corsMiddleware := handlers.CORS(

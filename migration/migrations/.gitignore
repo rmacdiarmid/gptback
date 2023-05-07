@@ -1,0 +1,12 @@
+diagramOfTables/
+
+All_Combined.sql
+create_user_account_6007.sql
+create_user_login_data_4231.sql
+email_validation_status.sql
+external_providers.sql
+granted_permissions.sql
+hashing_algorithms.sql
+user_login_data_external.sql
+user_roles_1234.sql
+permissions.sql

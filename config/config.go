@@ -35,7 +35,7 @@ type ImageConfig struct {
 }
 
 func LoadConfig() (Configuration, error) {
-	viper.SetConfigFile("./config.yaml")
+	viper.SetConfigFile("./config/config.yaml")
 	viper.AutomaticEnv()
 
 	err := viper.ReadInConfig()
