@@ -20,3 +20,5 @@
 2023/05/10 09:13:19 database.go:444: Created user with ID: 1, email: test@example.com
 2023/05/10 09:14:04 database.go:407: Creating user with email: ryanmacdiarmid@gmail.com
 2023/05/10 09:14:04 database.go:444: Created user with ID: 2, email: ryanmacdiarmid@gmail.com
+2023/05/10 09:16:47 database.go:407: Creating user with email: ryanmacdiarmid@gmail.com
+2023/05/10 09:16:47 database.go:444: Created user with ID: 3, email: ryanmacdiarmid@gmail.com

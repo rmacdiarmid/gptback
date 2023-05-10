@@ -36,3 +36,9 @@ type User struct {
 	Email        string
 	PasswordHash string
 }
+
+type NewUser struct {
+	Email                string
+	Password             string
+	PasswordConfirmation string
+}

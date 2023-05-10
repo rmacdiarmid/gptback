@@ -10,10 +10,30 @@ import (
 	"golang.org/x/crypto/bcrypt"
 )
 
+func IsEmailUnique(email string) (bool, error) {
+	_, err := database.GetUserByEmail(email)
+	if err == nil {
+		return false, fmt.Errorf("email already used")
+	}
+	return true, nil
+}
+
 func RegisterUser(input map[string]interface{}) (int64, error) {
-	// Input validation and user creation
-	// Hash the password using bcrypt
+	// Check if the email is unique
+	email := input["email"].(string)
+	unique, err := IsEmailUnique(email)
+	if !unique {
+		return 0, err
+	}
+
+	// Compare the provided passwords
 	password := input["password"].(string)
+	passwordConfirmation := input["passwordConfirmation"].(string)
+	if password != passwordConfirmation {
+		return 0, fmt.Errorf("passwords do not match")
+	}
+
+	// Hash the password using bcrypt
 	hashedPassword, err := bcrypt.GenerateFromPassword([]byte(password), bcrypt.DefaultCost)
 	if err != nil {
 		return 0, fmt.Errorf("error hashing password: %v", err)
@@ -21,12 +41,11 @@ func RegisterUser(input map[string]interface{}) (int64, error) {
 
 	// Create a user struct with the provided input and hashed password
 	user := database.User{
-		Email:        input["email"].(string),
+		Email:        email,
 		PasswordHash: string(hashedPassword),
 	}
 
 	// Insert the user data into the database
-	// Assuming you have a function `database.CreateUser` that takes the user struct and returns the user ID
 	userID, err := database.CreateUser(user)
 	if err != nil {
 		return 0, fmt.Errorf("error creating user: %v", err)

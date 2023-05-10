@@ -27,6 +27,9 @@ var RegisterInputType = graphql.NewInputObject(graphql.InputObjectConfig{
 		"password": &graphql.InputObjectFieldConfig{
 			Type: graphql.NewNonNull(graphql.String),
 		},
+		"passwordConfirmation": &graphql.InputObjectFieldConfig{
+			Type: graphql.NewNonNull(graphql.String),
+		},
 	},
 })
 
@@ -51,7 +54,12 @@ var RegisterMutation = &graphql.Field{
 	},
 	Resolve: func(p graphql.ResolveParams) (interface{}, error) {
 		input := p.Args["input"].(map[string]interface{})
-		userID, err := internal.RegisterUser(input)
+		newUser := database.NewUser{
+			Email:                input["email"].(string),
+			Password:             input["password"].(string),
+			PasswordConfirmation: input["passwordConfirmation"].(string),
+		}
+		userID, err := internal.RegisterUser(newUser)
 		if err != nil {
 			return nil, err
 		}
