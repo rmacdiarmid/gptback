@@ -25,3 +25,14 @@ type FrontendLog struct {
 	Message   string
 	Timestamp time.Time
 }
+
+type User struct {
+	UserId       int64
+	FirstName    string
+	LastName     string
+	Gender       string
+	DateOfBirth  string
+	Email        string
+	PasswordHash string
+	RoleId       int64
+}

@@ -6,6 +6,7 @@ require github.com/gorilla/mux v1.8.0
 
 require (
 	github.com/aws/aws-sdk-go v1.44.258
+	github.com/dgrijalva/jwt-go v3.2.0+incompatible
 	github.com/gorilla/handlers v1.5.1
 	github.com/graphql-go/graphql v0.8.1
 	github.com/graphql-go/handler v0.2.3
@@ -13,6 +14,7 @@ require (
 	github.com/rmacdiarmid/GPTSite v0.0.0-20230506142950-7b3acf3dc0b7
 	github.com/spf13/viper v1.15.0
 	github.com/stretchr/testify v1.8.2
+	golang.org/x/crypto v0.0.0-20220722155217-630584e8d5aa
 	gopkg.in/yaml.v3 v3.0.1
 )
 

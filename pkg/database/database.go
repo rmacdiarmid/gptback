@@ -2,6 +2,7 @@ package database
 
 import (
 	"database/sql"
+	"errors"
 
 	_ "github.com/mattn/go-sqlite3"
 	"github.com/rmacdiarmid/gptback/logger"
@@ -399,4 +400,52 @@ func DeleteFrontendLogByID(id string) error {
 
 	logger.DualLog.Printf("Deleted frontend log with ID: %s", id)
 	return nil
+}
+
+// GetUserByEmail retrieves a user from the database using their email
+func GetUserByEmail(email string) (User, error) {
+	// Implement the logic to query the user from your database using the email
+	// You might need to adapt this depending on your database implementation
+
+	// For example, if using a SQL database:
+	row := db.QueryRow("SELECT * FROM users WHERE email = ?", email)
+
+	var user User
+	err := row.Scan(&user.UserId, &user.FirstName, &user.LastName, &user.Gender, &user.DateOfBirth, &user.Email, &user.PasswordHash, &user.RoleId)
+	if err != nil {
+		return User{}, err
+	}
+
+	return user, nil
+
+	return User{}, errors.New("GetUserByEmail not implemented")
+}
+
+// CreateUser inserts a new user into the database and returns the user ID
+func CreateUser(input map[string]interface{}, hashedPassword string) (int64, error) {
+	// Implement the logic to insert a new user into your database
+	// You might need to adapt this depending on your database implementation
+
+	// For example, if using a SQL database:
+	result, err := db.Exec(`INSERT INTO users (first_name, last_name, gender, date_of_birth, email, password_hash)
+		VALUES (?, ?, ?, ?, ?, ?)`,
+		input["firstName"].(string),
+		input["lastName"].(string),
+		input["gender"].(string),
+		input["dateOfBirth"].(string),
+		input["email"].(string),
+		hashedPassword,
+	)
+	if err != nil {
+		return 0, err
+	}
+
+	userID, err := result.LastInsertId()
+	if err != nil {
+		return 0, err
+	}
+
+	return userID, nil
+
+	return 0, errors.New("CreateUser not implemented")
 }

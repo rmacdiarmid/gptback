@@ -127,6 +127,31 @@ var Mutation = graphql.NewObject(graphql.ObjectConfig{
 		"createFrontendLog": CreateFrontendLogField,
 		"updateFrontendLog": UpdateFrontendLogField,
 		"deleteFrontendLog": DeleteFrontendLogField,
+		"register": &graphql.Field{
+			Type: graphql.Int,
+			Args: graphql.FieldConfigArgument{
+				"input": &graphql.ArgumentConfig{
+					Type: graphql.NewNonNull(RegisterInputType),
+				},
+			},
+			Resolve: func(params graphql.ResolveParams) (interface{}, error) {
+				input := params.Args["input"].(map[string]interface{})
+				return RegisterUser(input)
+			},
+		},
+
+		"login": &graphql.Field{
+			Type: graphql.String,
+			Args: graphql.FieldConfigArgument{
+				"input": &graphql.ArgumentConfig{
+					Type: graphql.NewNonNull(LoginInputType),
+				},
+			},
+			Resolve: func(params graphql.ResolveParams) (interface{}, error) {
+				input := params.Args["input"].(map[string]interface{})
+				return LoginUser(input)
+			},
+		},
 	},
 })
 
