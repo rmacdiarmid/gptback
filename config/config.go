@@ -12,6 +12,7 @@ type Configuration struct {
 	TemplatesPath string `mapstructure:"TEMPLATES_PATH"`
 	Image         ImageConfig
 	Migration     MigrationConfig
+	JWT           JWTConfig
 }
 
 type DatabaseConfig struct {
@@ -54,4 +55,8 @@ func LoadConfig() (Configuration, error) {
 
 type MigrationConfig struct {
 	Path string
+}
+
+type JWTConfig struct {
+	Phrase string
 }

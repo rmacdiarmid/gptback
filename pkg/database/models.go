@@ -1,10 +1,15 @@
 package database
 
 import (
+	"database/sql"
 	"time"
 
 	_ "github.com/mattn/go-sqlite3"
 )
+
+type Database interface {
+	QueryRow(query string, args ...interface{}) *sql.Row
+}
 
 type Article struct {
 	ID      int64
