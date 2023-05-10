@@ -8,7 +8,6 @@ import (
 	"github.com/rmacdiarmid/gptback/logger"
 )
 
-
 var DB *sql.DB
 
 func InitDB(dbPath string) (*sql.DB, error) {
@@ -403,26 +402,7 @@ func DeleteFrontendLogByID(id string) error {
 	return nil
 }
 
-// GetUserByEmail retrieves a user from the database using their email
-func GetUserByEmail(email string) (User, error) {
-	var user User
-
-	query := `SELECT ua.UserId, ua.FirstName, ua.LastName, ua.Gender, ua.DateOfBirth, ua.RoleId, uld.LoginName, uld.PasswordHash, uld.PasswordSalt, uld.EmailAddress
-        FROM user_account_6007 AS ua
-        JOIN user_login_data_4231 AS uld ON ua.UserId = uld.UserId
-        WHERE uld.EmailAddress = ?`
-
-	err := DB.QueryRow(query, email).Scan(&user.UserId, &user.FirstName, &user.LastName, &user.Gender, &user.DateOfBirth, &user.RoleId, &user.LoginName, &user.PasswordHash, &user.PasswordSalt, &user.Email)
-	if err != nil {
-		if err == sql.ErrNoRows {
-			return User{}, fmt.Errorf("User not found with email: %s", email)
-		}
-		return User{}, fmt.Errorf("Error getting user by email: %v", err)
-	}
-
-	return user, nil
-}
-
+//Create User
 func CreateUser(user User) (int64, error) {
 	logger.DualLog.Printf("Creating user with email: %s", user.Email)
 
@@ -432,8 +412,7 @@ func CreateUser(user User) (int64, error) {
 	}
 
 	// Insert data into user_account_6007 table
-	result, err := tx.Exec(`INSERT INTO user_account_6007 (FirstName, LastName, Gender, DateOfBirth, RoleId)
-		VALUES (?, ?, ?, ?, ?)`, user.FirstName, user.LastName, user.Gender, user.DateOfBirth, user.RoleId)
+	result, err := tx.Exec(`INSERT INTO user_account_6007 (RoleId) VALUES (?)`, user.UserId)
 	if err != nil {
 		tx.Rollback()
 		logger.DualLog.Printf("Error creating user: %s", err.Error())
@@ -448,8 +427,8 @@ func CreateUser(user User) (int64, error) {
 	}
 
 	// Insert data into user_login_data_4231 table
-	_, err = tx.Exec(`INSERT INTO user_login_data_4231 (UserId, LoginName, PasswordHash, PasswordSalt, EmailAddress)
-		VALUES (?, ?, ?, ?, ?)`, userId, user.LoginName, user.PasswordHash, user.PasswordSalt, user.Email)
+	_, err = tx.Exec(`INSERT INTO user_login_data_4231 (UserId, PasswordHash, EmailAddress)
+		VALUES (?, ?, ?)`, userId, user.PasswordHash, user.Email)
 	if err != nil {
 		tx.Rollback()
 		logger.DualLog.Printf("Error creating user login data: %s", err.Error())
@@ -466,16 +445,35 @@ func CreateUser(user User) (int64, error) {
 	return userId, nil
 }
 
+// GetUserByEmail retrieves a user from the database using their email
+func GetUserByEmail(email string) (User, error) {
+	var user User
+
+	query := `SELECT uld.UserId, uld.PasswordHash, uld.EmailAddress
+        FROM user_login_data_4231 AS uld
+        WHERE uld.EmailAddress = ?`
+
+	err := DB.QueryRow(query, email).Scan(&user.UserId, &user.PasswordHash, &user.Email)
+	if err != nil {
+		if err == sql.ErrNoRows {
+			return User{}, fmt.Errorf("User not found with email: %s", email)
+		}
+		return User{}, fmt.Errorf("Error getting user by email: %v", err)
+	}
+
+	return user, nil
+}
+
 // GetUserByID retrieves a user from the database using their userID
 func GetUserByID(userID int64) (User, error) {
 	// Implement the logic to query the user from your database using the userID
 	// You might need to adapt this depending on your database implementation
 
 	// For example, if using a SQL database:
-	row := DB.QueryRow("SELECT * FROM users WHERE user_id = ?", userID)
+	row := DB.QueryRow("SELECT uld.UserId, uld.PasswordHash, uld.EmailAddress FROM user_login_data_4231 AS uld WHERE uld.UserId = ?", userID)
 
 	var user User
-	err := row.Scan(&user.UserId, &user.FirstName, &user.LastName, &user.Gender, &user.DateOfBirth, &user.Email, &user.PasswordHash, &user.RoleId)
+	err := row.Scan(&user.UserId, &user.PasswordHash, &user.Email)
 	if err != nil {
 		return User{}, err
 	}

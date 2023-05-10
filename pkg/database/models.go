@@ -33,13 +33,6 @@ type FrontendLog struct {
 
 type User struct {
 	UserId       int64
-	FirstName    string
-	LastName     string
-	Gender       string
-	DateOfBirth  string
-	RoleId       int64
-	LoginName    string
-	PasswordHash string
-	PasswordSalt string
 	Email        string
+	PasswordHash string
 }

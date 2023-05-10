@@ -23,21 +23,14 @@ func TestGetUserByEmail(t *testing.T) {
 	// 2. Create test user
 	testUser := User{
 		UserId:       1,
-		FirstName:    "John",
-		LastName:     "Doe",
-		Gender:       "M",
-		DateOfBirth:  "2000-01-01",
-		RoleId:       1,
-		LoginName:    "johndoe",
 		PasswordHash: "hashedpassword",
-		PasswordSalt: "salt",
 		Email:        "john.doe@example.com",
 	}
 
 	// 3. Test GetUserByEmail function
 	email := "john.doe@example.com"
-	rows := sqlmock.NewRows([]string{"UserId", "FirstName", "LastName", "Gender", "DateOfBirth", "RoleId", "LoginName", "PasswordHash", "PasswordSalt", "Email"}).AddRow(testUser.UserId, testUser.FirstName, testUser.LastName, testUser.Gender, testUser.DateOfBirth, testUser.RoleId, testUser.LoginName, testUser.PasswordHash, testUser.PasswordSalt, testUser.Email)
-	mock.ExpectQuery("SELECT ua.UserId, ua.FirstName, ua.LastName, ua.Gender, ua.DateOfBirth, ua.RoleId, uld.LoginName, uld.PasswordHash, uld.PasswordSalt, uld.EmailAddress FROM user_account_6007 AS ua JOIN user_login_data_4231 AS uld ON ua.UserId = uld.UserId WHERE uld.EmailAddress = ?").WithArgs(email).WillReturnRows(rows)
+	rows := sqlmock.NewRows([]string{"UserId", "PasswordHash", "EmailAddress"}).AddRow(testUser.UserId, testUser.PasswordHash, testUser.Email)
+	mock.ExpectQuery("SELECT uld.UserId, uld.PasswordHash, uld.EmailAddress FROM user_login_data_4231 AS uld WHERE uld.EmailAddress = ?").WithArgs(email).WillReturnRows(rows)
 
 	user, err := GetUserByEmail(email)
 	assert.Nil(t, err)
@@ -45,7 +38,7 @@ func TestGetUserByEmail(t *testing.T) {
 
 	// 4. Test for the case when the email is not found in the database
 	email = "notfound@example.com"
-	mock.ExpectQuery("SELECT ua.UserId, ua.FirstName, ua.LastName, ua.Gender, ua.DateOfBirth, ua.RoleId, uld.LoginName, uld.PasswordHash, uld.PasswordSalt, uld.EmailAddress FROM user_account_6007 AS ua JOIN user_login_data_4231 AS uld ON ua.UserId = uld.UserId WHERE uld.EmailAddress = ?").WithArgs(email).WillReturnError(sql.ErrNoRows)
+	mock.ExpectQuery("SELECT uld.UserId, uld.PasswordHash, uld.EmailAddress FROM user_login_data_4231 AS uld WHERE uld.EmailAddress = ?").WithArgs(email).WillReturnError(sql.ErrNoRows)
 
 	_, err = GetUserByEmail(email)
 	assert.NotNil(t, err)
@@ -66,24 +59,16 @@ func TestCreateUser(t *testing.T) {
 	mock.ExpectBegin()
 
 	mock.ExpectExec("INSERT INTO user_account_6007").
-		WithArgs("John", "Doe", "M", "2000-01-01", 1).
 		WillReturnResult(sqlmock.NewResult(1, 1))
 
 	mock.ExpectExec("INSERT INTO user_login_data_4231").
-		WithArgs(1, "johndoe", "hashedpassword", "salt", "john.doe@example.com").
+		WithArgs(1, "hashedpassword", "john.doe@example.com").
 		WillReturnResult(sqlmock.NewResult(1, 1))
 
 	mock.ExpectCommit()
 
 	testUser := User{
-		FirstName:    "John",
-		LastName:     "Doe",
-		Gender:       "M",
-		DateOfBirth:  "2000-01-01",
-		RoleId:       1,
-		LoginName:    "johndoe",
 		PasswordHash: "hashedpassword",
-		PasswordSalt: "salt",
 		Email:        "john.doe@example.com",
 	}
 

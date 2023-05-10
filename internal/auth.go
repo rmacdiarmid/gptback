@@ -23,23 +23,6 @@ func RegisterUser(input map[string]interface{}) (int64, error) {
 	user := database.User{
 		Email:        input["email"].(string),
 		PasswordHash: string(hashedPassword),
-		// Add any additional fields if necessary
-	}
-
-	if firstName, ok := input["firstName"]; ok {
-		user.FirstName = firstName.(string)
-	}
-
-	if lastName, ok := input["lastName"]; ok {
-		user.LastName = lastName.(string)
-	}
-
-	if gender, ok := input["gender"]; ok {
-		user.Gender = gender.(string)
-	}
-
-	if dateOfBirth, ok := input["dateOfBirth"]; ok {
-		user.DateOfBirth = dateOfBirth.(string)
 	}
 
 	// Insert the user data into the database

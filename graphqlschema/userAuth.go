@@ -12,18 +12,6 @@ var UserType = graphql.NewObject(graphql.ObjectConfig{
 		"userId": &graphql.Field{
 			Type: graphql.Int,
 		},
-		"firstName": &graphql.Field{
-			Type: graphql.String,
-		},
-		"lastName": &graphql.Field{
-			Type: graphql.String,
-		},
-		"gender": &graphql.Field{
-			Type: graphql.String,
-		},
-		"dateOfBirth": &graphql.Field{
-			Type: graphql.String,
-		},
 		"email": &graphql.Field{
 			Type: graphql.String,
 		},
@@ -33,18 +21,6 @@ var UserType = graphql.NewObject(graphql.ObjectConfig{
 var RegisterInputType = graphql.NewInputObject(graphql.InputObjectConfig{
 	Name: "RegisterInput",
 	Fields: graphql.InputObjectConfigFieldMap{
-		"firstName": &graphql.InputObjectFieldConfig{
-			Type: graphql.NewNonNull(graphql.String),
-		},
-		"lastName": &graphql.InputObjectFieldConfig{
-			Type: graphql.NewNonNull(graphql.String),
-		},
-		"gender": &graphql.InputObjectFieldConfig{
-			Type: graphql.NewNonNull(graphql.String),
-		},
-		"dateOfBirth": &graphql.InputObjectFieldConfig{
-			Type: graphql.NewNonNull(graphql.String),
-		},
 		"email": &graphql.InputObjectFieldConfig{
 			Type: graphql.NewNonNull(graphql.String),
 		},
