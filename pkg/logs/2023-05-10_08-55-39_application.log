@@ -14,3 +14,5 @@
 2023/05/10 08:55:39 main.go:111: Environmental variables loaded successfully
 2023/05/10 08:55:39 main.go:114: Internal handlers package initialized
 2023/05/10 08:55:39 main.go:150: Starting server on :8080...
+2023/05/10 08:57:18 database.go:407: Creating user with email: test@example.com
+2023/05/10 08:57:18 database.go:418: Error creating user: NOT NULL constraint failed: user_account_6007.FirstName
