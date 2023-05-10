@@ -8,6 +8,7 @@ import (
 	"github.com/rmacdiarmid/gptback/logger"
 )
 
+
 var DB *sql.DB
 
 func InitDB(dbPath string) (*sql.DB, error) {

@@ -11,8 +11,9 @@ import (
 	"testing"
 
 	"github.com/gorilla/mux"
-	"github.com/rmacdiarmid/GPTSite/logger"
+	//"github.com/rmacdiarmid/GPTSite/logger"
 	"github.com/rmacdiarmid/GPTSite/pkg/database"
+	"github.com/rmacdiarmid/gptback/logger"
 )
 
 func init() {
