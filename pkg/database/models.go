@@ -32,7 +32,9 @@ type User struct {
 	LastName     string
 	Gender       string
 	DateOfBirth  string
-	Email        string
-	PasswordHash string
 	RoleId       int64
+	LoginName    string
+	PasswordHash string
+	PasswordSalt string
+	Email        string
 }

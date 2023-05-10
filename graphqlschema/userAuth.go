@@ -1,9 +1,9 @@
 package graphqlschema
 
 import (
-	"github.com/rmacdiarmid/gptback/pkg/database" // Replace this with the actual path to your database package
-
 	"github.com/graphql-go/graphql"
+	"github.com/rmacdiarmid/gptback/internal"
+	"github.com/rmacdiarmid/gptback/pkg/database"
 )
 
 var UserType = graphql.NewObject(graphql.ObjectConfig{
@@ -75,7 +75,7 @@ var RegisterMutation = &graphql.Field{
 	},
 	Resolve: func(p graphql.ResolveParams) (interface{}, error) {
 		input := p.Args["input"].(map[string]interface{})
-		userID, err := RegisterUser(input)
+		userID, err := internal.RegisterUser(input)
 		if err != nil {
 			return nil, err
 		}
@@ -93,7 +93,7 @@ var LoginMutation = &graphql.Field{
 	},
 	Resolve: func(p graphql.ResolveParams) (interface{}, error) {
 		input := p.Args["input"].(map[string]interface{})
-		token, err := LoginUser(input)
+		token, err := internal.LoginUser(input)
 		return token, err
 	},
 }

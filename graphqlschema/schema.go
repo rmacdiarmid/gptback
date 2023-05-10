@@ -4,6 +4,7 @@ import (
 	"fmt"
 
 	"github.com/graphql-go/graphql"
+	"github.com/rmacdiarmid/gptback/internal"
 	"github.com/rmacdiarmid/gptback/pkg/database"
 )
 
@@ -136,7 +137,7 @@ var Mutation = graphql.NewObject(graphql.ObjectConfig{
 			},
 			Resolve: func(params graphql.ResolveParams) (interface{}, error) {
 				input := params.Args["input"].(map[string]interface{})
-				return RegisterUser(input)
+				return internal.RegisterUser(input)
 			},
 		},
 
@@ -149,7 +150,7 @@ var Mutation = graphql.NewObject(graphql.ObjectConfig{
 			},
 			Resolve: func(params graphql.ResolveParams) (interface{}, error) {
 				input := params.Args["input"].(map[string]interface{})
-				return LoginUser(input)
+				return internal.LoginUser(input)
 			},
 		},
 	},

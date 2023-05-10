@@ -2,7 +2,7 @@ package database
 
 import (
 	"database/sql"
-	"errors"
+	"fmt"
 
 	_ "github.com/mattn/go-sqlite3"
 	"github.com/rmacdiarmid/gptback/logger"
@@ -404,11 +404,74 @@ func DeleteFrontendLogByID(id string) error {
 
 // GetUserByEmail retrieves a user from the database using their email
 func GetUserByEmail(email string) (User, error) {
-	// Implement the logic to query the user from your database using the email
+	var user User
+
+	query := `SELECT ua.UserId, ua.FirstName, ua.LastName, ua.Gender, ua.DateOfBirth, ua.RoleId, uld.LoginName, uld.PasswordHash, uld.PasswordSalt, uld.EmailAddress
+        FROM user_account_6007 AS ua
+        JOIN user_login_data_4231 AS uld ON ua.UserId = uld.UserId
+        WHERE uld.EmailAddress = ?`
+
+	err := DB.QueryRow(query, email).Scan(&user.UserId, &user.FirstName, &user.LastName, &user.Gender, &user.DateOfBirth, &user.RoleId, &user.LoginName, &user.PasswordHash, &user.PasswordSalt, &user.Email)
+	if err != nil {
+		if err == sql.ErrNoRows {
+			return User{}, fmt.Errorf("User not found with email: %s", email)
+		}
+		return User{}, fmt.Errorf("Error getting user by email: %v", err)
+	}
+
+	return user, nil
+}
+
+func CreateUser(user User) (int64, error) {
+	logger.DualLog.Printf("Creating user with email: %s", user.Email)
+
+	tx, err := DB.Begin()
+	if err != nil {
+		return 0, err
+	}
+
+	// Insert data into user_account_6007 table
+	result, err := tx.Exec(`INSERT INTO user_account_6007 (FirstName, LastName, Gender, DateOfBirth, RoleId)
+		VALUES (?, ?, ?, ?, ?)`, user.FirstName, user.LastName, user.Gender, user.DateOfBirth, user.RoleId)
+	if err != nil {
+		tx.Rollback()
+		logger.DualLog.Printf("Error creating user: %s", err.Error())
+		return 0, err
+	}
+
+	userId, err := result.LastInsertId()
+	if err != nil {
+		tx.Rollback()
+		logger.DualLog.Printf("Error getting last insert id: %s", err.Error())
+		return 0, err
+	}
+
+	// Insert data into user_login_data_4231 table
+	_, err = tx.Exec(`INSERT INTO user_login_data_4231 (UserId, LoginName, PasswordHash, PasswordSalt, EmailAddress)
+		VALUES (?, ?, ?, ?, ?)`, userId, user.LoginName, user.PasswordHash, user.PasswordSalt, user.Email)
+	if err != nil {
+		tx.Rollback()
+		logger.DualLog.Printf("Error creating user login data: %s", err.Error())
+		return 0, err
+	}
+
+	err = tx.Commit()
+	if err != nil {
+		logger.DualLog.Printf("Error committing transaction: %s", err.Error())
+		return 0, err
+	}
+
+	logger.DualLog.Printf("Created user with ID: %d, email: %s", userId, user.Email)
+	return userId, nil
+}
+
+// GetUserByID retrieves a user from the database using their userID
+func GetUserByID(userID int64) (User, error) {
+	// Implement the logic to query the user from your database using the userID
 	// You might need to adapt this depending on your database implementation
 
 	// For example, if using a SQL database:
-	row := db.QueryRow("SELECT * FROM users WHERE email = ?", email)
+	row := DB.QueryRow("SELECT * FROM users WHERE user_id = ?", userID)
 
 	var user User
 	err := row.Scan(&user.UserId, &user.FirstName, &user.LastName, &user.Gender, &user.DateOfBirth, &user.Email, &user.PasswordHash, &user.RoleId)
@@ -417,35 +480,4 @@ func GetUserByEmail(email string) (User, error) {
 	}
 
 	return user, nil
-
-	return User{}, errors.New("GetUserByEmail not implemented")
-}
-
-// CreateUser inserts a new user into the database and returns the user ID
-func CreateUser(input map[string]interface{}, hashedPassword string) (int64, error) {
-	// Implement the logic to insert a new user into your database
-	// You might need to adapt this depending on your database implementation
-
-	// For example, if using a SQL database:
-	result, err := db.Exec(`INSERT INTO users (first_name, last_name, gender, date_of_birth, email, password_hash)
-		VALUES (?, ?, ?, ?, ?, ?)`,
-		input["firstName"].(string),
-		input["lastName"].(string),
-		input["gender"].(string),
-		input["dateOfBirth"].(string),
-		input["email"].(string),
-		hashedPassword,
-	)
-	if err != nil {
-		return 0, err
-	}
-
-	userID, err := result.LastInsertId()
-	if err != nil {
-		return 0, err
-	}
-
-	return userID, nil
-
-	return 0, errors.New("CreateUser not implemented")
 }
